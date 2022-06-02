@@ -2,17 +2,17 @@
 
 TeloPortWrapper Quick Start
 
-**Dependencies**
+# **Dependencies**
 
 TeloPort by Seth Baunach
 
-[Blast+ 2.11.0]([url](https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.11.0/)) 
+[Blast+ 2.11.0](https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.11.0/) 
 
-[MUSCLE 3.8]([url](https://drive5.com/muscle/downloads_v3.htm))
+[MUSCLE 3.8](https://drive5.com/muscle/downloads_v3.htm)
 
-[WCD Express 6.3]([url](https://code.google.com/archive/p/wcdest/downloads))
+[WCD Express 6.3](https://code.google.com/archive/p/wcdest/downloads)
 
-[Emboss 6.6.0]([url](http://emboss.sourceforge.net/download/))
+[Emboss 6.6.0](http://emboss.sourceforge.net/download/)
 
 
 # Setting up TeloPort
