@@ -4,7 +4,7 @@ TeloPortWrapper Quick Start
 
 # **Dependencies**
 
-TeloPort by Seth Baunach
+[TeloPort by Seth Baunach](https://github.com/sabaunach/TeloPort)
 
 [Blast+ 2.11.0](https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.11.0/) 
 
