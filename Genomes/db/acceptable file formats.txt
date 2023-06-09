@@ -1,3 +1,0 @@
-In Genomes goes either seperated or interleaved fastq files (ex. seperated = Guy11_S4_L001_R1_001.fastq & Guy11_S4_L001_R2_001.fastq, Intervleaved = BD-KUS_PE.fastq)
-
-In db goes the fastq assembly files for your raw reads (ex. Arcadia2_Final.fasta)
