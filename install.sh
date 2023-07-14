@@ -2,9 +2,11 @@
 
 mkdir Programs/bin
 
-tar xvf Programs/muscle-5.1.0.tar.gz
+cd Programs/
 
-cd Programs/muscle-5.1.0/src
+tar xvf muscle-5.1.0.tar.gz
+
+cd muscle-5.1.0/src
 
 make
 
@@ -12,9 +14,9 @@ cd ..
 
 cd ..
 
-mv Programs/muscle-5.1.0/src/Linux/muscle Programs/bin/muscle5
+mv muscle-5.1.0/src/Linux/muscle bin/muscle5
 
-cd Programs/TeloPort-master/
+cd TeloPort-master/
 
 make
 
