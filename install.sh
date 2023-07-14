@@ -2,7 +2,7 @@
 
 mkdir Programs/bin
 
-tar xzf Programs/muscle-5.1.0.tar.gz
+tar xvf Programs/muscle-5.1.0.tar.gz
 
 cd Programs/muscle-5.1.0/src
 
