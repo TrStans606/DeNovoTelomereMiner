@@ -53,6 +53,16 @@ bash ./configure
 cd ReleaseMT/build
 
 make all_r
+#build
+cd .. 
+#ReleaseMt
+cd ..
+#c++
+cd ..
+#ncbi-blast
+cd ..
+#Programs
+mv ncbi-blast-2.14.0+-src/c++/ReleaseMT/bin/blastn bin/
 
 curl ftp://emboss.open-bio.org:21/pub/EMBOSS/EMBOSS-6.6.0.tar.gz -o EMBOSS-6.6.0.tar.gz
 
