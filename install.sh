@@ -75,4 +75,22 @@ bash ./configure
 
 make
 
+cd ..
 
+mv EMBOSS-6.6.0/emboss/cons bin/
+
+rm -r EMBOSS-6.6.0
+
+rm EMBOSS-6.6.0.tar.gz
+
+rm ncbi-blast-2.14.0+-src.tar.gz
+
+rm -r ncbi-blast-2.14.0+-src
+
+rm -r muscle-5.1.0
+
+rm muscle-5.1.0.tar.gz
+
+rm -r TeloPort-master
+
+rm -r wcdest-source
