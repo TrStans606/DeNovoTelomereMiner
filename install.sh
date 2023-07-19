@@ -2,6 +2,8 @@
 
 mkdir Outputs/
 
+mkdir Files/
+
 mkdir Programs/bin
 
 cd Programs/
