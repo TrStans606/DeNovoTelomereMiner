@@ -1,5 +1,7 @@
 #!/bin/bash
 
+mkdir Outputs/
+
 mkdir Programs/bin
 
 cd Programs/
