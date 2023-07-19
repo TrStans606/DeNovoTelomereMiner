@@ -1,6 +1,6 @@
-# TeloPortWrapper
+# DeNovoTelomereMiner
 
-TeloPortWrapper Quick Start
+DeNovoTelomereMiner Quick Start
 
 # **Dependencies**
 
@@ -21,10 +21,10 @@ TeloPortWrapper Quick Start
 2. Unzip TeloPort into the directory Programs
 3. While in the TeloPort directory type make
 
-#Dependencies for TeloPortWrapper
+#Dependencies for DeNovoTelomereMiner
 
 #Inputs for TeloPortWrapper
 an interleved or two seperated fastq files
 a fasta genome file
  
-#How to use TeloPortWrapper
+#How to use DeNovoTelomereMiner
