@@ -135,7 +135,7 @@ def config():
         genomeDir = input('Assembled genome Directory: ')
         filterDir = input('Filters directory: ')
         addDir = input('Additional Blast directory: ')
-        write = open('Programs/TeloPort/config.ini', 'w')
+        write = open('config.ini', 'w')
         write.write(
             f'readDirectory={readDir}\ngenomeDirectory= \
             {genomeDir}\nfilterDirectory={filterDir}\naddDirectory= \
