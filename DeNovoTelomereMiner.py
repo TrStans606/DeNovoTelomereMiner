@@ -243,7 +243,7 @@ def telomereFinderSeperated():
         'Outputs/' + directory + '/teloPortOut/',
         '-t',
         telRepeat]
-    subprocess.run(command,
+    subprocess.run(' '.join(command),
         shell=True,
         check=True)
 #runs telomereFinder with the -i argument
@@ -256,7 +256,7 @@ def telomereFinderInter():
         f'Outputs/{directory}/teloPortOut/',
         '-t',
         telRepeat]
-    subprocess.run(command,
+    subprocess.run(' '.join(command),
         shell=True,
         check=True)
 #tags every read with a unique id number for tracking
@@ -290,7 +290,7 @@ def junctionFinder():
                     '--revc 0',
                     '--splitJunc 1',
                     '--splitDir 0']
-    subprocess.run(command,
+    subprocess.run(' '.join(command),
                    shell=True,
                    check=True)
 #calls sequenceQuality
@@ -310,7 +310,7 @@ def sequenceQuality():
                     '0',
                     '-l',
                     '0']
-    subprocess.run(command,
+    subprocess.run(' '.join(command),
                    shell=True,
                    check=True)
 #calls WCDest
@@ -333,7 +333,7 @@ def wcdestCall():
                         directory,
                         'teloPortOut',
                         f'{directory}clusters.wcd')]
-    subprocess.run(command,
+    subprocess.run(' '.join(command),
                     shell=True,
                     check=True)
 #calls wcd interrogate
@@ -370,7 +370,7 @@ def wcdInterrogate():
                     '--sort',
                     '--size'
                     '1']
-    subprocess.run(command,
+    subprocess.run(' '.join(command),
                    shell=True,
                    check=True)
 #renames all canidate denovos from clusters
@@ -448,7 +448,7 @@ def autoMuscle():
                                      directory,
                                      'muscleOut',
                                      f'{directory}cluster{i}.msa')]
-        subprocess.run(command,
+        subprocess.run(' '.join(command),
                        shell=True,
                        check=True)
 
@@ -467,7 +467,7 @@ def autoMuscle():
                         f'{cons}/cons{i}.fasta',
                         '-name',
                         f'cluster{i}']
-        subprocess.run(command,
+        subprocess.run(' '.join(command),
                        shell=True,
                        check=True)
     return cntCluster
@@ -507,7 +507,7 @@ def blast(query, subject, output, dust):
                         dust,
                         '>>',
                         output]
-    subprocess.run(command,
+    subprocess.run(' '.join(command),
                        shell=True,
                        check=True)
 
