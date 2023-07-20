@@ -304,7 +304,7 @@ def sequenceQuality():
                     os.path.join('Outputs',
                                  directory,
                                  'teloPortOut/hiQualityTelAdjSeq.fastq'),
-                    '-ofmt',
+                    '--ofmt',
                     'fasta',
                     '-c',
                     '0',
