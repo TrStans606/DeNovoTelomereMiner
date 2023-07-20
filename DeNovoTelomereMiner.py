@@ -135,7 +135,7 @@ def config():
         genomeDir = input('Assembled genome Directory: ')
         filterDir = input('Filters directory: ')
         addDir = input('Additional Blast directory: ')
-        write = open('Programs/TeloPort/config.ini', 'w')
+        write = open('config.ini', 'w')
         write.write(
             f'readDirectory={readDir}\ngenomeDirectory= \
             {genomeDir}\nfilterDirectory={filterDir}\naddDirectory= \
@@ -913,12 +913,12 @@ def resultsBuilder():
 
 #assigns the path varibles from the config file
 config()
-with open('Programs/TeloPort/config.ini','r') as read:
+with open('config.ini','r') as read:
     configLines = read.readlines()
-    readDir = configLines[1].split('=')[1].split('\n')[0]
-    genomeDir = configLines[2].split('=')[1].split('\n')[0]
-    filterDir = configLines[3].split('=')[1].split('\n')[0] 
-    addDir = configLines[4].split('=')[1]
+    readDir = configLines[0].split('=')[1].split('\n')[0]
+    genomeDir = configLines[1].split('=')[1].split('\n')[0]
+    filterDir = configLines[2].split('=')[1].split('\n')[0] 
+    addDir = configLines[3].split('=')[1]
 
 if args.simple:
     inputResults = inputCollect()
