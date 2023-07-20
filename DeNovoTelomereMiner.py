@@ -135,7 +135,7 @@ def config():
         genomeDir = input('Assembled genome Directory: ')
         filterDir = input('Filters directory: ')
         addDir = input('Additional Blast directory: ')
-        write = open('config.ini', 'w')
+        write = open('Programs/TeloPort/config.ini', 'w')
         write.write(
             f'readDirectory={readDir}\ngenomeDirectory= \
             {genomeDir}\nfilterDirectory={filterDir}\naddDirectory= \
@@ -235,26 +235,28 @@ def teloPortPipeline():
 #runs telomereFinder with the -s argument
 #this is used for seperated fastq files
 def telomereFinderSeperated():
-    subprocess.run(['Programs/bin/telomereFinder', 
+    command = ['Programs/bin/telomereFinder', 
         '-s',
         os.path.join(readDir, genomeR1),
         os.path.join(readDir, genomeR1),
         '-o',
         'Outputs/' + directory + '/teloPortOut/',
         '-t',
-        telRepeat],
+        telRepeat]
+    subprocess.run(command,
         shell=True,
         check=True)
 #runs telomereFinder with the -i argument
 #this is used for interleaved fastq files
 def telomereFinderInter():
-    subprocess.run(['Programs/TeloPort/build/apps/telomereFinder',
+    command = ['Programs/TeloPort/build/apps/telomereFinder',
         '-i',
         os.path.join(readDir, genomeI),
         '-o',
         f'Outputs/{directory}/teloPortOut/',
         '-t',
-        telRepeat],
+        telRepeat]
+    subprocess.run(command,
         shell=True,
         check=True)
 #tags every read with a unique id number for tracking
@@ -276,7 +278,7 @@ def idTagger():
                 write.write(newLine)
 #calls junctionfinder
 def junctionFinder():
-    subprocess.run(['Programs/bin/junctionFinder',
+    command = ['Programs/bin/junctionFinder',
                     '-i',
                     os.path.join('Outputs',
                                  directory,
@@ -287,12 +289,13 @@ def junctionFinder():
                                  'teloPortOut/'),
                     '--revc 0',
                     '--splitJunc 1',
-                    '--splitDir 0'],
+                    '--splitDir 0']
+    subprocess.run(command,
                    shell=True,
                    check=True)
 #calls sequenceQuality
 def sequenceQuality():
-    subprocess.run(['Programs/bin/sequenceQuality',
+    command = ['Programs/bin/sequenceQuality',
                     '-i',
                     os.path.join('Outputs',
                                  directory,
@@ -306,12 +309,13 @@ def sequenceQuality():
                     '-c',
                     '0',
                     '-l',
-                    '0'],
+                    '0']
+    subprocess.run(command,
                    shell=True,
                    check=True)
 #calls WCDest
 def wcdestCall():
-    subprocess.run(['Programs/bin/wcd',
+    command = ['Programs/bin/wcd',
                     os.path.join('Outputs',
                                  directory,
                                  'teloPortOut/hiQualityTelAdjSeq.fastq'),
@@ -328,12 +332,13 @@ def wcdestCall():
                         'Outputs',
                         directory,
                         'teloPortOut',
-                        f'{directory}clusters.wcd')],
+                        f'{directory}clusters.wcd')]
+    subprocess.run(command,
                     shell=True,
                     check=True)
 #calls wcd interrogate
 def wcdInterrogate():
-    subprocess.run(['Programs/bin/wcdInterrogate',
+    command = ['Programs/bin/wcdInterrogate',
                     '-w',
                     os.path.join('Outputs',
                                  directory,
@@ -364,7 +369,8 @@ def wcdInterrogate():
                     '--indices',
                     '--sort',
                     '--size'
-                    '1'],
+                    '1']
+    subprocess.run(command,
                    shell=True,
                    check=True)
 #renames all canidate denovos from clusters
@@ -434,14 +440,15 @@ def autoMuscle():
                                         'telomereClusters')
     cntCluster = len(glob.glob(f'{clusters}cluster*.fasta'))
     for i in range(0,cntCluster):
-        subprocess.run(['Programs/bin/muscle5',
+        command = ['Programs/bin/muscle5',
                         '-allign',
                         f'{clusters}cluster{i}.fastq',
                         '-output',
                         os.path.join('Outputs/',
                                      directory,
                                      'muscleOut',
-                                     f'{directory}cluster{i}.msa')],
+                                     f'{directory}cluster{i}.msa')]
+        subprocess.run(command,
                        shell=True,
                        check=True)
 
@@ -453,13 +460,14 @@ def autoMuscle():
                                'consOut')
     cntAllignment = len(glob.glob(f'{allignments}/{directory}cluster*.msa'))
     for i in range(0, cntAllignment):
-        subprocess.run(['Programs/bin/cons',
+        command = ['Programs/bin/cons',
                         '-sequence',
                         f'{allignments}/{directory}cluster{i}.msa',
                         '-outseq',
                         f'{cons}/cons{i}.fasta',
                         '-name',
-                        f'cluster{i}'],
+                        f'cluster{i}']
+        subprocess.run(command,
                        shell=True,
                        check=True)
     return cntCluster
@@ -490,7 +498,7 @@ def blast(query, subject, output, dust):
     outfmt ='-outfmt \
                 "6 qseqid sseqid pident length mismatch \
                 gapopen qstart qend sstart send evalue qlen"'
-    subprocess.run(['Programs/bin/blastn',
+    command = ['Programs/bin/blastn',
                         '-query',
                         query,
                         '-subject',
@@ -498,7 +506,8 @@ def blast(query, subject, output, dust):
                         outfmt,
                         dust,
                         '>>',
-                        output],
+                        output]
+    subprocess.run(command,
                        shell=True,
                        check=True)
 
@@ -904,12 +913,12 @@ def resultsBuilder():
 
 #assigns the path varibles from the config file
 config()
-with open('config.ini','r') as read:
+with open('Programs/TeloPort/config.ini','r') as read:
     configLines = read.readlines()
-    readDir = configLines[0].split('=')[1].split('\n')[0]
-    genomeDir = configLines[1].split('=')[1].split('\n')[0]
-    filterDir = configLines[2].split('=')[1].split('\n')[0] 
-    addDir = configLines[3].split('=')[1]
+    readDir = configLines[1].split('=')[1].split('\n')[0]
+    genomeDir = configLines[2].split('=')[1].split('\n')[0]
+    filterDir = configLines[3].split('=')[1].split('\n')[0] 
+    addDir = configLines[4].split('=')[1]
 
 if args.simple:
     inputResults = inputCollect()
