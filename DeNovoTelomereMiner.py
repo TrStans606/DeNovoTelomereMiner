@@ -262,13 +262,13 @@ def telomereFinderInter():
 #tags every read with a unique id number for tracking
 def idTagger():
     pairLines, pairLineCnt = fileListBuilder(
-        os.path.join('Outputs/',
+        os.path.join('Outputs',
             directory,
-            '/teloPortOut/pairReads.fastq')
+            'teloPortOut/pairReads.fastq')
         )
-    newFile = os.path.join('Outputs/',
+    newFile = os.path.join('Outputs',
         directory,
-        '/teloPortOut/subTelReads.fastq')
+        'teloPortOut/subTelReads.fastq')
     with open(newFile, 'a') as write:
         x = 0
         for line in pairLines:
