@@ -129,18 +129,16 @@ args = parser.parse_args()
 #config file maker
 
 def config():
-    if args.config:
-        print('Manual Time setup')
-        readDir = input('Raw Reads Directory: ')
-        genomeDir = input('Assembled genome Directory: ')
-        filterDir = input('Filters directory: ')
-        addDir = input('Additional Blast directory: ')
-        write = open('config.ini', 'w')
-        write.write(f'readDirectory={readDir}\n')
-        write.write(f'genomeDirectory={genomeDir}\n')
-        write.write(f'filterDirectory={filterDir}\n')
-        write.write(f'addDirectory={addDir}')
-        write.close()
+    print('Manual Time setup')
+    readDir = input('Raw Reads Directory: ')
+    genomeDir = input('Assembled genome Directory: ')
+    filterDir = input('Filters directory: ')
+    addDir = input('Additional Blast directory: ')
+    with open('config.ini', 'w') as write:
+        write.write(
+        f'readDirectory={readDir}\ngenomeDirectory= \
+            {genomeDir}\nfilterDirectory={filterDir}\naddDirectory= \
+                {addDir}')
 #simple input collection mode
 def inputCollect():
     
@@ -912,7 +910,8 @@ def resultsBuilder():
             append.append(line)
 
 #assigns the path varibles from the config file
-config()
+if args.config:
+    config()
 with open('config.ini','r') as read:
     configLines = read.readlines()
     readDir = configLines[0].split('=')[1].split('\n')[0]
