@@ -136,11 +136,11 @@ def config():
         filterDir = input('Filters directory: ')
         addDir = input('Additional Blast directory: ')
         write = open('config.ini', 'w')
-        write.write(
-            f'readDirectory={readDir}\ngenomeDirectory= \
-            {genomeDir}\nfilterDirectory={filterDir}\naddDirectory= \
-                {addDir}')
-
+        write.write(f'readDirectory={readDir}\n')
+        write.write(f'genomeDirectory={genomeDir}\n')
+        write.write(f'filterDirectory={filterDir}\n')
+        write.write(f'addDirectory={addDir}')
+        write.close()
 #simple input collection mode
 def inputCollect():
     
