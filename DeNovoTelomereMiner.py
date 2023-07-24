@@ -139,6 +139,7 @@ def config():
         f'readDirectory={readDir}\ngenomeDirectory= \
             {genomeDir}\nfilterDirectory={filterDir}\naddDirectory= \
                 {addDir}')
+
 #simple input collection mode
 def inputCollect():
     
@@ -272,8 +273,8 @@ def idTagger():
         for line in pairLines:
             if x % 4 == 0:
                 newLine = f"@{directory}{x}\t{line.lstrip('@')}"
-                x += 1
                 write.write(newLine)
+            x += 1
 #calls junctionfinder
 def junctionFinder():
     command = ['Programs/bin/junctionFinder',
