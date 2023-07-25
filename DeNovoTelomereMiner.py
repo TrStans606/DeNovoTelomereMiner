@@ -274,6 +274,7 @@ def idTagger():
             if x % 4 == 0:
                 newLine = f"@{directory}{x}\t{line.lstrip('@')}"
                 write.write(newLine)
+                write.write(pairLines[x + 1])
             x += 1
 #calls junctionfinder
 def junctionFinder():
