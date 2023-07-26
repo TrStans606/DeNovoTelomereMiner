@@ -489,9 +489,12 @@ def consBlast():
             consLines = read.readlines()
         with open(f'{blast}/{directory}catCons.fasta', 'a') as write:
             write.write(consLines)
-    blast(f'{singles}/deNovos.fasta',
-          f'{blast}/{directory}deNovos.fasta',
-          f'{blast}/{directory}blastCons.txt',
+    arg1 = f'{singles}/deNovos.fasta'
+    arg2 = f'{blast}/{directory}deNovos.fasta'
+    arg3 =  f'{blast}/{directory}blastCons.txt'
+    blast(arg1,
+         arg2,
+          arg3,
           '')
 #runs blast            
 def blast(query, subject, output, dust):
