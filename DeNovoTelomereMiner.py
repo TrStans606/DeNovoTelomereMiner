@@ -353,7 +353,7 @@ def wcdInterrogate():
                     os.path.join('Outputs',
                                  directory,
                                  'teloPortOut',
-                                 'telAdjSeq'),
+                                 'telAdjSeq.fastq'),
                     '-f',
                     'fastq',
                     '-o',
