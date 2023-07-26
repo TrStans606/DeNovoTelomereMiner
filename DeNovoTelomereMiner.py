@@ -489,13 +489,14 @@ def consBlast():
             consLines = read.readlines()
         with open(f'{blast}/{directory}catCons.fasta', 'a') as write:
             write.write(consLines)
-    arg1 = f'{singles}/deNovos.fasta'
-    arg2 = f'{blast}/{directory}deNovos.fasta'
-    arg3 =  f'{blast}/{directory}blastCons.txt'
-    blast(arg1,
-         arg2,
-          arg3,
-          '')
+    query = f'{singles}/deNovos.fasta'
+    subject = f'{blast}/{directory}deNovos.fasta'
+    output =  f'{blast}/{directory}blastCons.txt'
+    dust = ''
+    blast(query,
+         subject,
+          output,
+          dust)
 #runs blast            
 def blast(query, subject, output, dust):
     outfmt ='-outfmt \
@@ -865,7 +866,8 @@ def resultsBuilder():
             if line[0] == '>':
                 deNovoCnt += 1
                 
-    resultsLine += f'Number of de-novo telomeres found by TeloPort: {deNovoCnt}\n'
+    resultsLine += f'Number of de-novo telomeres found by TeloPort: \
+        {deNovoCnt}\n'
                 
     resultsLine += f'Number of true de-novo telomeres: {trueDeNovos}\n'
     
