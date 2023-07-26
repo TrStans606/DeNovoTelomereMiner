@@ -368,7 +368,7 @@ def wcdInterrogate():
                                 'telomereReads/'),
                     '--indices',
                     '--sort',
-                    '--size'
+                    '--size',
                     '1']
     subprocess.run(' '.join(command),
                    shell=True,
