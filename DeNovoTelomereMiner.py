@@ -493,12 +493,12 @@ def consBlast():
     subject = f'{blast}/{directory}deNovos.fasta'
     output =  f'{blast}/{directory}blastCons.txt'
     dust = ''
-    blast(query,
+    blastRun(query,
          subject,
           output,
           dust)
 #runs blast            
-def blast(query, subject, output, dust):
+def blastRun(query, subject, output, dust):
     outfmt ='-outfmt \
                 "6 qseqid sseqid pident length mismatch \
                 gapopen qstart qend sstart send evalue qlen"'
@@ -590,7 +590,7 @@ def histogramBuilder():
 def deNovoFilter():
     if filtersCnt > 0:
         for file in args.f:
-            blast(os.path.join('Outputs',
+            blastRun(os.path.join('Outputs',
                                directory,
                                'telomereReads',
                                'deNovoTelomeres',
@@ -671,7 +671,7 @@ def telContigDictMaker():
                            f'{directory}telRepeats'), 'a') as write:
         write.write(f'>{blastGenome} telomere repeats')
         write.write(telRepeat * 8)
-    blast(f'{genomeDir}/{blastGenome}', 
+    blastRun(f'{genomeDir}/{blastGenome}', 
           os.path.join('Outputs/',
                        directory,
                        'blastOut',
@@ -974,7 +974,7 @@ trueDeNovos = falsePosFilter()
 histogramBuilder()
 filteredDeNovos = deNovoFilter()
 telContigs = telContigDictMaker()
-blast(os.path.join('Outputs/',
+blastRun(os.path.join('Outputs/',
                    directory,
                    'telomereReads',
                    'deNovoTelomeres',
@@ -988,7 +988,7 @@ blast(os.path.join('Outputs/',
       '')
 if addBlastCnt > 0:
     for file in args.add:
-        blast(f'{addDir}file',
+        blastRun(f'{addDir}file',
               f'{genomeDir}/{blastGenome}',
               os.path.join('Outputs/',
                            directory,
