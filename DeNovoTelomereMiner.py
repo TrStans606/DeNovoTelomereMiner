@@ -499,8 +499,7 @@ def consBlast():
           dust)
 #runs blast            
 def blastRun(query, subject, output, dust):
-    outfmt ='-outfmt \
-        "6 qseqid sseqid pident length mismatch \
+    outfmt ='-outfmt "6 qseqid sseqid pident length mismatch \
         gapopen qstart qend sstart send evalue qlen"'
     command = ['Programs/bin/blastn',
                         '-query',
