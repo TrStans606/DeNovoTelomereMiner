@@ -396,26 +396,26 @@ def deNovoRename():
                   f'{directory}deNovos.fasta'), 'a') as write:
             for line in deNovoLines:
                 if line[0]=='>':
-                    write.write(f'{directory}\t{line.lstrip(">")}')
+                    write.write(f'>{directory}\t{line.lstrip(">")}')
                 else:
                     write.write(line)
             os.remove(f'{cluster}{i}.fasta')
-        newClusterCnt = len(glob.glob(
-            os.path.join('Outputs/',
-                                      directory,
-                                      'telomereReads',
-                                      'telomereClusters',
-                                      'cluster*.fasta')))
-        for i in range(0,newClusterCnt):
-            with open(f'{cluster}{i}.fasta', 'r') as read:
-                clusterLines = read.readlines()
-            os.remove(f'{cluster}{i}.fasta')
-            with open(f'{cluster}{i}.fasta', 'a') as write:
-                for line in clusterLines:
-                    if line[0]=='>':
-                        write.write(f'{directory}\t{line.lstrip(">")}')
-                    else:
-                        write.write(line)
+    newClusterCnt = len(glob.glob(
+        os.path.join('Outputs/',
+                     directory,
+                     'telomereReads',
+                     'telomereClusters',
+                     'cluster*.fasta')))
+    for i in range(0,newClusterCnt):
+        with open(f'{cluster}{i}.fasta', 'r') as read:
+            clusterLines = read.readlines()
+        os.remove(f'{cluster}{i}.fasta')
+        with open(f'{cluster}{i}.fasta', 'a') as write:
+            for line in clusterLines:
+                if line[0]=='>':
+                    write.write(f'{directory}\t{line.lstrip(">")}')
+                else:
+                    write.write(line)
                   
                                   
 def firstDeNovoCount():
