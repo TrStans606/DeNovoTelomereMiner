@@ -1,6 +1,6 @@
 # DeNovoTelomereMiner
 
-##Source
+## Source
 
 Stansfield, Trey, "TeloPortWrapper: A New Tool for Understanding the Dynamic World of Fungal Telomere Ends" (2023). Mahurin Honors College Capstone Experience/Thesis Projects. Paper 999.
 https://digitalcommons.wku.edu/stu_hon_theses/999
