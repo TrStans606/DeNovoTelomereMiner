@@ -1,0 +1,12 @@
+##gff-version 3.1.26
+Chr2	teloPortWrapper	telomere	2265917	2266002	1.07e-22	+	.	ID=Telomere0;Name=aERR2061622_V6cut2204;Length=85;Distance from Telomere=2260695
+Chr2	teloPortWrapper	telomere	2265936	2266002	1.66e-20	+	.	ID=Telomere1;Name=aERR2061622_V6cut2196;Length=66;Distance from Telomere=2260714
+Chr1	teloPortWrapper	telomere	2218072	2218116	5.58e-17	+	.	ID=Telomere2;Name=aERR2061622_V6cut5364;Length=44;Distance from Telomere=4450103
+Chr1	teloPortWrapper	telomere	2218127	2218072	5.96e-23	-	.	ID=Telomere3;Name=aERR2061622_V6cut5368;Length=55;Distance from Telomere=4450048
+Chr7	teloPortWrapper	telomere	1227506	1227558	2.56e-21	+	.	ID=Telomere4;Name=aERR2061622_V6cut7176;Length=52;Distance from Telomere=1227339
+Chr5	teloPortWrapper	telomere	3294395	3294477	1.18e-37	+	.	ID=Telomere5;Name=aERR2061622_V6cut4888;Length=82;Distance from Telomere=1165853
+Chr3	teloPortWrapper	telomere	6058961	6058899	8.05e-27	-	.	ID=Telomere6;Name=aERR2061622_V6cut2380;Length=62;Distance from Telomere=2178893
+Chr3	teloPortWrapper	telomere	5884781	5884700	3.23e-37	-	.	ID=Telomere7;Name=aERR2061622_V6cut2304;Length=81;Distance from Telomere=2353073
+Chr9	teloPortWrapper	telomere	6109	6031	1.43e-35	-	.	ID=Telomere8;Name=aERR2061622_V6cut7824;Length=78;Distance from Telomere=0
+Chr3	teloPortWrapper	telomere	3866857	3866926	1.34e-30	+	.	ID=Telomere9;Name=aERR2061622_V6cut2248;Length=69;Distance from Telomere=3866700
+Chr2	teloPortWrapper	telomere	1004220	1004293	7.84e-33	+	.	ID=Telomere10;Name=aERR2061622_V6cut7560;Length=73;Distance from Telomere=998998

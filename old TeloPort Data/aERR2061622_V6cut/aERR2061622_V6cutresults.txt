@@ -1,0 +1,25 @@
+aERR2061622_V6cut
+Number of raw reads processed: 52113073
+Number of Telomere reads processed: 2013
+Number of de novo telomeres: 39
+Number of clusters: 6
+Number of de novo telomeres that match up with the genome: 11
+Number of de novo telomeres that match up with the MOTER sequences: 15
+Distribution of clusters 
+cluster0	72	########################################################################
+cluster1	12	############
+cluster2	10	##########
+cluster3	7	#######
+cluster4	7	#######
+cluster5	6	######
+aERR2061622_V6cut2204	Chr2	88.372	86	10	0	1	86	2265917	2266002	1.07e-22	7915472	TelYs	TelYe	2260695	MoterY	revF
+aERR2061622_V6cut2196	Chr2	92.537	67	5	0	15	81	2265936	2266002	1.66e-20	7915472	TelYs	TelYe	2260714	MoterY	revF
+aERR2061622_V6cut5364	Chr1	100.000	45	0	0	5	49	2218072	2218116	5.58e-17	6668242	TelNs	TelYe	4450103	MoterY	revF
+aERR2061622_V6cut5368	Chr1	100.000	56	0	0	1	56	2218127	2218072	5.96e-23	6668242	TelNs	TelYe	4450048	MoterY	revT
+aERR2061622_V6cut7176	Chr7	100.000	53	0	0	5	57	1227506	1227558	2.56e-21	4079358	TelYs	TelYe	1227339	MoterY	revF
+aERR2061622_V6cut4888	Chr5	100.000	83	0	0	1	83	3294395	3294477	1.18e-37	4460276	TelYs	TelYe	1165853	MoterY	revF
+aERR2061622_V6cut2380	Chr3	100.000	63	0	0	1	63	6058961	6058899	8.05e-27	8237918	TelYs	TelYe	2178893	MoterY	revT
+aERR2061622_V6cut2304	Chr3	100.000	82	0	0	1	82	5884781	5884700	3.23e-37	8237918	TelYs	TelYe	2353073	MoterY	revT
+aERR2061622_V6cut7824	Chr9	100.000	79	0	0	1	79	6109	6031	1.43e-35	34996	TelNs	TelNe	0	MoterN	revT
+aERR2061622_V6cut2248	Chr3	100.000	70	0	0	1	70	3866857	3866926	1.34e-30	8237918	TelYs	TelYe	3866700	MoterY	revF
+aERR2061622_V6cut7560	Chr2	100.000	74	0	0	1	74	1004220	1004293	7.84e-33	7915472	TelYs	TelYe	998998	MoterY	revF
