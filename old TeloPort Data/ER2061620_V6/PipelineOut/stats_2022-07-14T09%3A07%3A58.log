@@ -1,0 +1,22 @@
+244	Forward telomere in R1 AND reverse in R2
+301	Reverse telomere in R1 AND forward in R2
+963	Forward telomere in R1 AND NOT reverse in R2
+168	Reverse telomere in R1 AND NOT forward in R2
+905	Forward telomere in R2 AND NOT reverse in R1
+146	Reverse telomere in R2 AND NOT forward in R1
+
+1207	Forward telomeres from R1
+469	Reverse telomeres from R1
+1206	Forward telomeres from R2
+390	Reverse telomeres from R2
+
+1676	Total telomeres from R1
+1596	Total telomeres from R2
+
+1131	Telomeres from R1 and not R2
+1051	Telomeres from R2 and not R1
+
+545	Telomeres from both R1 and R2
+
+Average penalty for a telomere: 0.156193
+
