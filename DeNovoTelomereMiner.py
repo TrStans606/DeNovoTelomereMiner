@@ -224,9 +224,9 @@ def teloPortPipeline():
     elif choice =='i':
         telomereFinderInter()
     idTagger()
-    os.remove(
-        f'Outputs/{directory}/teloPortOut/pairReads.fastq'
-        )
+#    os.remove(
+#        f'Outputs/{directory}/teloPortOut/pairReads.fastq'
+#        )
     junctionFinder()
     sequenceQuality()
     wcdestCall()
@@ -255,6 +255,7 @@ def telomereFinderInter():
         f'Outputs/{directory}/teloPortOut/',
         '-t',
         telRepeat]
+    print(' '.join(command))
     subprocess.run(' '.join(command),
         shell=True,
         check=True)
@@ -290,6 +291,7 @@ def junctionFinder():
                     '--revc 0',
                     '--splitJunc 1',
                     '--splitDir 0']
+    print(' '.join(command))
     subprocess.run(' '.join(command),
                    shell=True,
                    check=True)
@@ -303,13 +305,14 @@ def sequenceQuality():
                     '-o',
                     os.path.join('Outputs',
                                  directory,
-                                 'teloPortOut/hiQualityTelAdjSeq.fastq'),
+                    f'teloPortOut/{directory}hiQualityTelAdjSeq.fastq'),
                     '--ofmt',
                     'fasta',
                     '-c',
-                    '0',
+                    '60',
                     '-l',
-                    '0']
+                    '40']
+    print(' '.join(command))
     subprocess.run(' '.join(command),
                    shell=True,
                    check=True)
@@ -318,7 +321,7 @@ def wcdestCall():
     command = ['Programs/bin/wcd',
                     os.path.join('Outputs',
                                  directory,
-                                 'teloPortOut/hiQualityTelAdjSeq.fastq'),
+                    f'teloPortOut/{directory}hiQualityTelAdjSeq.fastq'),
                     '-l',
                     '-40',
                     '-T',
@@ -333,6 +336,7 @@ def wcdestCall():
                         directory,
                         'teloPortOut',
                         f'{directory}clusters.wcd')]
+    print(' '.join(command))
     subprocess.run(' '.join(command),
                     shell=True,
                     check=True)
@@ -370,6 +374,7 @@ def wcdInterrogate():
                     '--sort',
                     '--size',
                     '1']
+    print(' '.join(command))
     subprocess.run(' '.join(command),
                    shell=True,
                    check=True)
