@@ -1,0 +1,5 @@
+##gff-version 3.1.26
+Chr5	teloPortWrapper	telomere	1845294	1845343	1.09e-19	+	.	ID=Telomere0;Name=ER2061614_V66272;Length=49;Distance from Telomere=1845099
+Chr1	teloPortWrapper	telomere	5228526	5228463	2.29e-27	-	.	ID=Telomere1;Name=ER2061614_V69672;Length=63;Distance from Telomere=1439649
+Chr1	teloPortWrapper	telomere	4589999	4589918	3.23e-37	-	.	ID=Telomere2;Name=ER2061614_V6252;Length=81;Distance from Telomere=2078176
+Chr7	teloPortWrapper	telomere	1048357	1048427	3.44e-31	+	.	ID=Telomere3;Name=ER2061614_V69212;Length=70;Distance from Telomere=1048190
