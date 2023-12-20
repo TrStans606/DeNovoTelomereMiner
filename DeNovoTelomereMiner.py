@@ -242,6 +242,7 @@ def telomereFinderSeperated():
         'Outputs/' + directory + '/teloPortOut/',
         '-t',
         telRepeat]
+    print(' '.join(command))
     subprocess.run(' '.join(command),
         shell=True,
         check=True)
@@ -352,7 +353,7 @@ def wcdInterrogate():
                     os.path.join('Outputs',
                                  directory,
                                  'teloPortOut',
-                                 'hiQualityTelAdjSeq.fasta'),
+                                 '{directory}hiQualityTelAdjSeq.fasta'),
                     '-s',
                     os.path.join('Outputs',
                                  directory,
