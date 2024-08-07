@@ -6,7 +6,8 @@
 
 #ifndef TELOMERE_CORE_HPP
 #define TELOMERE_CORE_HPP
-
+#include <stdexcept>
+#include <limits>
 #include <iostream>
 #include <iomanip>
 #include <fstream>
