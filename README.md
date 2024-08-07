@@ -9,7 +9,7 @@ DeNovoTelomereMiner Quick Start
 
 # **Dependencies**
 
-[TeloPort by Seth Baunach](https://github.com/sabaunach/TeloPort)
+[TeloPort20XX](https://github.com/TrStans606/TeloPort20xx) a fork of [TeloPort by Seth Baunach](https://github.com/sabaunach/TeloPort) 
 
 [Blast+ 2.11.0](https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.11.0/) 
 
