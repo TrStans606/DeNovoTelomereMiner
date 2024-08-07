@@ -7,7 +7,8 @@
 
 #ifndef SEQUENCEQUALITY_HPP
 #define SEQUENCEQUALITY_HPP
-
+#include <stdexcept>
+#include <limits>
 #include "core/telomere_core.hpp"
 
 namespace core = telomere_core;
