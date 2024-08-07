@@ -15,13 +15,13 @@ namespace core = telomere_core;
 
 namespace junctionFinder {
 
-static int windowLen; // window length for first pass
-static int stepLen; // step length for first pass
-static double cutoff; // cutoff for first pass
-static int shortWindowLen; // cutoff for second pass; to match the bad part.
-static double shortCutoff; // cutoff for second pass; to match the bad part.
-static int startTries; // amount of times to try skipping when first window fails
-static int startSkipLen; // amount of bp to skip and try looking for a window if first window fails completely
+static int windowLen1; // window length for first pass
+static int stepLen1; // step length for first pass
+static double cutoff1; // cutoff for first pass
+static int shortWindowLen1; // cutoff for second pass; to match the bad part.
+static double shortCutoff1; // cutoff for second pass; to match the bad part.
+static int startTries1; // amount of times to try skipping when first window fails
+static int startSkipLen1; // amount of bp to skip and try looking for a window if first window fails completely
 
 /* Returns sum of insertions and deletions in first n positions of optimal WF edit path.
  *  Deletions are +1, insertions are -1.
@@ -43,18 +43,18 @@ int indelSum(vector<vector<pair<int, int> > > tb_matrix, int n);
  *  Returns INF ( > seq.size()) if the whole sequence was telomeric
  */
 size_t findTelomereJunction(string seq, core::TelRepeatInfo telRepeatInfo,
-                            size_t windowLen = windowLen, size_t stepLen = stepLen,
-                            double cutoff = cutoff, double shortWindowLen = shortWindowLen,
-                            double shortCutoff = shortCutoff, int startTries = startTries,
-                            int startSkipLen = startSkipLen);
+                            size_t windowLen = windowLen1, size_t stepLen = stepLen1,
+                            double cutoff = cutoff1, double shortWindowLen = shortWindowLen1,
+                            double shortCutoff = shortCutoff1, int startTries = startTries1,
+                            int startSkipLen = startSkipLen1);
 
 // includes information for last window matched for first and second pass
 size_t findTelomereJunction_i(string seq, core::TelRepeatInfo telRepeatInfo,
                               size_t & firstWindowStart, size_t & secondWindowStart,
-                              size_t windowLen = windowLen, size_t stepLen = stepLen,
-                              double cutoff = cutoff, double shortWindowLen = shortWindowLen,
-                              double shortCutoff = shortCutoff, int startTries = startTries,
-                              int startSkipLen = startSkipLen);
+                              size_t windowLen = windowLen1, size_t stepLen = stepLen1,
+                              double cutoff = cutoff1, double shortWindowLen = shortWindowLen1,
+                              double shortCutoff = shortCutoff1, int startTries = startTries1,
+                              int startSkipLen = startSkipLen1);
 
 } // end namespace junctionFinder
 
