@@ -70,20 +70,20 @@ void writePretty(JunctionRead r, ostream & out) {
 		for (; i < r.junc_loc; i++)
 			out << r.read.seq[i];
 		out << "\033[24;36m";
-		for (; i < r.secondWindowStart + jf::shortWindowLen; i++)
+		for (; i < r.secondWindowStart + jf::shortWindowLen1; i++)
 			out << r.read.seq[i];
 		out << "\033[24;35m";
-		for (; i < r.firstWindowStart + jf::windowLen; i++)
+		for (; i < r.firstWindowStart + jf::windowLen1; i++)
 			out << r.read.seq[i];
 		out << "\033[0m";
 		for (; i < r.read.seq.length(); i++)
 			out << r.read.seq[i];
 		out << endl;
 	} else {
-		for (; (int)i < (int)(r.firstWindowStart - jf::windowLen); i++)
+		for (; (int)i < (int)(r.firstWindowStart - jf::windowLen1); i++)
 			out << r.read.seq[i];
 		out << "\033[24;35m";
-		for (; (int)i < (int)(r.secondWindowStart - jf::shortWindowLen); i++)
+		for (; (int)i < (int)(r.secondWindowStart - jf::shortWindowLen1); i++)
 			out << r.read.seq[i];
 		out << "\033[24;36m";
 		for (; i < r.junc_loc; i++)
@@ -229,13 +229,13 @@ bool process_options(int argc, char** argv,
 		    ("help,h", "produce this message")
 		    ("in,i", po::value<string>(&i_filename), "specify input from a fastq file.")
 		    ("out,o", po::value<string>(&out_dirname)->default_value("junctionFinder_out"), "specify output directory.")
-		    ("startTries,T", po::value<int>(&jf::startTries)->default_value(10), "specify how many times to try a start window.")
-		    ("startSkipLen,l", po::value<int>(&jf::startSkipLen)->default_value(12), "specify how many bp to skip if the first start fails.")
-		    ("windowLen,W", po::value<int>(&jf::windowLen)->default_value(60), "specify window length on first pass.")
-		    ("stepLen,L", po::value<int>(&jf::stepLen)->default_value(1), "specify step length on first pass.")
-		    ("cutoff,C", po::value<double>(&jf::cutoff)->default_value(.5), "specify cutoff penalty for first pass.")
-		    ("shortWindowLen,w", po::value<int>(&jf::shortWindowLen)->default_value(15), "specify window size for second pass.")
-		    ("shortCutoff,c", po::value<double>(&jf::shortCutoff)->default_value(1.375), "specify cutoff penalty for second pass.")
+		    ("startTries,T", po::value<int>(&jf::startTries1)->default_value(10), "specify how many times to try a start window.")
+		    ("startSkipLen,l", po::value<int>(&jf::startSkipLen1)->default_value(12), "specify how many bp to skip if the first start fails.")
+		    ("windowLen,W", po::value<int>(&jf::windowLen1)->default_value(60), "specify window length on first pass.")
+		    ("stepLen,L", po::value<int>(&jf::stepLen1)->default_value(1), "specify step length on first pass.")
+		    ("cutoff,C", po::value<double>(&jf::cutoff1)->default_value(.5), "specify cutoff penalty for first pass.")
+		    ("shortWindowLen,w", po::value<int>(&jf::shortWindowLen1)->default_value(15), "specify window size for second pass.")
+		    ("shortCutoff,c", po::value<double>(&jf::shortCutoff1)->default_value(1.375), "specify cutoff penalty for second pass.")
 		    ("repeatsThrow,r", po::value<int>(&repeatsThrow)->default_value(4), "ignore reads with at least u telomere repeats remaining after cut. (=0 to turn off)")
 		    ("sort", po::value<bool>(&o_opt_sort)->default_value(true), "sort output based on telomere length")
 		    ("splitDir", po::value<bool>(&o_opt_splitDir)->default_value(true), "split output based on telomere orientation (forward/reverse)")
