@@ -7,7 +7,8 @@
 
 #ifndef JUNCTIONFINDER_HPP
 #define JUNCTIONFINDER_HPP
-
+#include <stdexcept>
+#include <limits>
 #include "core/telomere_core.hpp"
 
 namespace core = telomere_core;
