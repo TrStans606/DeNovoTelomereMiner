@@ -7,7 +7,8 @@
 
 #ifndef TELOMEREFINDER_HPP
 #define TELOMEREFINDER_HPP
-
+#include <stdexcept>
+#include <limits>
 #include "core/telomere_core.hpp"
 
 namespace core = telomere_core;
