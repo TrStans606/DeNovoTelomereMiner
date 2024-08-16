@@ -7,6 +7,10 @@ https://digitalcommons.wku.edu/stu_hon_theses/999
 
 DeNovoTelomereMiner Quick Start
 
+Possible new workflow:
+- conda
+- replace wcdest with mmseq2
+
 # **Dependencies**
 
 [TeloPort20XX](https://github.com/TrStans606/TeloPort20xx) a fork of [TeloPort by Seth Baunach](https://github.com/sabaunach/TeloPort) 
