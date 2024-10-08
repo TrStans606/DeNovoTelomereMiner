@@ -11,6 +11,10 @@ Possible new workflow:
 - conda
 - replace wcdest with mmseq2
 
+For Apple Silicon/Arm:
+```conda create --name myenv --platform osx-64```
+
+
 # **Dependencies**
 
 [TeloPort20XX](https://github.com/TrStans606/TeloPort20xx) a fork of [TeloPort by Seth Baunach](https://github.com/sabaunach/TeloPort) 
