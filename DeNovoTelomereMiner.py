@@ -3,6 +3,11 @@ import os
 import argparse
 import glob
 import urllib.parse
+import pandas as pd
+import re
+import shutil
+
+
 
 
 #Command line argument set up
@@ -229,8 +234,9 @@ def teloPortPipeline():
 #        )
     junctionFinder()
     sequenceQuality()
-    wcdestCall()
-    wcdInterrogate()
+    mmseqs2Call()
+    #wcdestCall()
+    #wcdInterrogate()
 #runs telomereFinder with the -s argument
 #this is used for seperated fastq files
 def telomereFinderSeperated():
@@ -317,6 +323,19 @@ def sequenceQuality():
     subprocess.run(' '.join(command),
                    shell=True,
                    check=True)
+#calls mmseqs2
+def mmseqs2Call():
+    command = ['mmseqs easy-cluster',
+               os.path.join('Outputs',
+                                 directory,
+                    f'teloPortOut/{directory}hiQualityTelAdjSeq.fasta'),
+                    os.path.join('Outputs',
+                                 directory,
+                    f'teloPortOut/clusters'),
+                    "tmp/"]
+    subprocess.run(' '.join(command),
+                    shell=True,
+                    check=True)
 #calls WCDest
 def wcdestCall():
     command = ['Programs/bin/wcd',
@@ -341,6 +360,46 @@ def wcdestCall():
     subprocess.run(' '.join(command),
                     shell=True,
                     check=True)
+#processes the clustering into reads for further use
+def mmseqs2_processing():
+	clusters = pd.read_csv(f"Outputs/{directory}/teloPortOut/clusters_cluster.tsv",sep="\t",header=None)
+	labels = {}
+	i=0
+	for value in clusters.loc[:,0]:
+		if value not in labels:
+			labels[value] = f'cluster_{i}'
+			i+=1
+	i=0
+	for value in clusters.iloc[:,0]:
+		clusters.loc[i,0] = labels[value]
+		i+=1
+	with open(f"Outputs/{directory}/teloPortOut/{directory}hiQualityTelAdjSeq.fasta",'r') as read:
+		seqs = read.readlines()
+	i=0
+	for value in clusters.iloc[:,0]:
+		with open(f"Outputs/{directory}/telomereReads/{value}.fasta",'a') as write:
+			for j in range(len(seqs)):
+				if re.search(clusters.loc[i,1],seqs[j]):
+					write.write(f"{seqs[j]}{seqs[j+1]}")
+			i+=1
+	for value in clusters.iloc[:,0]:
+		with open(f"Outputs/{directory}/telomereReads/{value}.fasta",'r') as read:
+			lines = read.readlines()
+		if len(lines) <= 2:
+			shutil.move(f"Outputs/{directory}/telomereReads/{value}.fasta",f"Outputs/{directory}/telomereReads/deNovoTelomeres")
+	cluster_num = 0
+	clusters_rename = glob.glob(f"Outputs/{directory}/telomereReads/*.fasta")
+	for file in clusters_rename:
+		shutil.move(file,f"Outputs/{directory}/telomereReads/telomereClusters/cluster_{cluster_num}.fasta")
+		cluster_num += 1
+	singles = glob.glob(f"Outputs/{directory}/telomereReads/deNovoTelomeres/*.fasta")
+	with open(f"Outputs/{directory}/telomereReads/deNovoTelomeres/{directory}deNovos.fasta",'w') as write:
+		for file in singles:
+			with open(file,'r') as read:
+				for line in read:
+					write.write(line)
+			os.remove(file)
+
 #calls wcd interrogate
 def wcdInterrogate():
     command = ['Programs/bin/wcdInterrogate',
@@ -496,7 +555,7 @@ def consBlast():
         with open(f'{blast}/{directory}catCons.fasta', 'a') as write:
             write.write(consLines)
     query = f'{singles}/deNovos.fasta'
-    subject = f'{blast}/{directory}deNovos.fasta'
+    subject = f'{blast}/{directory}catCons.fasta'
     output =  f'{blast}/{directory}blastCons.txt'
     dust = ''
     blastRun(query,
@@ -972,7 +1031,9 @@ else:
     filtersCnt = 0
 
 teloPortPipeline()
-deNovoRename()
+mmseqs2_processing()
+quit()
+#deNovoRename()
 trueClusterCnt = autoMuscle()
 consBlast()
 trueDeNovos = falsePosFilter()
