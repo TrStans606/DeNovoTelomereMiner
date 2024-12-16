@@ -13,7 +13,9 @@ DeNovoTelomereMiner is built for POSIX systems and has been tested on Fedora, Ub
 ### Linux & macOS
 Make sure you have [git](https://git-scm.com/) installed:
 
-```git clone https://github.com/TrStans606/DeNovoTelomereMiner```
+```shell
+git clone https://github.com/TrStans606/DeNovoTelomereMiner
+```
 
 ## 2. Setting Up Dependencies
 
