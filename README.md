@@ -12,6 +12,7 @@ DeNovoTelomereMiner is built for POSIX systems and has been tested on Fedora, Ub
 ## 1. Setting up the Repository
 ### Linux & macOS
 Make sure you have [git](https://git-scm.com/) installed:
+
 ```git clone https://github.com/TrStans606/DeNovoTelomereMiner```
 
 ## 2. Setting Up Dependencies
@@ -23,6 +24,7 @@ If you are unsure if you have an Intel or Arm-based Mac, then click on the Apple
 I would recommend creating a conda environment for this as it cleanly installs everything in one command, which can be uninstalled easily later. 
 
 ```conda create -n de_novo python=13.1 bioconda::blast bioconda::emboss bioconda::muscle bioconda::mmseqs2 conda-forge::pandas```
+
 ```conda activate de_novo```
 
 ### Apple Silicon/ARM/OSX-arm64 Macs
@@ -32,24 +34,36 @@ Many of the dependencies here do not have an ARM build in Bioconda despite binar
 #### Installing Via Homebrew
 
 1. Enable the BrewSci tap 
+
 ```brew tap brewsci/bio```
 
 2. Install all of the needed dependencies
+
 ```brew install blast brewsci/bio/emboss brewsci/bio/muscle mmseqs2```
+
 3. Install Pandas via a Conda or Pip environment
+
 ```python3 -m venv .venv```
+
 ``` source .venv/bin/activate```
+
 ```pip install pandas```
+
 or 
+
 ```conda create --name de_novo pandas```
 
 #### Installing Via Conda
 
 This method will be easier but will run slower due to the entire environment running in x86 emulation mode. I also cannot guarantee that future updates will work with this method. Use at your own risk.
 1. Install Apple's Rosetta 2 if you haven't already.
+
 ```softwareupdate --install-rosetta```
+
 2. Set up the Conda environment.
+
 ```conda create -n de_novo --platform osx-64 python=13.1 bioconda::blast bioconda::emboss bioconda::muscle bioconda::mmseqs2 conda-forge::pandas```
+
 ```conda activate de_novo```
 
 ### Linux & macOS
@@ -57,13 +71,16 @@ This method will be easier but will run slower due to the entire environment run
 TeloPort20XX needs to be compiled from source. To aid in this, there is the install.sh script. This does require a C++ compiler and has been tested on GCC and Apple clang.
 
 #### Installing Boost via Homebrew
+
 ```brew install boost```
 
 #### Installing Boost via Conda
 Make sure this is done in the same conda environment used in step 2.
+
 ```conda install conda-forge::boost```
 
 #### Compiling TeloPort
+
 ```bash install.sh```
 
 # **Dependencies**
