@@ -6,6 +6,7 @@ import urllib.parse
 import pandas as pd
 import re
 import shutil
+import sys
 
 
 
@@ -336,30 +337,6 @@ def mmseqs2Call():
     subprocess.run(' '.join(command),
                     shell=True,
                     check=True)
-#calls WCDest
-def wcdestCall():
-    command = ['Programs/bin/wcd',
-                    os.path.join('Outputs',
-                                 directory,
-                    f'teloPortOut/{directory}hiQualityTelAdjSeq.fasta'),
-                    '-l',
-                    '-40',
-                    '-T',
-                    '5',
-                    '-H',
-                    '0',
-                    '--show_clusters',
-                    '--histogram',
-                    '>',
-                    os.path.join(
-                        'Outputs',
-                        directory,
-                        'teloPortOut',
-                        f'{directory}clusters.wcd')]
-    print(' '.join(command))
-    subprocess.run(' '.join(command),
-                    shell=True,
-                    check=True)
 #processes the clustering into reads for further use
 def mmseqs2_processing():
 	clusters = pd.read_csv(f"Outputs/{directory}/teloPortOut/clusters_cluster.tsv",sep="\t",header=None)
@@ -385,7 +362,7 @@ def mmseqs2_processing():
 	for value in clusters.iloc[:,0]:
 		with open(f"Outputs/{directory}/telomereReads/{value}.fasta",'r') as read:
 			lines = read.readlines()
-		if len(lines) <= 2:
+		if len(lines) <= cutOff*2:
 			shutil.move(f"Outputs/{directory}/telomereReads/{value}.fasta",f"Outputs/{directory}/telomereReads/deNovoTelomeres")
 	cluster_num = 0
 	clusters_rename = glob.glob(f"Outputs/{directory}/telomereReads/*.fasta")
@@ -400,103 +377,6 @@ def mmseqs2_processing():
 					write.write(line)
 			os.remove(file)
 
-#calls wcd interrogate
-def wcdInterrogate():
-    command = ['Programs/bin/wcdInterrogate',
-                    '-w',
-                    os.path.join('Outputs',
-                                 directory,
-                                 'teloPortOut',
-                                 f'{directory}clusters.wcd'),
-                    '-i',
-                    os.path.join('Outputs',
-                                 directory,
-                                 'teloPortOut',
-                                 '{directory}hiQualityTelAdjSeq.fasta'),
-                    '-s',
-                    os.path.join('Outputs',
-                                 directory,
-                                 'teloPortOut',
-                                 'telAdjSeq.fastq'),
-                    '-f',
-                    'fastq',
-                    '-o',
-                    os.path.join('Outputs',
-                                 directory,
-                                 'teloPortOut',
-                                 f'{directory}Clusters.out'),
-                    '-r',
-                    os.path.join('Outputs',
-                                 directory,
-                                'telomereReads',
-                                'telomereClusters/'),
-                    '--indices',
-                    '--sort',
-                    '--size',
-                    '1']
-    print(' '.join(command))
-    subprocess.run(' '.join(command),
-                   shell=True,
-                   check=True)
-#renames all canidate denovos from clusters
-def deNovoRename():
-    cntCluster = len(glob.glob(os.path.join('Outputs/',
-                                  directory,
-                                  'telomereReads',
-                                  'telomereClusters',
-                                  'cluster*.fasta')))
-    firstDeNovo = firstDeNovoCount()
-    cluster = os.path.join('Outputs/',
-                                  directory,
-                                  'telomereReads',
-                                  'telomereClusters',
-                                  'cluster')
-    for i in range(firstDeNovo,cntCluster):
-        with open(f'{cluster}{i}.fasta', 'r') as read:
-            deNovoLines = read.readlines()
-        with open(os.path.join('Outputs/',
-                  directory,
-                  'telomereReads',
-                  'deNovoTelomeres',
-                  f'{directory}deNovos.fasta'), 'a') as write:
-            for line in deNovoLines:
-                if line[0]=='>':
-                    write.write(f'>{directory}\t{line.lstrip(">")}')
-                else:
-                    write.write(line)
-            os.remove(f'{cluster}{i}.fasta')
-    newClusterCnt = len(glob.glob(
-        os.path.join('Outputs/',
-                     directory,
-                     'telomereReads',
-                     'telomereClusters',
-                     'cluster*.fasta')))
-    for i in range(0,newClusterCnt):
-        with open(f'{cluster}{i}.fasta', 'r') as read:
-            clusterLines = read.readlines()
-        os.remove(f'{cluster}{i}.fasta')
-        with open(f'{cluster}{i}.fasta', 'a') as write:
-            for line in clusterLines:
-                if line[0]=='>':
-                    write.write(f'{directory}\t{line.lstrip(">")}')
-                else:
-                    write.write(line)
-                  
-                                  
-def firstDeNovoCount():
-    with open(os.path.join('Outputs',
-                           directory,
-                           'teloPortOut',
-                           f'{directory}Clusters.out')) as intOut:
-        clusterLines = intOut.readlines()
-    cnt = 0
-    for line in clusterLines:
-        if line[0:1]=='cl':
-            if line.split('=')[1] <= str(cutOff):
-                break    
-            cnt += 1
-        return cnt
-
 #runs muscle and EMBOSS cons
 def autoMuscle():
     clusters = os.path.join('Outputs/',
@@ -505,7 +385,7 @@ def autoMuscle():
                                         'telomereClusters')
     cntCluster = len(glob.glob(f'{clusters}cluster*.fasta'))
     for i in range(0,cntCluster):
-        command = ['Programs/bin/muscle5',
+        command = ['muscle',
                         '-allign',
                         f'{clusters}cluster{i}.fastq',
                         '-output',
@@ -525,7 +405,7 @@ def autoMuscle():
                                'consOut')
     cntAllignment = len(glob.glob(f'{allignments}/{directory}cluster*.msa'))
     for i in range(0, cntAllignment):
-        command = ['Programs/bin/cons',
+        command = ['cons',
                         '-sequence',
                         f'{allignments}/{directory}cluster{i}.msa',
                         '-outseq',
@@ -566,7 +446,7 @@ def consBlast():
 def blastRun(query, subject, output, dust):
     outfmt ='-outfmt "6 qseqid sseqid pident length mismatch \
         gapopen qstart qend sstart send evalue qlen"'
-    command = ['Programs/bin/blastn',
+    command = ['blastn',
                         '-query',
                         query,
                         '-subject',
@@ -979,7 +859,11 @@ def resultsBuilder():
             
         for line in annotation:
             append.append(line)
-
+def path_checker(path):
+	if not os.path.exists(path):
+		print(f"It seems the {path} defined in config.ini doesnt exist please update the file to include the proper path.")
+		print("You can either edit config.ini in a text editor or using the --config flag when running again")
+		sys.exit()
 #assigns the path varibles from the config file
 if args.config:
     config()
@@ -989,6 +873,11 @@ with open('config.ini','r') as read:
     genomeDir = configLines[1].split('=')[1].split('\n')[0]
     filterDir = configLines[2].split('=')[1].split('\n')[0] 
     addDir = configLines[3].split('=')[1]
+#makes sure the folders in config.ini exist
+path_checker(readDir.strip())
+path_checker(genomeDir.strip())
+path_checker(filterDir.strip())
+path_checker(addDir.strip())
 
 if args.simple:
     inputResults = inputCollect()
@@ -1032,8 +921,6 @@ else:
 
 teloPortPipeline()
 mmseqs2_processing()
-quit()
-#deNovoRename()
 trueClusterCnt = autoMuscle()
 consBlast()
 trueDeNovos = falsePosFilter()
