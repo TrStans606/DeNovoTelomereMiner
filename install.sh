@@ -5,8 +5,8 @@ cd Programs/TeloPort-master/ || exit
 make
 )
 
-mv Programs/TeloPort-master/build/apps/telomereFinder bin/
+mv Programs/TeloPort-master/build/apps/telomereFinder Programs/bin/
 
-mv Programs/TeloPort-master/build/apps/junctionFinder bin/
+mv Programs/TeloPort-master/build/apps/junctionFinder Programs/bin/
 
-mv Programs/TeloPort-master/build/apps/sequenceQuality bin/
+mv Programs/TeloPort-master/build/apps/sequenceQuality Programs/bin/
