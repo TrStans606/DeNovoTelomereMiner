@@ -89,7 +89,7 @@ conda create -n de_novo --platform osx-64 python=13.1 bioconda::blast bioconda::
 ```shell
 conda activate de_novo
 ```
-
+## 3. Compiling TeloPort
 ### Linux & macOS
 
 TeloPort20XX needs to be compiled from source. To aid in this, there is the install.sh script. This does require a C++ compiler and has been tested on GCC and Apple clang.
