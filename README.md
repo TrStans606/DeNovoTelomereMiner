@@ -106,16 +106,17 @@ Make sure this is done in the same conda environment used in step 2.
 ```shell
 conda install conda-forge::boost
 ```
-#### Installing Boost via Apt (Debian/Ubuntu/Linux Mint)
+
+##### Installing Boost via Apt (Debian/Ubuntu/Linux Mint)
 ```shell
 sudo apt install libboost-all-dev
 ```
 
-#### Installing Boost via DNF (Red Hat/Fedora/CentOS)
+##### Installing Boost via DNF (Red Hat/Fedora/CentOS)
 ```shell
 sudo dnf install boost-devel
 ```
-#### Installing Boost via Pacman (Arch)
+##### Installing Boost via Pacman (Arch)
 ```shell
 sudo pacman -S boost
 ```
@@ -125,6 +126,18 @@ sudo pacman -S boost
 ```shell
 bash install.sh
 ```
+If you are getting errors that boost isn't found even though it has been installed via Homebrew then you may need to add it your shell profile:
+For zsh users (this is the default on macOS) edit ~/.zshrc:
+```shell
+nano ~/.zshrc
+```
+Then add the lines to the file:
+```shell
+export CPATH=/opt/homebrew/include
+export LIBRARY_PATH=/opt/homebrew/lib
+```
+For Bash users do the same but for ~/.bashrc. Then close out of and reopen your terminal for the changes to take effect.
+
 
 # **Dependencies**
 
