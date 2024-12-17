@@ -92,7 +92,7 @@ conda activate de_novo
 ## 3. Compiling TeloPort
 ### Linux & macOS
 
-TeloPort20XX needs to be compiled from source. To aid in this, there is the install.sh script. This does require a C++ compiler and has been tested on GCC and Apple clang.
+TeloPort20XX needs to be compiled from source. To aid in this, there is the install.sh script. This does require a C++ compiler and has been tested on GCC and Apple clang. The boost library is needed for compilation and can be installed from your native package manager, Conda, or Homebrew 
 
 #### Installing Boost via Homebrew
 
@@ -105,6 +105,19 @@ Make sure this is done in the same conda environment used in step 2.
 
 ```shell
 conda install conda-forge::boost
+```
+#### Installing Boost via Apt (Debian/Ubuntu/Linux Mint)
+```shell
+sudo apt install libboost-all-dev
+```
+
+#### Installing Boost via DNF (Red Hat/Fedora/CentOS)
+```shell
+sudo dnf install boost-devel
+```
+#### Installing Boost via Pacman (Arch)
+```shell
+sudo pacman -S boost
 ```
 
 #### Compiling TeloPort
