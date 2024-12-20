@@ -1,0 +1,13 @@
+name: de_novo
+
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+
+dependencies:
+  - bioconda::blast
+  - bioconda::emboss
+  - bioconda::muscle
+  - bioconda::mmseqs2
+  - conda-forge::pandas
