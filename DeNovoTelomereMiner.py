@@ -344,7 +344,7 @@ def mmseqs2_processing():
 	i=0
 	for value in clusters.loc[:,0]:
 		if value not in labels:
-			labels[value] = f'cluster_{i}'
+			labels[value] = f'cluster{i}'
 			i+=1
 	i=0
 	for value in clusters.iloc[:,0]:
@@ -359,15 +359,15 @@ def mmseqs2_processing():
 				if re.search(clusters.loc[i,1],seqs[j]):
 					write.write(f"{seqs[j]}{seqs[j+1]}")
 			i+=1
-	for value in clusters.iloc[:,0]:
+	for value in pd.unique(clusters.iloc[:,0]):
 		with open(f"Outputs/{directory}/telomereReads/{value}.fasta",'r') as read:
 			lines = read.readlines()
-		if len(lines) <= cutOff*2:
+		if len(lines) /2 <= cutOff:
 			shutil.move(f"Outputs/{directory}/telomereReads/{value}.fasta",f"Outputs/{directory}/telomereReads/deNovoTelomeres")
 	cluster_num = 0
 	clusters_rename = glob.glob(f"Outputs/{directory}/telomereReads/*.fasta")
 	for file in clusters_rename:
-		shutil.move(file,f"Outputs/{directory}/telomereReads/telomereClusters/cluster_{cluster_num}.fasta")
+		shutil.move(file,f"Outputs/{directory}/telomereReads/telomereClusters/cluster{cluster_num}.fasta")
 		cluster_num += 1
 	singles = glob.glob(f"Outputs/{directory}/telomereReads/deNovoTelomeres/*.fasta")
 	with open(f"Outputs/{directory}/telomereReads/deNovoTelomeres/{directory}deNovos.fasta",'w') as write:
@@ -379,15 +379,16 @@ def mmseqs2_processing():
 
 #runs muscle and EMBOSS cons
 def autoMuscle():
+    print("muscle entered")
     clusters = os.path.join('Outputs/',
                                         directory,
                                         'telomereReads',
                                         'telomereClusters')
-    cntCluster = len(glob.glob(f'{clusters}cluster*.fasta'))
+    cntCluster = len(glob.glob(f'{clusters}/cluster*.fasta'))
     for i in range(0,cntCluster):
         command = ['muscle',
-                        '-allign',
-                        f'{clusters}cluster{i}.fastq',
+                        '-align',
+                        f'{clusters}/cluster{i}.fasta',
                         '-output',
                         os.path.join('Outputs/',
                                      directory,
@@ -433,8 +434,9 @@ def consBlast():
         with open(f'{cons}/cons{i}.fasta', 'r') as read:
             consLines = read.readlines()
         with open(f'{blast}/{directory}catCons.fasta', 'a') as write:
-            write.write(consLines)
-    query = f'{singles}/deNovos.fasta'
+            for line in consLines:
+                write.write(line)
+    query = f'{singles}/{directory}deNovos.fasta'
     subject = f'{blast}/{directory}catCons.fasta'
     output =  f'{blast}/{directory}blastCons.txt'
     dust = ''
@@ -503,7 +505,7 @@ def dictMaker(file, secondVal):
             if item[0] not in dictionary:
                 dictionary[item[0]] = (item[1], item[secondVal])
             elif secondVal == 3:
-                if item[3] > dictionary[item[1]][1]:
+                if item[3] > dictionary[item[0]][1]:
                     dictionary[item[0]]=(item[1], item[3])
                     
 def histogramBuilder():
