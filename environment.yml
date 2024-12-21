@@ -9,3 +9,4 @@ dependencies:
   - muscle
   - mmseqs2
   - pandas
+  - sra-tools
