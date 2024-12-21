@@ -10,6 +10,3 @@ dependencies:
   - mmseqs2
   - pandas
   - boost
-  - git
-  - gcc
-  - make
