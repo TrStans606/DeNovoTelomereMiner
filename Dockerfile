@@ -15,7 +15,7 @@ RUN conda env create -f environment.yml
 
 # Activate the environment
 RUN echo "source activate de_novo" > ~/.bashrc
-ENV PATH /opt/conda/envs/de_novo/bin:$PATH
+ENV PATH=/opt/conda/envs/de_novo/bin:$PATH
 
 # Clone the repository
 RUN git clone https://github.com/TrStans606/DeNovoTelomereMiner
