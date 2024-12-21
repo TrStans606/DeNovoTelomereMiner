@@ -1,5 +1,5 @@
 # Use the conda base image
-FROM continuumio/miniconda3
+FROM --platform=linux/amd64 continuumio/miniconda3
 
 # Set the working directory
 WORKDIR /docker
