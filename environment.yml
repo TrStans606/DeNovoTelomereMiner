@@ -9,4 +9,3 @@ dependencies:
   - muscle
   - mmseqs2
   - pandas
-  - boost
