@@ -5,7 +5,7 @@ FROM continuumio/miniconda3
 WORKDIR /docker
 
 # Install Git
-RUN apt-get update && apt-get install -y git
+RUN apt-get update && apt-get install -y git clang build-essential cmake
 
 # Copy the environment file
 COPY environment.yml .
