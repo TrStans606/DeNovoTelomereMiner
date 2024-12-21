@@ -22,7 +22,7 @@ RUN git clone https://github.com/TrStans606/DeNovoTelomereMiner
 
 RUN mkdir DeNovoTelomereMiner/Programs/bin/
 RUN cd DeNovoTelomereMiner/Programs/TeloPort-master/ && make
-RUN mv DeNovoTelomereMiner/Programs/TeloPort-master/build/apps/* Programs/bin/
+RUN mv DeNovoTelomereMiner/Programs/TeloPort-master/build/apps/* DeNovoTelomereMiner/Programs/bin/
 
 # Copy the repository content
 COPY . .
