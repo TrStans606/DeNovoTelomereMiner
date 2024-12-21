@@ -39,7 +39,7 @@ docker build -t denovo_telomere_miner .
 2. Activate the Docker image with the command:
 
 ```shell
-docker run -it denovo_telomere_miner bash
+docker run --name de_novo -it denovo_telomere_miner bash
 ```
 3. Run the shell script inside the new container enviroment:
 
@@ -49,7 +49,7 @@ bash install.sh
 
 It's that simple! Now the teloport environment is set up perfectly for running. To copy your data from your host machine to the docker image use this command on your host machine:
 ```shell
-docker cp <any file or directory> denovo_telomere_miner:DeNovoTelomereMiner
+docker cp <any file or directory> de_novo:docker/
 ```
 The image also comes equiped with wget and the NCBI sra-toolkit to easily add data from FTP servers or the Sequence Read Archive (SRA) directly from the container itself.
 
