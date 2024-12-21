@@ -20,6 +20,10 @@ ENV PATH /opt/conda/envs/de_novo/bin:$PATH
 # Clone the repository
 RUN git clone https://github.com/TrStans606/DeNovoTelomereMiner
 
+RUN mkdir Programs/bin/
+RUN cd Programs/TeloPort-master/ && make
+RUN mv Programs/TeloPort-master/build/apps/* Programs/bin/
+
 # Copy the repository content
 COPY . .
 
