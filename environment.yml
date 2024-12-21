@@ -1,13 +1,12 @@
 name: de_novo
-
 channels:
   - bioconda
   - conda-forge
-  - defaults
-
 dependencies:
-  - bioconda::blast
-  - bioconda::emboss
-  - bioconda::muscle
-  - bioconda::mmseqs2
-  - conda-forge::pandas
+  - python=3.8
+  - blast
+  - emboss
+  - muscle
+  - mmseqs2
+  - pandas
+  - boost
