@@ -2,7 +2,11 @@
 
 ## Table of contents
 1. [Original Paper](https://github.com/TrStans606/DeNovoTelomereMiner/tree/main#source)
-2. [DeNovoTelomereMiner Quick Start]
+2. [Dependencies](https://github.com/TrStans606/DeNovoTelomereMiner/tree/main#dependencies)
+3. [Docker Installation Guide](https://github.com/TrStans606/DeNovoTelomereMiner/tree/main#docker-instructions-for-linux-macos-and-windows)
+4. [Manual Installation Guide](https://github.com/TrStans606/DeNovoTelomereMiner/tree/main#manual-installation)
+5. [DeNovoTelomereMiner.py Guide]()
+6. [config.ini Guide]()
 
 ## Source
 
@@ -51,17 +55,3 @@ docker cp <any file or directory> denovo_telomere_miner:DeNovoTelomereMiner
 ## Manual Installation
 
 For manual installation instructions check out the [Installation.md](Installation.md) guide
-
-# Setting up TeloPort
-
-1. Create directory called Programs in root folder
-2. Unzip TeloPort into the directory Programs
-3. While in the TeloPort directory type make
-
-#Dependencies for DeNovoTelomereMiner
-
-#Inputs for TeloPortWrapper
-an interleved or two seperated fastq files
-a fasta genome file
- 
-#How to use DeNovoTelomereMiner
