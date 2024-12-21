@@ -24,4 +24,4 @@ RUN git clone https://github.com/TrStans606/DeNovoTelomereMiner
 COPY . .
 
 # Clone the repository
-CMD ["bash", "-c", "source ~/.bashrc && conda run -n de_novo git --version"]
+CMD ["bash", "-c", "source ~/.bashrc && git --version"]
