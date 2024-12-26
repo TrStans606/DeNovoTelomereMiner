@@ -8,40 +8,37 @@ import re
 import shutil
 import sys
 
-#Command line argument set up
+# Command line argument set up
 parser = argparse.ArgumentParser(
-	prog='DenovoTelomereMiner',
-	argument_default='try --simple',
-	description=(
-		'An all-in-one pipeline and anaylsis tool for de-novo Telomeres'
-	),
-	epilog=(
-		'The -s and -i options are mutally exclusive. '
-		'If simple mode is not used options -b is required.'
-	),
+    prog='DenovoTelomereMiner',
+    argument_default='try --simple',
+    description=(
+        'An all-in-one pipeline and analysis tool for de-novo Telomeres'
+    ),
+    epilog=(
+        'The -s and -i options are mutually exclusive. If simple mode is not used options -b is required.'
+    ),
 )
 
-#command line option for seperated files 
+# Command line option for separated files 
 parser.add_argument(
-	'-s',
-	action='store',
-	nargs=2,
-	help=(
-		'User defined name for two seperated fastq files.' 
-		'This argument exepcts two file names seperated by a space.'
-	),
-	default='n/a'
+    '-s',
+    action='store',
+    nargs=2,
+    help=(
+        'User defined name for two separated fastq files. This argument expects two file names separated by a space.'
+    ),
+    default='n/a'
 )
 
-#command line option for interleaved files
+# Command line option for interleaved files
 parser.add_argument(
-	'-i',
-	action='store',
-	help=(
-		'User defined name for an interleaved fastq file'
-		'This argument expects one file name.'
-	),
-	default='n/a'
+    '-i',
+    action='store',
+    help=(
+        'User defined name for an interleaved fastq file.'
+    ),
+    default='n/a'
 )
 
 #command line argument for a genome file
@@ -59,9 +56,7 @@ parser.add_argument(
 	'-d',
 	action='store',
 	help=(
-		'The name of the directory where all output files will be placed.'
-		'The name defaults to the name of the fasta file provided'
-		'Directory names must be unique'
+		'The name of the directory where all output files will be placed. The name defaults to the name of the fasta file provided. Directory names must be unique'
 	),
 	default='n/a'
 )
@@ -81,8 +76,7 @@ parser.add_argument(
 	'-f',
 	action='store', nargs='*', 
 	help=(
-		'List all of the seqeunces you want removed from reads.'
-		'Must be in fasta format.'    
+		'List all of the seqeunces you want removed from reads. Must be in fasta format.'    
 	),
 	default='n/a'
 )
@@ -92,9 +86,7 @@ parser.add_argument(
 	'--cut', 
 	action='store', 
 	type=int, 
-	help= ('The number of reads in a cluster before it is'
-		   'labeled a canidate de-novo.'
-		   'The default is five.'
+	help= ('The number of reads in a cluster before it is labeled a canidate de-novo. The default is five.'
 	),
 	default=5
 )
@@ -113,8 +105,7 @@ parser.add_argument(
 	'--add', 
 	action='store', 
 	nargs='*', 
-	help=('List all addition seqeunces you want compared to the reads.',
-		  'All must be in fasta format'
+	help=('List all addition seqeunces you want compared to the reads. All must be in fasta format'
 	),
 	default='n/a'
 )
@@ -126,6 +117,7 @@ parser.add_argument(
 	default=False
 )
 
+# Parse the arguments
 args = parser.parse_args()
 
 #config file maker
@@ -753,9 +745,9 @@ def gffBuilder():
 		append.write('##gff-version 3.1.26')
 		cnt = '0'
 		for line in lines:
-			if line.split('\t')[14].rstrip() == 'revF':
+			if line.split('\t')[13].rstrip() == 'revF':
 				strand = '+'
-			elif line.split('\t')[14].rstrip() == 'revT':
+			elif line.split('\t')[13].rstrip() == 'revT':
 				strand = '-'
 			name = line.split("\t")[1]
 			length = \
@@ -772,7 +764,7 @@ def gffBuilder():
 							strand,
 							'.'])
 			gffLine += f'\tID=Telomere{cnt};Name={name};Length={str(length)}'
-			telDist = line.split('\t')[14]
+			telDist = line.split('\t')[12]
 			gffLine += f';Distance from Telomere={telDist}\n'
 			
 			append.write(gffLine)
@@ -853,7 +845,7 @@ def resultsBuilder():
 	with open(os.path.join('Outputs',
 						   directory,
 						   'clusterHistogram.txt'), 'r') as read:
-		histogram = read.readLines()
+		histogram = read.readlines()
 		
 	with open(os.path.join('Outputs',
 						   directory,
@@ -864,13 +856,13 @@ def resultsBuilder():
 	with open(os.path.join('Outputs',
 						   directory,
 						   f'{directory}results.txt'), 'a') as append:
-		append.append(resultsLine)
+		append.write(resultsLine)
 		
 		for line in histogram:
-			append.append(line)
+			append.write(line)
 			
 		for line in annotation:
-			append.append(line)
+			append.write(line)
 def path_checker(path):
 	if not os.path.exists(path):
 		print(f"It seems the {path} defined in config.ini doesnt exist please update the file to include the proper path.")
