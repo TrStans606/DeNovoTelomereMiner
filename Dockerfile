@@ -23,5 +23,8 @@ RUN git clone https://github.com/TrStans606/DeNovoTelomereMiner
 # Copy the repository content
 COPY . .
 
+#compile teloport
+RUN cd docker && bash install.sh
+
 # Clone the repository
-CMD ["bash", "-c", "source ~/.bashrc", "&&", "cd", "docker", "&&", "bash", "install.sh"]
+CMD ["bash", "-c", "source ~/.bashrc", "&&", "python3 DeNovoTelomereMiner.py -h"]
