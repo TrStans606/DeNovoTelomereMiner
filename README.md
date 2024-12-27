@@ -64,8 +64,6 @@ For manual installation instructions check out the [Installation wiki](https://g
 
 ## DeNovoTelomereMiner Usage
 
-There are two ways to run DeNovoTelomereMiner. The first is via the main Python script: DeNovoTelomereMiner.py, which is cross-platform. The second is via the compiled script DeNovoTelomereMiner<arch>.bin, which can be downloaded from the releases tab. The compiled script is around 30 seconds to a minute faster per dataset, but you must download the correct version for your system. If you are using the Docker file, it will be DeNovoTelomereMiner_linux_amd64.bin. If you have no idea what version to download, then stick with the main Python script.
-
 ### DeNovoTelomereMiner Command Line Arguments
 
 For this command line, only include the file name. The directory of each file type will be set in the config file.
