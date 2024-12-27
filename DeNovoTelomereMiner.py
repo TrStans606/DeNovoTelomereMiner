@@ -16,7 +16,7 @@ parser = argparse.ArgumentParser(
         'An all-in-one pipeline and analysis tool for de-novo Telomeres'
     ),
     epilog=(
-        'The -s and -i options are mutually exclusive. If simple mode is not used options -b is required.'
+        'The -s and -i options are mutually exclusive. If simple mode is not used options -g is required.'
     ),
 )
 
