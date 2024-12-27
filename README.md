@@ -71,10 +71,6 @@ For this command line, only include the file name. The directory of each file ty
 ```bash
 python3 DeNovoTelomereMiner.py [-h] [-s S S] [-i I] -g G [-d D] [-t T] [-f [F ...]] [--cut CUT] [--simple] [--add [ADD ...]] [--config]
 ```
-or
-```bash
-DeNovoTelomereMiner<arch>.bin [-h] [-s S S] [-i I] -g G [-d D] [-t T] [-f [F ...]] [--cut CUT] [--simple] [--add [ADD ...]] [--config]
-```
 
 ```-h```: show the help message and exits
 
