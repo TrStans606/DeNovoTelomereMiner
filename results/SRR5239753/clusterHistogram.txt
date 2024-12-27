@@ -1,0 +1,1 @@
+Distribution of Clusterscluster0	12	#cluster0	12	#cluster0	12	#cluster0	12	#cluster0	12	#cluster0	12	#cluster0	12	#cluster0	12	#cluster0	12	#cluster0	12	#cluster0	12	#cluster0	12	#cluster1	4	#cluster1	4	#cluster1	4	#cluster1	4	#cluster2	4	#cluster2	4	#cluster2	4	#cluster2	4	#cluster3	5	#cluster3	5	#cluster3	5	#cluster3	5	#cluster3	5	#

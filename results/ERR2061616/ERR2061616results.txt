@@ -1,0 +1,532 @@
+ERR2061616
+Number of raw reads processed: 78506911
+Number of Telomere reads processed: 2592
+Number of de-novo telomeres found by TeloPort: 		39
+Number of true de-novo telomeres: 0
+Number of clusters: 5
+Number of true de-novos filtered out: -34.0
+Number of true de-novo compared to the genome: 34.0
+Number of de novo telomere matches to the genome: 261
+Distribution of clusters 
+Distribution of Clusterscluster0	40	#cluster0	40	#cluster0	40	#cluster0	40	#cluster0	40	#cluster0	40	#cluster0	40	#cluster0	40	#cluster0	40	#cluster0	40	#cluster0	40	#cluster0	40	#cluster0	40	#cluster0	40	#cluster0	40	#cluster0	40	#cluster0	40	#cluster0	40	#cluster0	40	#cluster0	40	#cluster0	40	#cluster0	40	#cluster0	40	#cluster0	40	#cluster0	40	#cluster0	40	#cluster0	40	#cluster0	40	#cluster0	40	#cluster0	40	#cluster0	40	#cluster0	40	#cluster0	40	#cluster0	40	#cluster0	40	#cluster0	40	#cluster0	40	#cluster0	40	#cluster0	40	#cluster0	40	#cluster1	6	#cluster1	6	#cluster1	6	#cluster1	6	#cluster1	6	#cluster1	6	#cluster2	22	#cluster2	22	#cluster2	22	#cluster2	22	#cluster2	22	#cluster2	22	#cluster2	22	#cluster2	22	#cluster2	22	#cluster2	22	#cluster2	22	#cluster2	22	#cluster2	22	#cluster2	22	#cluster2	22	#cluster2	22	#cluster2	22	#cluster2	22	#cluster2	22	#cluster2	22	#cluster2	22	#cluster2	22	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster3	99	#cluster4	26	#cluster4	26	#cluster4	26	#cluster4	26	#cluster4	26	#cluster4	26	#cluster4	26	#cluster4	26	#cluster4	26	#cluster4	26	#cluster4	26	#cluster4	26	#cluster4	26	#cluster4	26	#cluster4	26	#cluster4	26	#cluster4	26	#cluster4	26	#cluster4	26	#cluster4	26	#cluster4	26	#cluster4	26	#cluster4	26	#cluster4	26	#cluster4	26	#cluster4	26	#ERR20616167216	Chr6	100.000	49	0	12	60	4822313	4822361	4.64e-19	60	TelYs	4822313	revF
+ERR20616164864	Chr1	100.000	60	0	1	60	1795397	1795456	3.56e-25	60	TelYs	1795408	revF
+ERR20616164376	Chr2	100.000	60	0	1	60	7751462	7751521	3.56e-25	60	TelYs	7751473	revF
+ERR20616168416	Chr7	100.000	41	0	1	41	3710936	3710896	6.66e-15	41	TelYs	3710848	revT
+ERR20616163560	Chr6	100.000	60	0	1	60	1620314	1620373	3.56e-25	60	TelYs	1620325	revF
+ERR20616167192	Chr8	100.000	60	0	1	60	2007	1948	3.56e-25	60	TelYs	1900	revT
+ERR20616167192	Chr8	100.000	60	0	1	60	12209	12150	3.56e-25	60	TelYs	12102	revT
+ERR20616167192	Chr8	100.000	60	0	1	60	1846967	1847026	3.56e-25	60	TelYs	1846978	revF
+ERR20616167192	Chr8	100.000	60	0	1	60	1852099	1852158	3.56e-25	60	TelYs	1852110	revF
+ERR20616167192	Chr8	100.000	60	0	1	60	1867326	1867385	3.56e-25	60	TelYs	1867337	revF
+ERR20616167192	Chr8	98.361	61	0	1	60	7174	7114	1.66e-23	60	TelYs	7066	revT
+ERR20616167192	Chr8	98.361	61	0	1	60	1857168	1857228	1.66e-23	60	TelYs	1857180	revF
+ERR20616167192	Chr8	98.361	61	0	1	60	1862185	1862245	1.66e-23	60	TelYs	1862197	revF
+ERR20616167192	Chr8	98.333	60	0	1	60	1872462	1872520	5.96e-23	60	TelYs	1872472	revF
+ERR20616167192	Chr8	98.333	60	0	1	60	1877585	1877643	5.96e-23	60	TelYs	1877595	revF
+ERR20616167192	Chr8	98.333	60	0	1	60	1882718	1882776	5.96e-23	60	TelYs	1882728	revF
+ERR20616167192	Chr8	98.333	60	0	1	60	1887840	1887898	5.96e-23	60	TelYs	1887850	revF
+ERR20616167192	Chr8	98.333	60	0	1	60	1897910	1897968	5.96e-23	60	TelYs	1897920	revF
+ERR20616167192	Chr8	96.667	60	0	1	60	1892813	1892870	2.77e-21	60	TelYs	1892822	revF
+ERR20616167192	Chr8	96.667	60	0	1	60	1902934	1902991	2.77e-21	60	TelYs	1902943	revF
+ERR20616167192	Chr7	100.000	60	0	1	60	5327	5268	3.56e-25	60	TelYs	5220	revT
+ERR20616167192	Chr7	100.000	60	0	1	60	4041261	4041320	3.56e-25	60	TelYs	4041272	revF
+ERR20616167192	Chr7	100.000	60	0	1	60	4053759	4053818	3.56e-25	60	TelYs	4053770	revF
+ERR20616167192	Chr7	98.361	61	0	1	60	304	244	1.66e-23	60	TelYs	196	revT
+ERR20616167192	Chr7	98.361	61	0	1	60	4048723	4048783	1.66e-23	60	TelYs	4048735	revF
+ERR20616167192	Chr7	98.361	61	0	1	60	4058914	4058974	1.66e-23	60	TelYs	4058926	revF
+ERR20616167192	Chr7	98.333	60	0	1	60	4079052	4079110	5.96e-23	60	TelYs	4079062	revF
+ERR20616167192	Chr7	96.721	61	0	1	60	4063945	4064004	7.71e-22	60	TelYs	4063956	revF
+ERR20616167192	Chr7	96.667	60	0	1	60	4074061	4074118	2.77e-21	60	TelYs	4074070	revF
+ERR20616167192	Chr6	100.000	60	0	1	60	5532	5473	3.56e-25	60	TelYs	5425	revT
+ERR20616167192	Chr6	100.000	60	0	1	60	10563	10504	3.56e-25	60	TelYs	10456	revT
+ERR20616167192	Chr6	100.000	60	0	1	60	15601	15542	3.56e-25	60	TelYs	15494	revT
+ERR20616167192	Chr6	100.000	60	0	1	60	6107641	6107700	3.56e-25	60	TelYs	6107652	revF
+ERR20616167192	Chr6	100.000	60	0	1	60	6112754	6112813	3.56e-25	60	TelYs	6112765	revF
+ERR20616167192	Chr6	100.000	60	0	1	60	6117799	6117858	3.56e-25	60	TelYs	6117810	revF
+ERR20616167192	Chr6	98.361	61	0	1	60	20625	20565	1.66e-23	60	TelYs	20517	revT
+ERR20616167192	Chr6	98.361	61	0	1	60	6128005	6128065	1.66e-23	60	TelYs	6128017	revF
+ERR20616167192	Chr6	98.333	60	0	1	60	6122844	6122902	5.96e-23	60	TelYs	6122854	revF
+ERR20616167192	Chr6	96.721	61	0	1	60	495	436	7.71e-22	60	TelYs	388	revT
+ERR20616167192	Chr6	96.721	61	0	1	60	6133044	6133103	7.71e-22	60	TelYs	6133055	revF
+ERR20616167192	Chr5	100.000	60	0	1	60	331	272	3.56e-25	60	TelYs	224	revT
+ERR20616167192	Chr5	100.000	60	0	1	60	4439647	4439706	3.56e-25	60	TelYs	4439658	revF
+ERR20616167192	Chr5	98.361	61	0	1	60	4444685	4444745	1.66e-23	60	TelYs	4444697	revF
+ERR20616167192	Chr5	98.361	61	0	1	60	4449725	4449785	1.66e-23	60	TelYs	4449737	revF
+ERR20616167192	Chr5	98.361	61	0	1	60	4454769	4454829	1.66e-23	60	TelYs	4454781	revF
+ERR20616167192	Chr5	98.361	61	0	1	60	4459817	4459877	1.66e-23	60	TelYs	4459829	revF
+ERR20616167192	Chr4	100.000	60	0	1	60	10385	10326	3.56e-25	60	TelYs	10278	revT
+ERR20616167192	Chr4	100.000	60	0	1	60	5398583	5398642	3.56e-25	60	TelYs	5398594	revF
+ERR20616167192	Chr4	98.361	61	0	1	60	333	273	1.66e-23	60	TelYs	225	revT
+ERR20616167192	Chr4	98.361	61	0	1	60	5356	5296	1.66e-23	60	TelYs	5248	revT
+ERR20616167192	Chr4	98.361	61	0	1	60	5403634	5403694	1.66e-23	60	TelYs	5403646	revF
+ERR20616167192	Chr4	98.361	61	0	1	60	5412885	5412945	1.66e-23	60	TelYs	5412897	revF
+ERR20616167192	Chr3	100.000	60	0	1	60	4865	4806	3.56e-25	60	TelYs	4758	revT
+ERR20616167192	Chr3	100.000	60	0	1	60	9853	9794	3.56e-25	60	TelYs	9746	revT
+ERR20616167192	Chr3	100.000	60	0	1	60	8227393	8227452	3.56e-25	60	TelYs	8227404	revF
+ERR20616167192	Chr3	100.000	60	0	1	60	8237439	8237498	3.56e-25	60	TelYs	8237450	revF
+ERR20616167192	Chr3	98.361	61	0	1	60	8232402	8232462	1.66e-23	60	TelYs	8232414	revF
+ERR20616167192	Chr2	100.000	60	0	1	60	5527	5468	3.56e-25	60	TelYs	5420	revT
+ERR20616167192	Chr2	98.361	61	0	1	60	10554	10494	1.66e-23	60	TelYs	10446	revT
+ERR20616167192	Chr2	98.361	61	0	1	60	7915128	7915188	1.66e-23	60	TelYs	7915140	revF
+ERR20616167192	Chr1	100.000	60	0	1	60	6667886	6667945	3.56e-25	60	TelYs	6667897	revF
+ERR20616162128	Chr1	100.000	60	0	1	60	16433	16492	3.56e-25	60	TelYs	16444	revF
+ERR20616162128	Chr1	100.000	60	0	1	60	24692	24751	3.56e-25	60	TelYs	24703	revF
+ERR20616162128	Chr1	100.000	60	0	1	60	41178	41237	3.56e-25	60	TelYs	41189	revF
+ERR20616162128	Chr1	100.000	60	0	1	60	49373	49432	3.56e-25	60	TelYs	49384	revF
+ERR20616162128	Chr1	100.000	60	0	1	60	57646	57705	3.56e-25	60	TelYs	57657	revF
+ERR20616162128	Chr1	100.000	60	0	1	60	65906	65965	3.56e-25	60	TelYs	65917	revF
+ERR20616162128	Chr1	100.000	60	0	1	60	74194	74253	3.56e-25	60	TelYs	74205	revF
+ERR20616162128	Chr1	100.000	60	0	1	60	82296	82355	3.56e-25	60	TelYs	82307	revF
+ERR20616162128	Chr1	100.000	60	0	1	60	90598	90657	3.56e-25	60	TelYs	90609	revF
+ERR20616162128	Chr1	100.000	60	0	1	60	98911	98970	3.56e-25	60	TelYs	98922	revF
+ERR20616162128	Chr1	100.000	60	0	1	60	107222	107281	3.56e-25	60	TelYs	107233	revF
+ERR20616162128	Chr1	100.000	60	0	1	60	125453	125512	3.56e-25	60	TelYs	125464	revF
+ERR20616162128	Chr1	100.000	60	0	1	60	133615	133674	3.56e-25	60	TelYs	133626	revF
+ERR20616162128	Chr1	100.000	60	0	1	60	141865	141924	3.56e-25	60	TelYs	141876	revF
+ERR20616162128	Chr1	100.000	60	0	1	60	150113	150172	3.56e-25	60	TelYs	150124	revF
+ERR20616162128	Chr1	100.000	60	0	1	60	158327	158386	3.56e-25	60	TelYs	158338	revF
+ERR20616162128	Chr1	100.000	60	0	1	60	166544	166603	3.56e-25	60	TelYs	166555	revF
+ERR20616162128	Chr1	100.000	60	0	1	60	174794	174853	3.56e-25	60	TelYs	174805	revF
+ERR20616162128	Chr1	100.000	60	0	1	60	183025	183084	3.56e-25	60	TelYs	183036	revF
+ERR20616162128	Chr1	100.000	60	0	1	60	216046	216105	3.56e-25	60	TelYs	216057	revF
+ERR20616162128	Chr1	100.000	60	0	1	60	224314	224373	3.56e-25	60	TelYs	224325	revF
+ERR20616162128	Chr1	100.000	60	0	1	60	232617	232676	3.56e-25	60	TelYs	232628	revF
+ERR20616162128	Chr1	100.000	60	0	1	60	240917	240976	3.56e-25	60	TelYs	240928	revF
+ERR20616162128	Chr1	100.000	60	0	1	60	249221	249280	3.56e-25	60	TelYs	249232	revF
+ERR20616162128	Chr1	100.000	60	0	1	60	257523	257582	3.56e-25	60	TelYs	257534	revF
+ERR20616162128	Chr1	100.000	60	0	1	60	265821	265880	3.56e-25	60	TelYs	265832	revF
+ERR20616162128	Chr1	100.000	60	0	1	60	274125	274184	3.56e-25	60	TelYs	274136	revF
+ERR20616162128	Chr1	100.000	60	0	1	60	282428	282487	3.56e-25	60	TelYs	282439	revF
+ERR20616162128	Chr1	100.000	60	0	1	60	290736	290795	3.56e-25	60	TelYs	290747	revF
+ERR20616162128	Chr1	98.333	60	0	1	60	117240	117298	5.96e-23	60	TelYs	117250	revF
+ERR20616162128	Chr1	98.333	60	0	1	60	199619	199677	5.96e-23	60	TelYs	199629	revF
+ERR20616162128	Chr1	98.333	60	0	1	60	207836	207894	5.96e-23	60	TelYs	207846	revF
+ERR20616162128	Chr1	96.721	61	1	1	60	577	637	7.71e-22	60	TelYs	589	revF
+ERR20616162128	Chr1	100.000	53	0	8	60	32968	33020	2.77e-21	60	TelYs	32972	revF
+ERR20616162128	Chr1	97.778	45	0	1	45	8216	8259	1.30e-14	60	TelYs	8211	revF
+ERR20616166504	Chr7	98.333	60	1	1	60	560550	560609	1.66e-23	60	TelYs	560561	revF
+ERR20616166504	Chr7	96.552	58	2	1	58	3966583	3966640	9.97e-21	60	TelYs	3966592	revF
+ERR20616166504	Chr7	95.000	60	3	1	60	526116	526057	3.59e-20	60	TelYs	526009	revT
+ERR20616166504	Chr7	95.000	60	3	1	60	554661	554720	3.59e-20	60	TelYs	554672	revF
+ERR20616166504	Chr3	98.333	60	1	1	60	8075029	8074970	1.66e-23	60	TelYs	8074922	revT
+ERR20616166504	Chr3	98.276	58	1	1	58	2596088	2596145	2.14e-22	60	TelYs	2596097	revF
+ERR20616166504	Chr3	96.667	60	2	1	60	2559418	2559359	7.71e-22	60	TelYs	2559311	revT
+ERR20616166504	Chr3	95.000	60	3	1	60	2539032	2538973	3.59e-20	60	TelYs	2538925	revT
+ERR20616166504	Chr1	98.333	60	1	1	60	2205588	2205529	1.66e-23	60	TelYs	2205481	revT
+ERR20616166504	Chr1	96.667	60	2	1	60	393160	393101	7.71e-22	60	TelYs	393053	revT
+ERR20616166504	Chr1	96.667	60	2	1	60	2300582	2300641	7.71e-22	60	TelYs	2300593	revF
+ERR20616166504	Chr1	96.667	60	2	1	60	6643967	6644026	7.71e-22	60	TelYs	6643978	revF
+ERR20616166504	Chr1	94.828	58	3	1	58	442320	442377	4.64e-19	60	TelYs	442329	revF
+ERR20616166504	Chr1	93.103	58	1	1	58	6391110	6391164	2.79e-16	60	TelYs	6391116	revF
+ERR20616166504	Chr8	96.667	60	2	1	60	554855	554796	7.71e-22	60	TelYs	554748	revT
+ERR20616166504	Chr2	95.000	60	3	1	60	7390738	7390797	3.59e-20	60	TelYs	7390749	revF
+ERR20616166520	Chr7	96.667	60	2	1	60	560550	560609	7.71e-22	60	TelYs	560561	revF
+ERR20616166520	Chr7	94.828	58	3	1	58	3966583	3966640	4.64e-19	60	TelYs	3966592	revF
+ERR20616166520	Chr8	95.000	60	3	1	60	554855	554796	3.59e-20	60	TelYs	554748	revT
+ERR20616166536	Chr7	98.333	60	1	1	60	560552	560611	1.66e-23	60	TelYs	560563	revF
+ERR20616166536	Chr7	95.000	60	3	1	60	554663	554722	3.59e-20	60	TelYs	554674	revF
+ERR20616166536	Chr7	95.000	60	3	1	60	3966585	3966644	3.59e-20	60	TelYs	3966596	revF
+ERR20616166536	Chr7	94.915	59	3	1	59	526114	526056	1.29e-19	60	TelYs	526008	revT
+ERR20616166536	Chr3	98.333	60	1	1	60	8075027	8074968	1.66e-23	60	TelYs	8074920	revT
+ERR20616166536	Chr3	96.610	59	2	1	59	2559416	2559358	2.77e-21	60	TelYs	2559310	revT
+ERR20616166536	Chr3	98.214	56	1	1	56	2596090	2596145	2.77e-21	60	TelYs	2596097	revF
+ERR20616166536	Chr3	95.000	60	3	1	60	2539030	2538971	3.59e-20	60	TelYs	2538923	revT
+ERR20616166536	Chr1	98.333	60	1	1	60	2205586	2205527	1.66e-23	60	TelYs	2205479	revT
+ERR20616166536	Chr1	96.667	60	2	1	60	393158	393099	7.71e-22	60	TelYs	393051	revT
+ERR20616166536	Chr1	96.667	60	2	1	60	2300584	2300643	7.71e-22	60	TelYs	2300595	revF
+ERR20616166536	Chr1	96.667	60	2	1	60	6643969	6644028	7.71e-22	60	TelYs	6643980	revF
+ERR20616166536	Chr1	94.643	56	3	1	56	442322	442377	6.00e-18	60	TelYs	442329	revF
+ERR20616166536	Chr1	91.667	60	2	1	60	6391112	6391168	1.00e-15	60	TelYs	6391120	revF
+ERR20616166536	Chr8	96.667	60	2	1	60	554853	554794	7.71e-22	60	TelYs	554746	revT
+ERR20616166536	Chr2	95.000	60	3	1	60	7390740	7390799	3.59e-20	60	TelYs	7390751	revF
+ERR20616169448	Chr7	97.500	40	1	1	40	1967112	1967073	1.12e-12	41	TelYs	1967025	revT
+ERR20616166088	Chr8	100.000	60	0	1	60	3519	3578	3.56e-25	60	TelYs	3530	revF
+ERR20616166088	Chr8	100.000	60	0	1	60	8688	8747	3.56e-25	60	TelYs	8699	revF
+ERR20616166088	Chr8	100.000	60	0	1	60	13718	13777	3.56e-25	60	TelYs	13729	revF
+ERR20616166088	Chr8	100.000	60	0	1	60	1845450	1845391	3.56e-25	60	TelYs	1845343	revT
+ERR20616166088	Chr8	100.000	60	0	1	60	1850587	1850528	3.56e-25	60	TelYs	1850480	revT
+ERR20616166088	Chr8	100.000	60	0	1	60	1855653	1855594	3.56e-25	60	TelYs	1855546	revT
+ERR20616166088	Chr8	100.000	60	0	1	60	1860675	1860616	3.56e-25	60	TelYs	1860568	revT
+ERR20616166088	Chr8	100.000	60	0	1	60	1865816	1865757	3.56e-25	60	TelYs	1865709	revT
+ERR20616166088	Chr8	100.000	60	0	1	60	1870957	1870898	3.56e-25	60	TelYs	1870850	revT
+ERR20616166088	Chr8	100.000	60	0	1	60	1876083	1876024	3.56e-25	60	TelYs	1875976	revT
+ERR20616166088	Chr8	100.000	60	0	1	60	1881205	1881146	3.56e-25	60	TelYs	1881098	revT
+ERR20616166088	Chr8	100.000	60	0	1	60	1886334	1886275	3.56e-25	60	TelYs	1886227	revT
+ERR20616166088	Chr8	100.000	60	0	1	60	1891329	1891270	3.56e-25	60	TelYs	1891222	revT
+ERR20616166088	Chr8	100.000	60	0	1	60	1896420	1896361	3.56e-25	60	TelYs	1896313	revT
+ERR20616166088	Chr8	100.000	60	0	1	60	1901429	1901370	3.56e-25	60	TelYs	1901322	revT
+ERR20616166088	Chr7	100.000	60	0	1	60	6841	6900	3.56e-25	60	TelYs	6852	revF
+ERR20616166088	Chr7	100.000	60	0	1	60	4039753	4039694	3.56e-25	60	TelYs	4039646	revT
+ERR20616166088	Chr7	100.000	60	0	1	60	4047214	4047155	3.56e-25	60	TelYs	4047107	revT
+ERR20616166088	Chr7	100.000	60	0	1	60	4052243	4052184	3.56e-25	60	TelYs	4052136	revT
+ERR20616166088	Chr7	100.000	60	0	1	60	4057400	4057341	3.56e-25	60	TelYs	4057293	revT
+ERR20616166088	Chr7	100.000	60	0	1	60	4062432	4062373	3.56e-25	60	TelYs	4062325	revT
+ERR20616166088	Chr7	100.000	60	0	1	60	4067458	4067399	3.56e-25	60	TelYs	4067351	revT
+ERR20616166088	Chr7	100.000	60	0	1	60	4072564	4072505	3.56e-25	60	TelYs	4072457	revT
+ERR20616166088	Chr7	100.000	60	0	1	60	4077558	4077499	3.56e-25	60	TelYs	4077451	revT
+ERR20616166088	Chr7	98.333	60	1	1	60	1810	1869	1.66e-23	60	TelYs	1821	revF
+ERR20616166088	Chr6	100.000	60	0	1	60	2007	2066	3.56e-25	60	TelYs	2018	revF
+ERR20616166088	Chr6	100.000	60	0	1	60	7054	7113	3.56e-25	60	TelYs	7065	revF
+ERR20616166088	Chr6	100.000	60	0	1	60	12075	12134	3.56e-25	60	TelYs	12086	revF
+ERR20616166088	Chr6	100.000	60	0	1	60	17111	17170	3.56e-25	60	TelYs	17122	revF
+ERR20616166088	Chr6	100.000	60	0	1	60	22134	22193	3.56e-25	60	TelYs	22145	revF
+ERR20616166088	Chr6	100.000	60	0	1	60	6106127	6106068	3.56e-25	60	TelYs	6106020	revT
+ERR20616166088	Chr6	100.000	60	0	1	60	6111242	6111183	3.56e-25	60	TelYs	6111135	revT
+ERR20616166088	Chr6	100.000	60	0	1	60	6116287	6116228	3.56e-25	60	TelYs	6116180	revT
+ERR20616166088	Chr6	100.000	60	0	1	60	6121327	6121268	3.56e-25	60	TelYs	6121220	revT
+ERR20616166088	Chr6	100.000	60	0	1	60	6126489	6126430	3.56e-25	60	TelYs	6126382	revT
+ERR20616166088	Chr6	100.000	60	0	1	60	6131529	6131470	3.56e-25	60	TelYs	6131422	revT
+ERR20616166088	Chr5	100.000	60	0	1	60	1760	1819	3.56e-25	60	TelYs	1771	revF
+ERR20616166088	Chr5	100.000	60	0	1	60	4438136	4438077	3.56e-25	60	TelYs	4438029	revT
+ERR20616166088	Chr5	100.000	60	0	1	60	4443163	4443104	3.56e-25	60	TelYs	4443056	revT
+ERR20616166088	Chr5	100.000	60	0	1	60	4448205	4448146	3.56e-25	60	TelYs	4448098	revT
+ERR20616166088	Chr5	100.000	60	0	1	60	4453258	4453199	3.56e-25	60	TelYs	4453151	revT
+ERR20616166088	Chr5	100.000	60	0	1	60	4458301	4458242	3.56e-25	60	TelYs	4458194	revT
+ERR20616166088	Chr4	100.000	60	0	1	60	1842	1901	3.56e-25	60	TelYs	1853	revF
+ERR20616166088	Chr4	100.000	60	0	1	60	6868	6927	3.56e-25	60	TelYs	6879	revF
+ERR20616166088	Chr4	100.000	60	0	1	60	11905	11964	3.56e-25	60	TelYs	11916	revF
+ERR20616166088	Chr4	100.000	60	0	1	60	5397072	5397013	3.56e-25	60	TelYs	5396965	revT
+ERR20616166088	Chr4	100.000	60	0	1	60	5402117	5402058	3.56e-25	60	TelYs	5402010	revT
+ERR20616166088	Chr4	100.000	60	0	1	60	5407155	5407096	3.56e-25	60	TelYs	5407048	revT
+ERR20616166088	Chr4	100.000	60	0	1	60	5411370	5411311	3.56e-25	60	TelYs	5411263	revT
+ERR20616166088	Chr3	100.000	60	0	1	60	1378	1437	3.56e-25	60	TelYs	1389	revF
+ERR20616166088	Chr3	100.000	60	0	1	60	6370	6429	3.56e-25	60	TelYs	6381	revF
+ERR20616166088	Chr3	100.000	60	0	1	60	11359	11418	3.56e-25	60	TelYs	11370	revF
+ERR20616166088	Chr3	100.000	60	0	1	60	8225874	8225815	3.56e-25	60	TelYs	8225767	revT
+ERR20616166088	Chr3	100.000	60	0	1	60	8230888	8230829	3.56e-25	60	TelYs	8230781	revT
+ERR20616166088	Chr3	100.000	60	0	1	60	8235922	8235863	3.56e-25	60	TelYs	8235815	revT
+ERR20616166088	Chr2	100.000	60	0	1	60	1965	2024	3.56e-25	60	TelYs	1976	revF
+ERR20616166088	Chr2	100.000	60	0	1	60	7040	7099	3.56e-25	60	TelYs	7051	revF
+ERR20616166088	Chr2	100.000	60	0	1	60	12066	12125	3.56e-25	60	TelYs	12077	revF
+ERR20616166088	Chr2	100.000	60	0	1	60	7913614	7913555	3.56e-25	60	TelYs	7913507	revT
+ERR20616166088	Chr1	100.000	60	0	1	60	6666374	6666315	3.56e-25	60	TelYs	6666267	revT
+ERR20616164896	Chr4	100.000	60	0	1	60	4350544	4350603	3.56e-25	60	TelYs	4350555	revF
+ERR20616164040	Chr2	100.000	57	0	1	57	1265263	1265319	1.53e-23	57	TelYs	1265271	revF
+ERR20616161752	Chr8	100.000	60	0	1	60	661	720	3.56e-25	60	TelYs	672	revF
+ERR20616161752	Chr8	100.000	60	0	1	60	5799	5858	3.56e-25	60	TelYs	5810	revF
+ERR20616161752	Chr8	100.000	60	0	1	60	10968	11027	3.56e-25	60	TelYs	10979	revF
+ERR20616161752	Chr8	100.000	60	0	1	60	15998	16057	3.56e-25	60	TelYs	16009	revF
+ERR20616161752	Chr8	100.000	60	0	1	60	1848307	1848248	3.56e-25	60	TelYs	1848200	revT
+ERR20616161752	Chr8	100.000	60	0	1	60	1853373	1853314	3.56e-25	60	TelYs	1853266	revT
+ERR20616161752	Chr8	100.000	60	0	1	60	1868680	1868621	3.56e-25	60	TelYs	1868573	revT
+ERR20616161752	Chr8	100.000	60	0	1	60	1873812	1873753	3.56e-25	60	TelYs	1873705	revT
+ERR20616161752	Chr8	100.000	60	0	1	60	1878932	1878873	3.56e-25	60	TelYs	1878825	revT
+ERR20616161752	Chr8	100.000	60	0	1	60	1889064	1889005	3.56e-25	60	TelYs	1888957	revT
+ERR20616161752	Chr8	100.000	60	0	1	60	1894159	1894100	3.56e-25	60	TelYs	1894052	revT
+ERR20616161752	Chr8	100.000	60	0	1	60	1899160	1899101	3.56e-25	60	TelYs	1899053	revT
+ERR20616161752	Chr8	98.333	60	1	1	60	1843169	1843110	1.66e-23	60	TelYs	1843062	revT
+ERR20616161752	Chr8	98.333	60	1	1	60	1858396	1858337	1.66e-23	60	TelYs	1858289	revT
+ERR20616161752	Chr8	98.333	60	1	1	60	1863539	1863480	1.66e-23	60	TelYs	1863432	revT
+ERR20616161752	Chr8	98.333	60	1	1	60	1884068	1884009	1.66e-23	60	TelYs	1883961	revT
+ERR20616161752	Chr7	100.000	60	0	1	60	4091	4150	3.56e-25	60	TelYs	4102	revF
+ERR20616161752	Chr7	100.000	60	0	1	60	9122	9181	3.56e-25	60	TelYs	9133	revF
+ERR20616161752	Chr7	100.000	60	0	1	60	11567	11626	3.56e-25	60	TelYs	11578	revF
+ERR20616161752	Chr7	100.000	60	0	1	60	4037474	4037415	3.56e-25	60	TelYs	4037367	revT
+ERR20616161752	Chr7	100.000	60	0	1	60	4042500	4042441	3.56e-25	60	TelYs	4042393	revT
+ERR20616161752	Chr7	100.000	60	0	1	60	4044934	4044875	3.56e-25	60	TelYs	4044827	revT
+ERR20616161752	Chr7	100.000	60	0	1	60	4049962	4049903	3.56e-25	60	TelYs	4049855	revT
+ERR20616161752	Chr7	100.000	60	0	1	60	4060153	4060094	3.56e-25	60	TelYs	4060046	revT
+ERR20616161752	Chr7	100.000	60	0	1	60	4065188	4065129	3.56e-25	60	TelYs	4065081	revT
+ERR20616161752	Chr7	100.000	60	0	1	60	4070299	4070240	3.56e-25	60	TelYs	4070192	revT
+ERR20616161752	Chr7	100.000	60	0	1	60	4075290	4075231	3.56e-25	60	TelYs	4075183	revT
+ERR20616161752	Chr7	98.333	60	0	1	60	4055123	4055065	5.96e-23	60	TelYs	4055017	revT
+ERR20616161752	Chr7	92.308	52	4	1	52	3789848	3789899	4.67e-14	60	TelYs	3789851	revF
+ERR20616161752	Chr6	100.000	60	0	1	60	4287	4346	3.56e-25	60	TelYs	4298	revF
+ERR20616161752	Chr6	100.000	60	0	1	60	9334	9393	3.56e-25	60	TelYs	9345	revF
+ERR20616161752	Chr6	100.000	60	0	1	60	19392	19451	3.56e-25	60	TelYs	19403	revF
+ERR20616161752	Chr6	100.000	60	0	1	60	24414	24473	3.56e-25	60	TelYs	24425	revF
+ERR20616161752	Chr6	100.000	60	0	1	60	6103847	6103788	3.56e-25	60	TelYs	6103740	revT
+ERR20616161752	Chr6	100.000	60	0	1	60	6108962	6108903	3.56e-25	60	TelYs	6108855	revT
+ERR20616161752	Chr6	100.000	60	0	1	60	6129251	6129192	3.56e-25	60	TelYs	6129144	revT
+ERR20616161752	Chr6	98.333	60	1	1	60	14353	14412	1.66e-23	60	TelYs	14364	revF
+ERR20616161752	Chr6	98.333	60	1	1	60	6114006	6113947	1.66e-23	60	TelYs	6113899	revT
+ERR20616161752	Chr6	98.333	60	1	1	60	6119049	6118990	1.66e-23	60	TelYs	6118942	revT
+ERR20616161752	Chr6	98.333	60	1	1	60	6124211	6124152	1.66e-23	60	TelYs	6124104	revT
+ERR20616161752	Chr5	100.000	60	0	1	60	4040	4099	3.56e-25	60	TelYs	4051	revF
+ERR20616161752	Chr5	100.000	60	0	1	60	4435855	4435796	3.56e-25	60	TelYs	4435748	revT
+ERR20616161752	Chr5	100.000	60	0	1	60	4440882	4440823	3.56e-25	60	TelYs	4440775	revT
+ERR20616161752	Chr5	100.000	60	0	1	60	4450977	4450918	3.56e-25	60	TelYs	4450870	revT
+ERR20616161752	Chr5	98.333	60	1	1	60	4445924	4445865	1.66e-23	60	TelYs	4445817	revT
+ERR20616161752	Chr5	98.333	60	1	1	60	4456021	4455962	1.66e-23	60	TelYs	4455914	revT
+ERR20616161752	Chr4	100.000	60	0	1	60	9149	9208	3.56e-25	60	TelYs	9160	revF
+ERR20616161752	Chr4	100.000	60	0	1	60	14187	14246	3.56e-25	60	TelYs	14198	revF
+ERR20616161752	Chr4	100.000	60	0	1	60	5394791	5394732	3.56e-25	60	TelYs	5394684	revT
+ERR20616161752	Chr4	100.000	60	0	1	60	5399838	5399779	3.56e-25	60	TelYs	5399731	revT
+ERR20616161752	Chr4	100.000	60	0	1	60	5404875	5404816	3.56e-25	60	TelYs	5404768	revT
+ERR20616161752	Chr4	100.000	60	0	1	60	5409089	5409030	3.56e-25	60	TelYs	5408982	revT
+ERR20616161752	Chr4	98.333	60	0	1	60	4122	4180	5.96e-23	60	TelYs	4132	revF
+ERR20616161752	Chr3	100.000	60	0	1	60	8228608	8228549	3.56e-25	60	TelYs	8228501	revT
+ERR20616161752	Chr3	98.333	60	0	1	60	8650	8708	5.96e-23	60	TelYs	8660	revF
+ERR20616161752	Chr3	98.333	60	0	1	60	8223593	8223535	5.96e-23	60	TelYs	8223487	revT
+ERR20616161752	Chr3	98.333	60	0	1	60	8233642	8233584	5.96e-23	60	TelYs	8233536	revT
+ERR20616161752	Chr3	100.000	55	0	1	55	3658	3712	2.14e-22	60	TelYs	3664	revF
+ERR20616161752	Chr3	100.000	55	0	1	55	13635	13689	2.14e-22	60	TelYs	13641	revF
+ERR20616161752	Chr2	100.000	60	0	1	60	4236	4295	3.56e-25	60	TelYs	4247	revF
+ERR20616161752	Chr2	100.000	60	0	1	60	9321	9380	3.56e-25	60	TelYs	9332	revF
+ERR20616161752	Chr2	100.000	60	0	1	60	14346	14405	3.56e-25	60	TelYs	14357	revF
+ERR20616161752	Chr2	100.000	60	0	1	60	7911334	7911275	3.56e-25	60	TelYs	7911227	revT
+ERR20616161752	Chr1	100.000	60	0	1	60	6664095	6664036	3.56e-25	60	TelYs	6663988	revT
+ERR20616169208	Chr6	100.000	58	0	3	60	3063312	3063369	4.61e-24	60	TelYs	3063321	revF
+ERR20616169744	Chr4	100.000	45	0	1	45	2610711	2610755	7.57e-17	59	TelYs	2610707	revF
+ERR20616163352	Chr6	100.000	60	0	1	60	5374801	5374742	3.56e-25	60	TelYs	5374694	revT
+##gff-version 3.1.26Chr6	.teloPortWrapper	.telomere	.4822313	.4822361	.4.64e-19	.+	..	ID=Telomere0;Name=Chr6;Length=48;Distance from Telomere=4822313
+Chr1	.teloPortWrapper	.telomere	.1795397	.1795456	.3.56e-25	.+	..	ID=Telomere0;Name=Chr1;Length=59;Distance from Telomere=1795408
+Chr2	.teloPortWrapper	.telomere	.7751462	.7751521	.3.56e-25	.+	..	ID=Telomere0;Name=Chr2;Length=59;Distance from Telomere=7751473
+Chr7	.teloPortWrapper	.telomere	.3710936	.3710896	.6.66e-15	.-	..	ID=Telomere0;Name=Chr7;Length=40;Distance from Telomere=3710848
+Chr6	.teloPortWrapper	.telomere	.1620314	.1620373	.3.56e-25	.+	..	ID=Telomere0;Name=Chr6;Length=59;Distance from Telomere=1620325
+Chr8	.teloPortWrapper	.telomere	.2007	.1948	.3.56e-25	.-	..	ID=Telomere0;Name=Chr8;Length=59;Distance from Telomere=1900
+Chr8	.teloPortWrapper	.telomere	.12209	.12150	.3.56e-25	.-	..	ID=Telomere0;Name=Chr8;Length=59;Distance from Telomere=12102
+Chr8	.teloPortWrapper	.telomere	.1846967	.1847026	.3.56e-25	.+	..	ID=Telomere0;Name=Chr8;Length=59;Distance from Telomere=1846978
+Chr8	.teloPortWrapper	.telomere	.1852099	.1852158	.3.56e-25	.+	..	ID=Telomere0;Name=Chr8;Length=59;Distance from Telomere=1852110
+Chr8	.teloPortWrapper	.telomere	.1867326	.1867385	.3.56e-25	.+	..	ID=Telomere0;Name=Chr8;Length=59;Distance from Telomere=1867337
+Chr8	.teloPortWrapper	.telomere	.7174	.7114	.1.66e-23	.-	..	ID=Telomere0;Name=Chr8;Length=60;Distance from Telomere=7066
+Chr8	.teloPortWrapper	.telomere	.1857168	.1857228	.1.66e-23	.+	..	ID=Telomere0;Name=Chr8;Length=60;Distance from Telomere=1857180
+Chr8	.teloPortWrapper	.telomere	.1862185	.1862245	.1.66e-23	.+	..	ID=Telomere0;Name=Chr8;Length=60;Distance from Telomere=1862197
+Chr8	.teloPortWrapper	.telomere	.1872462	.1872520	.5.96e-23	.+	..	ID=Telomere0;Name=Chr8;Length=58;Distance from Telomere=1872472
+Chr8	.teloPortWrapper	.telomere	.1877585	.1877643	.5.96e-23	.+	..	ID=Telomere0;Name=Chr8;Length=58;Distance from Telomere=1877595
+Chr8	.teloPortWrapper	.telomere	.1882718	.1882776	.5.96e-23	.+	..	ID=Telomere0;Name=Chr8;Length=58;Distance from Telomere=1882728
+Chr8	.teloPortWrapper	.telomere	.1887840	.1887898	.5.96e-23	.+	..	ID=Telomere0;Name=Chr8;Length=58;Distance from Telomere=1887850
+Chr8	.teloPortWrapper	.telomere	.1897910	.1897968	.5.96e-23	.+	..	ID=Telomere0;Name=Chr8;Length=58;Distance from Telomere=1897920
+Chr8	.teloPortWrapper	.telomere	.1892813	.1892870	.2.77e-21	.+	..	ID=Telomere0;Name=Chr8;Length=57;Distance from Telomere=1892822
+Chr8	.teloPortWrapper	.telomere	.1902934	.1902991	.2.77e-21	.+	..	ID=Telomere0;Name=Chr8;Length=57;Distance from Telomere=1902943
+Chr7	.teloPortWrapper	.telomere	.5327	.5268	.3.56e-25	.-	..	ID=Telomere0;Name=Chr7;Length=59;Distance from Telomere=5220
+Chr7	.teloPortWrapper	.telomere	.4041261	.4041320	.3.56e-25	.+	..	ID=Telomere0;Name=Chr7;Length=59;Distance from Telomere=4041272
+Chr7	.teloPortWrapper	.telomere	.4053759	.4053818	.3.56e-25	.+	..	ID=Telomere0;Name=Chr7;Length=59;Distance from Telomere=4053770
+Chr7	.teloPortWrapper	.telomere	.304	.244	.1.66e-23	.-	..	ID=Telomere0;Name=Chr7;Length=60;Distance from Telomere=196
+Chr7	.teloPortWrapper	.telomere	.4048723	.4048783	.1.66e-23	.+	..	ID=Telomere0;Name=Chr7;Length=60;Distance from Telomere=4048735
+Chr7	.teloPortWrapper	.telomere	.4058914	.4058974	.1.66e-23	.+	..	ID=Telomere0;Name=Chr7;Length=60;Distance from Telomere=4058926
+Chr7	.teloPortWrapper	.telomere	.4079052	.4079110	.5.96e-23	.+	..	ID=Telomere0;Name=Chr7;Length=58;Distance from Telomere=4079062
+Chr7	.teloPortWrapper	.telomere	.4063945	.4064004	.7.71e-22	.+	..	ID=Telomere0;Name=Chr7;Length=59;Distance from Telomere=4063956
+Chr7	.teloPortWrapper	.telomere	.4074061	.4074118	.2.77e-21	.+	..	ID=Telomere0;Name=Chr7;Length=57;Distance from Telomere=4074070
+Chr6	.teloPortWrapper	.telomere	.5532	.5473	.3.56e-25	.-	..	ID=Telomere0;Name=Chr6;Length=59;Distance from Telomere=5425
+Chr6	.teloPortWrapper	.telomere	.10563	.10504	.3.56e-25	.-	..	ID=Telomere0;Name=Chr6;Length=59;Distance from Telomere=10456
+Chr6	.teloPortWrapper	.telomere	.15601	.15542	.3.56e-25	.-	..	ID=Telomere0;Name=Chr6;Length=59;Distance from Telomere=15494
+Chr6	.teloPortWrapper	.telomere	.6107641	.6107700	.3.56e-25	.+	..	ID=Telomere0;Name=Chr6;Length=59;Distance from Telomere=6107652
+Chr6	.teloPortWrapper	.telomere	.6112754	.6112813	.3.56e-25	.+	..	ID=Telomere0;Name=Chr6;Length=59;Distance from Telomere=6112765
+Chr6	.teloPortWrapper	.telomere	.6117799	.6117858	.3.56e-25	.+	..	ID=Telomere0;Name=Chr6;Length=59;Distance from Telomere=6117810
+Chr6	.teloPortWrapper	.telomere	.20625	.20565	.1.66e-23	.-	..	ID=Telomere0;Name=Chr6;Length=60;Distance from Telomere=20517
+Chr6	.teloPortWrapper	.telomere	.6128005	.6128065	.1.66e-23	.+	..	ID=Telomere0;Name=Chr6;Length=60;Distance from Telomere=6128017
+Chr6	.teloPortWrapper	.telomere	.6122844	.6122902	.5.96e-23	.+	..	ID=Telomere0;Name=Chr6;Length=58;Distance from Telomere=6122854
+Chr6	.teloPortWrapper	.telomere	.495	.436	.7.71e-22	.-	..	ID=Telomere0;Name=Chr6;Length=59;Distance from Telomere=388
+Chr6	.teloPortWrapper	.telomere	.6133044	.6133103	.7.71e-22	.+	..	ID=Telomere0;Name=Chr6;Length=59;Distance from Telomere=6133055
+Chr5	.teloPortWrapper	.telomere	.331	.272	.3.56e-25	.-	..	ID=Telomere0;Name=Chr5;Length=59;Distance from Telomere=224
+Chr5	.teloPortWrapper	.telomere	.4439647	.4439706	.3.56e-25	.+	..	ID=Telomere0;Name=Chr5;Length=59;Distance from Telomere=4439658
+Chr5	.teloPortWrapper	.telomere	.4444685	.4444745	.1.66e-23	.+	..	ID=Telomere0;Name=Chr5;Length=60;Distance from Telomere=4444697
+Chr5	.teloPortWrapper	.telomere	.4449725	.4449785	.1.66e-23	.+	..	ID=Telomere0;Name=Chr5;Length=60;Distance from Telomere=4449737
+Chr5	.teloPortWrapper	.telomere	.4454769	.4454829	.1.66e-23	.+	..	ID=Telomere0;Name=Chr5;Length=60;Distance from Telomere=4454781
+Chr5	.teloPortWrapper	.telomere	.4459817	.4459877	.1.66e-23	.+	..	ID=Telomere0;Name=Chr5;Length=60;Distance from Telomere=4459829
+Chr4	.teloPortWrapper	.telomere	.10385	.10326	.3.56e-25	.-	..	ID=Telomere0;Name=Chr4;Length=59;Distance from Telomere=10278
+Chr4	.teloPortWrapper	.telomere	.5398583	.5398642	.3.56e-25	.+	..	ID=Telomere0;Name=Chr4;Length=59;Distance from Telomere=5398594
+Chr4	.teloPortWrapper	.telomere	.333	.273	.1.66e-23	.-	..	ID=Telomere0;Name=Chr4;Length=60;Distance from Telomere=225
+Chr4	.teloPortWrapper	.telomere	.5356	.5296	.1.66e-23	.-	..	ID=Telomere0;Name=Chr4;Length=60;Distance from Telomere=5248
+Chr4	.teloPortWrapper	.telomere	.5403634	.5403694	.1.66e-23	.+	..	ID=Telomere0;Name=Chr4;Length=60;Distance from Telomere=5403646
+Chr4	.teloPortWrapper	.telomere	.5412885	.5412945	.1.66e-23	.+	..	ID=Telomere0;Name=Chr4;Length=60;Distance from Telomere=5412897
+Chr3	.teloPortWrapper	.telomere	.4865	.4806	.3.56e-25	.-	..	ID=Telomere0;Name=Chr3;Length=59;Distance from Telomere=4758
+Chr3	.teloPortWrapper	.telomere	.9853	.9794	.3.56e-25	.-	..	ID=Telomere0;Name=Chr3;Length=59;Distance from Telomere=9746
+Chr3	.teloPortWrapper	.telomere	.8227393	.8227452	.3.56e-25	.+	..	ID=Telomere0;Name=Chr3;Length=59;Distance from Telomere=8227404
+Chr3	.teloPortWrapper	.telomere	.8237439	.8237498	.3.56e-25	.+	..	ID=Telomere0;Name=Chr3;Length=59;Distance from Telomere=8237450
+Chr3	.teloPortWrapper	.telomere	.8232402	.8232462	.1.66e-23	.+	..	ID=Telomere0;Name=Chr3;Length=60;Distance from Telomere=8232414
+Chr2	.teloPortWrapper	.telomere	.5527	.5468	.3.56e-25	.-	..	ID=Telomere0;Name=Chr2;Length=59;Distance from Telomere=5420
+Chr2	.teloPortWrapper	.telomere	.10554	.10494	.1.66e-23	.-	..	ID=Telomere0;Name=Chr2;Length=60;Distance from Telomere=10446
+Chr2	.teloPortWrapper	.telomere	.7915128	.7915188	.1.66e-23	.+	..	ID=Telomere0;Name=Chr2;Length=60;Distance from Telomere=7915140
+Chr1	.teloPortWrapper	.telomere	.6667886	.6667945	.3.56e-25	.+	..	ID=Telomere0;Name=Chr1;Length=59;Distance from Telomere=6667897
+Chr1	.teloPortWrapper	.telomere	.16433	.16492	.3.56e-25	.+	..	ID=Telomere0;Name=Chr1;Length=59;Distance from Telomere=16444
+Chr1	.teloPortWrapper	.telomere	.24692	.24751	.3.56e-25	.+	..	ID=Telomere0;Name=Chr1;Length=59;Distance from Telomere=24703
+Chr1	.teloPortWrapper	.telomere	.41178	.41237	.3.56e-25	.+	..	ID=Telomere0;Name=Chr1;Length=59;Distance from Telomere=41189
+Chr1	.teloPortWrapper	.telomere	.49373	.49432	.3.56e-25	.+	..	ID=Telomere0;Name=Chr1;Length=59;Distance from Telomere=49384
+Chr1	.teloPortWrapper	.telomere	.57646	.57705	.3.56e-25	.+	..	ID=Telomere0;Name=Chr1;Length=59;Distance from Telomere=57657
+Chr1	.teloPortWrapper	.telomere	.65906	.65965	.3.56e-25	.+	..	ID=Telomere0;Name=Chr1;Length=59;Distance from Telomere=65917
+Chr1	.teloPortWrapper	.telomere	.74194	.74253	.3.56e-25	.+	..	ID=Telomere0;Name=Chr1;Length=59;Distance from Telomere=74205
+Chr1	.teloPortWrapper	.telomere	.82296	.82355	.3.56e-25	.+	..	ID=Telomere0;Name=Chr1;Length=59;Distance from Telomere=82307
+Chr1	.teloPortWrapper	.telomere	.90598	.90657	.3.56e-25	.+	..	ID=Telomere0;Name=Chr1;Length=59;Distance from Telomere=90609
+Chr1	.teloPortWrapper	.telomere	.98911	.98970	.3.56e-25	.+	..	ID=Telomere0;Name=Chr1;Length=59;Distance from Telomere=98922
+Chr1	.teloPortWrapper	.telomere	.107222	.107281	.3.56e-25	.+	..	ID=Telomere0;Name=Chr1;Length=59;Distance from Telomere=107233
+Chr1	.teloPortWrapper	.telomere	.125453	.125512	.3.56e-25	.+	..	ID=Telomere0;Name=Chr1;Length=59;Distance from Telomere=125464
+Chr1	.teloPortWrapper	.telomere	.133615	.133674	.3.56e-25	.+	..	ID=Telomere0;Name=Chr1;Length=59;Distance from Telomere=133626
+Chr1	.teloPortWrapper	.telomere	.141865	.141924	.3.56e-25	.+	..	ID=Telomere0;Name=Chr1;Length=59;Distance from Telomere=141876
+Chr1	.teloPortWrapper	.telomere	.150113	.150172	.3.56e-25	.+	..	ID=Telomere0;Name=Chr1;Length=59;Distance from Telomere=150124
+Chr1	.teloPortWrapper	.telomere	.158327	.158386	.3.56e-25	.+	..	ID=Telomere0;Name=Chr1;Length=59;Distance from Telomere=158338
+Chr1	.teloPortWrapper	.telomere	.166544	.166603	.3.56e-25	.+	..	ID=Telomere0;Name=Chr1;Length=59;Distance from Telomere=166555
+Chr1	.teloPortWrapper	.telomere	.174794	.174853	.3.56e-25	.+	..	ID=Telomere0;Name=Chr1;Length=59;Distance from Telomere=174805
+Chr1	.teloPortWrapper	.telomere	.183025	.183084	.3.56e-25	.+	..	ID=Telomere0;Name=Chr1;Length=59;Distance from Telomere=183036
+Chr1	.teloPortWrapper	.telomere	.216046	.216105	.3.56e-25	.+	..	ID=Telomere0;Name=Chr1;Length=59;Distance from Telomere=216057
+Chr1	.teloPortWrapper	.telomere	.224314	.224373	.3.56e-25	.+	..	ID=Telomere0;Name=Chr1;Length=59;Distance from Telomere=224325
+Chr1	.teloPortWrapper	.telomere	.232617	.232676	.3.56e-25	.+	..	ID=Telomere0;Name=Chr1;Length=59;Distance from Telomere=232628
+Chr1	.teloPortWrapper	.telomere	.240917	.240976	.3.56e-25	.+	..	ID=Telomere0;Name=Chr1;Length=59;Distance from Telomere=240928
+Chr1	.teloPortWrapper	.telomere	.249221	.249280	.3.56e-25	.+	..	ID=Telomere0;Name=Chr1;Length=59;Distance from Telomere=249232
+Chr1	.teloPortWrapper	.telomere	.257523	.257582	.3.56e-25	.+	..	ID=Telomere0;Name=Chr1;Length=59;Distance from Telomere=257534
+Chr1	.teloPortWrapper	.telomere	.265821	.265880	.3.56e-25	.+	..	ID=Telomere0;Name=Chr1;Length=59;Distance from Telomere=265832
+Chr1	.teloPortWrapper	.telomere	.274125	.274184	.3.56e-25	.+	..	ID=Telomere0;Name=Chr1;Length=59;Distance from Telomere=274136
+Chr1	.teloPortWrapper	.telomere	.282428	.282487	.3.56e-25	.+	..	ID=Telomere0;Name=Chr1;Length=59;Distance from Telomere=282439
+Chr1	.teloPortWrapper	.telomere	.290736	.290795	.3.56e-25	.+	..	ID=Telomere0;Name=Chr1;Length=59;Distance from Telomere=290747
+Chr1	.teloPortWrapper	.telomere	.117240	.117298	.5.96e-23	.+	..	ID=Telomere0;Name=Chr1;Length=58;Distance from Telomere=117250
+Chr1	.teloPortWrapper	.telomere	.199619	.199677	.5.96e-23	.+	..	ID=Telomere0;Name=Chr1;Length=58;Distance from Telomere=199629
+Chr1	.teloPortWrapper	.telomere	.207836	.207894	.5.96e-23	.+	..	ID=Telomere0;Name=Chr1;Length=58;Distance from Telomere=207846
+Chr1	.teloPortWrapper	.telomere	.577	.637	.7.71e-22	.+	..	ID=Telomere0;Name=Chr1;Length=60;Distance from Telomere=589
+Chr1	.teloPortWrapper	.telomere	.32968	.33020	.2.77e-21	.+	..	ID=Telomere0;Name=Chr1;Length=52;Distance from Telomere=32972
+Chr1	.teloPortWrapper	.telomere	.8216	.8259	.1.30e-14	.+	..	ID=Telomere0;Name=Chr1;Length=43;Distance from Telomere=8211
+Chr7	.teloPortWrapper	.telomere	.560550	.560609	.1.66e-23	.+	..	ID=Telomere0;Name=Chr7;Length=59;Distance from Telomere=560561
+Chr7	.teloPortWrapper	.telomere	.3966583	.3966640	.9.97e-21	.+	..	ID=Telomere0;Name=Chr7;Length=57;Distance from Telomere=3966592
+Chr7	.teloPortWrapper	.telomere	.526116	.526057	.3.59e-20	.-	..	ID=Telomere0;Name=Chr7;Length=59;Distance from Telomere=526009
+Chr7	.teloPortWrapper	.telomere	.554661	.554720	.3.59e-20	.+	..	ID=Telomere0;Name=Chr7;Length=59;Distance from Telomere=554672
+Chr3	.teloPortWrapper	.telomere	.8075029	.8074970	.1.66e-23	.-	..	ID=Telomere0;Name=Chr3;Length=59;Distance from Telomere=8074922
+Chr3	.teloPortWrapper	.telomere	.2596088	.2596145	.2.14e-22	.+	..	ID=Telomere0;Name=Chr3;Length=57;Distance from Telomere=2596097
+Chr3	.teloPortWrapper	.telomere	.2559418	.2559359	.7.71e-22	.-	..	ID=Telomere0;Name=Chr3;Length=59;Distance from Telomere=2559311
+Chr3	.teloPortWrapper	.telomere	.2539032	.2538973	.3.59e-20	.-	..	ID=Telomere0;Name=Chr3;Length=59;Distance from Telomere=2538925
+Chr1	.teloPortWrapper	.telomere	.2205588	.2205529	.1.66e-23	.-	..	ID=Telomere0;Name=Chr1;Length=59;Distance from Telomere=2205481
+Chr1	.teloPortWrapper	.telomere	.393160	.393101	.7.71e-22	.-	..	ID=Telomere0;Name=Chr1;Length=59;Distance from Telomere=393053
+Chr1	.teloPortWrapper	.telomere	.2300582	.2300641	.7.71e-22	.+	..	ID=Telomere0;Name=Chr1;Length=59;Distance from Telomere=2300593
+Chr1	.teloPortWrapper	.telomere	.6643967	.6644026	.7.71e-22	.+	..	ID=Telomere0;Name=Chr1;Length=59;Distance from Telomere=6643978
+Chr1	.teloPortWrapper	.telomere	.442320	.442377	.4.64e-19	.+	..	ID=Telomere0;Name=Chr1;Length=57;Distance from Telomere=442329
+Chr1	.teloPortWrapper	.telomere	.6391110	.6391164	.2.79e-16	.+	..	ID=Telomere0;Name=Chr1;Length=54;Distance from Telomere=6391116
+Chr8	.teloPortWrapper	.telomere	.554855	.554796	.7.71e-22	.-	..	ID=Telomere0;Name=Chr8;Length=59;Distance from Telomere=554748
+Chr2	.teloPortWrapper	.telomere	.7390738	.7390797	.3.59e-20	.+	..	ID=Telomere0;Name=Chr2;Length=59;Distance from Telomere=7390749
+Chr7	.teloPortWrapper	.telomere	.560550	.560609	.7.71e-22	.+	..	ID=Telomere0;Name=Chr7;Length=59;Distance from Telomere=560561
+Chr7	.teloPortWrapper	.telomere	.3966583	.3966640	.4.64e-19	.+	..	ID=Telomere0;Name=Chr7;Length=57;Distance from Telomere=3966592
+Chr8	.teloPortWrapper	.telomere	.554855	.554796	.3.59e-20	.-	..	ID=Telomere0;Name=Chr8;Length=59;Distance from Telomere=554748
+Chr7	.teloPortWrapper	.telomere	.560552	.560611	.1.66e-23	.+	..	ID=Telomere0;Name=Chr7;Length=59;Distance from Telomere=560563
+Chr7	.teloPortWrapper	.telomere	.554663	.554722	.3.59e-20	.+	..	ID=Telomere0;Name=Chr7;Length=59;Distance from Telomere=554674
+Chr7	.teloPortWrapper	.telomere	.3966585	.3966644	.3.59e-20	.+	..	ID=Telomere0;Name=Chr7;Length=59;Distance from Telomere=3966596
+Chr7	.teloPortWrapper	.telomere	.526114	.526056	.1.29e-19	.-	..	ID=Telomere0;Name=Chr7;Length=58;Distance from Telomere=526008
+Chr3	.teloPortWrapper	.telomere	.8075027	.8074968	.1.66e-23	.-	..	ID=Telomere0;Name=Chr3;Length=59;Distance from Telomere=8074920
+Chr3	.teloPortWrapper	.telomere	.2559416	.2559358	.2.77e-21	.-	..	ID=Telomere0;Name=Chr3;Length=58;Distance from Telomere=2559310
+Chr3	.teloPortWrapper	.telomere	.2596090	.2596145	.2.77e-21	.+	..	ID=Telomere0;Name=Chr3;Length=55;Distance from Telomere=2596097
+Chr3	.teloPortWrapper	.telomere	.2539030	.2538971	.3.59e-20	.-	..	ID=Telomere0;Name=Chr3;Length=59;Distance from Telomere=2538923
+Chr1	.teloPortWrapper	.telomere	.2205586	.2205527	.1.66e-23	.-	..	ID=Telomere0;Name=Chr1;Length=59;Distance from Telomere=2205479
+Chr1	.teloPortWrapper	.telomere	.393158	.393099	.7.71e-22	.-	..	ID=Telomere0;Name=Chr1;Length=59;Distance from Telomere=393051
+Chr1	.teloPortWrapper	.telomere	.2300584	.2300643	.7.71e-22	.+	..	ID=Telomere0;Name=Chr1;Length=59;Distance from Telomere=2300595
+Chr1	.teloPortWrapper	.telomere	.6643969	.6644028	.7.71e-22	.+	..	ID=Telomere0;Name=Chr1;Length=59;Distance from Telomere=6643980
+Chr1	.teloPortWrapper	.telomere	.442322	.442377	.6.00e-18	.+	..	ID=Telomere0;Name=Chr1;Length=55;Distance from Telomere=442329
+Chr1	.teloPortWrapper	.telomere	.6391112	.6391168	.1.00e-15	.+	..	ID=Telomere0;Name=Chr1;Length=56;Distance from Telomere=6391120
+Chr8	.teloPortWrapper	.telomere	.554853	.554794	.7.71e-22	.-	..	ID=Telomere0;Name=Chr8;Length=59;Distance from Telomere=554746
+Chr2	.teloPortWrapper	.telomere	.7390740	.7390799	.3.59e-20	.+	..	ID=Telomere0;Name=Chr2;Length=59;Distance from Telomere=7390751
+Chr7	.teloPortWrapper	.telomere	.1967112	.1967073	.1.12e-12	.-	..	ID=Telomere0;Name=Chr7;Length=39;Distance from Telomere=1967025
+Chr8	.teloPortWrapper	.telomere	.3519	.3578	.3.56e-25	.+	..	ID=Telomere0;Name=Chr8;Length=59;Distance from Telomere=3530
+Chr8	.teloPortWrapper	.telomere	.8688	.8747	.3.56e-25	.+	..	ID=Telomere0;Name=Chr8;Length=59;Distance from Telomere=8699
+Chr8	.teloPortWrapper	.telomere	.13718	.13777	.3.56e-25	.+	..	ID=Telomere0;Name=Chr8;Length=59;Distance from Telomere=13729
+Chr8	.teloPortWrapper	.telomere	.1845450	.1845391	.3.56e-25	.-	..	ID=Telomere0;Name=Chr8;Length=59;Distance from Telomere=1845343
+Chr8	.teloPortWrapper	.telomere	.1850587	.1850528	.3.56e-25	.-	..	ID=Telomere0;Name=Chr8;Length=59;Distance from Telomere=1850480
+Chr8	.teloPortWrapper	.telomere	.1855653	.1855594	.3.56e-25	.-	..	ID=Telomere0;Name=Chr8;Length=59;Distance from Telomere=1855546
+Chr8	.teloPortWrapper	.telomere	.1860675	.1860616	.3.56e-25	.-	..	ID=Telomere0;Name=Chr8;Length=59;Distance from Telomere=1860568
+Chr8	.teloPortWrapper	.telomere	.1865816	.1865757	.3.56e-25	.-	..	ID=Telomere0;Name=Chr8;Length=59;Distance from Telomere=1865709
+Chr8	.teloPortWrapper	.telomere	.1870957	.1870898	.3.56e-25	.-	..	ID=Telomere0;Name=Chr8;Length=59;Distance from Telomere=1870850
+Chr8	.teloPortWrapper	.telomere	.1876083	.1876024	.3.56e-25	.-	..	ID=Telomere0;Name=Chr8;Length=59;Distance from Telomere=1875976
+Chr8	.teloPortWrapper	.telomere	.1881205	.1881146	.3.56e-25	.-	..	ID=Telomere0;Name=Chr8;Length=59;Distance from Telomere=1881098
+Chr8	.teloPortWrapper	.telomere	.1886334	.1886275	.3.56e-25	.-	..	ID=Telomere0;Name=Chr8;Length=59;Distance from Telomere=1886227
+Chr8	.teloPortWrapper	.telomere	.1891329	.1891270	.3.56e-25	.-	..	ID=Telomere0;Name=Chr8;Length=59;Distance from Telomere=1891222
+Chr8	.teloPortWrapper	.telomere	.1896420	.1896361	.3.56e-25	.-	..	ID=Telomere0;Name=Chr8;Length=59;Distance from Telomere=1896313
+Chr8	.teloPortWrapper	.telomere	.1901429	.1901370	.3.56e-25	.-	..	ID=Telomere0;Name=Chr8;Length=59;Distance from Telomere=1901322
+Chr7	.teloPortWrapper	.telomere	.6841	.6900	.3.56e-25	.+	..	ID=Telomere0;Name=Chr7;Length=59;Distance from Telomere=6852
+Chr7	.teloPortWrapper	.telomere	.4039753	.4039694	.3.56e-25	.-	..	ID=Telomere0;Name=Chr7;Length=59;Distance from Telomere=4039646
+Chr7	.teloPortWrapper	.telomere	.4047214	.4047155	.3.56e-25	.-	..	ID=Telomere0;Name=Chr7;Length=59;Distance from Telomere=4047107
+Chr7	.teloPortWrapper	.telomere	.4052243	.4052184	.3.56e-25	.-	..	ID=Telomere0;Name=Chr7;Length=59;Distance from Telomere=4052136
+Chr7	.teloPortWrapper	.telomere	.4057400	.4057341	.3.56e-25	.-	..	ID=Telomere0;Name=Chr7;Length=59;Distance from Telomere=4057293
+Chr7	.teloPortWrapper	.telomere	.4062432	.4062373	.3.56e-25	.-	..	ID=Telomere0;Name=Chr7;Length=59;Distance from Telomere=4062325
+Chr7	.teloPortWrapper	.telomere	.4067458	.4067399	.3.56e-25	.-	..	ID=Telomere0;Name=Chr7;Length=59;Distance from Telomere=4067351
+Chr7	.teloPortWrapper	.telomere	.4072564	.4072505	.3.56e-25	.-	..	ID=Telomere0;Name=Chr7;Length=59;Distance from Telomere=4072457
+Chr7	.teloPortWrapper	.telomere	.4077558	.4077499	.3.56e-25	.-	..	ID=Telomere0;Name=Chr7;Length=59;Distance from Telomere=4077451
+Chr7	.teloPortWrapper	.telomere	.1810	.1869	.1.66e-23	.+	..	ID=Telomere0;Name=Chr7;Length=59;Distance from Telomere=1821
+Chr6	.teloPortWrapper	.telomere	.2007	.2066	.3.56e-25	.+	..	ID=Telomere0;Name=Chr6;Length=59;Distance from Telomere=2018
+Chr6	.teloPortWrapper	.telomere	.7054	.7113	.3.56e-25	.+	..	ID=Telomere0;Name=Chr6;Length=59;Distance from Telomere=7065
+Chr6	.teloPortWrapper	.telomere	.12075	.12134	.3.56e-25	.+	..	ID=Telomere0;Name=Chr6;Length=59;Distance from Telomere=12086
+Chr6	.teloPortWrapper	.telomere	.17111	.17170	.3.56e-25	.+	..	ID=Telomere0;Name=Chr6;Length=59;Distance from Telomere=17122
+Chr6	.teloPortWrapper	.telomere	.22134	.22193	.3.56e-25	.+	..	ID=Telomere0;Name=Chr6;Length=59;Distance from Telomere=22145
+Chr6	.teloPortWrapper	.telomere	.6106127	.6106068	.3.56e-25	.-	..	ID=Telomere0;Name=Chr6;Length=59;Distance from Telomere=6106020
+Chr6	.teloPortWrapper	.telomere	.6111242	.6111183	.3.56e-25	.-	..	ID=Telomere0;Name=Chr6;Length=59;Distance from Telomere=6111135
+Chr6	.teloPortWrapper	.telomere	.6116287	.6116228	.3.56e-25	.-	..	ID=Telomere0;Name=Chr6;Length=59;Distance from Telomere=6116180
+Chr6	.teloPortWrapper	.telomere	.6121327	.6121268	.3.56e-25	.-	..	ID=Telomere0;Name=Chr6;Length=59;Distance from Telomere=6121220
+Chr6	.teloPortWrapper	.telomere	.6126489	.6126430	.3.56e-25	.-	..	ID=Telomere0;Name=Chr6;Length=59;Distance from Telomere=6126382
+Chr6	.teloPortWrapper	.telomere	.6131529	.6131470	.3.56e-25	.-	..	ID=Telomere0;Name=Chr6;Length=59;Distance from Telomere=6131422
+Chr5	.teloPortWrapper	.telomere	.1760	.1819	.3.56e-25	.+	..	ID=Telomere0;Name=Chr5;Length=59;Distance from Telomere=1771
+Chr5	.teloPortWrapper	.telomere	.4438136	.4438077	.3.56e-25	.-	..	ID=Telomere0;Name=Chr5;Length=59;Distance from Telomere=4438029
+Chr5	.teloPortWrapper	.telomere	.4443163	.4443104	.3.56e-25	.-	..	ID=Telomere0;Name=Chr5;Length=59;Distance from Telomere=4443056
+Chr5	.teloPortWrapper	.telomere	.4448205	.4448146	.3.56e-25	.-	..	ID=Telomere0;Name=Chr5;Length=59;Distance from Telomere=4448098
+Chr5	.teloPortWrapper	.telomere	.4453258	.4453199	.3.56e-25	.-	..	ID=Telomere0;Name=Chr5;Length=59;Distance from Telomere=4453151
+Chr5	.teloPortWrapper	.telomere	.4458301	.4458242	.3.56e-25	.-	..	ID=Telomere0;Name=Chr5;Length=59;Distance from Telomere=4458194
+Chr4	.teloPortWrapper	.telomere	.1842	.1901	.3.56e-25	.+	..	ID=Telomere0;Name=Chr4;Length=59;Distance from Telomere=1853
+Chr4	.teloPortWrapper	.telomere	.6868	.6927	.3.56e-25	.+	..	ID=Telomere0;Name=Chr4;Length=59;Distance from Telomere=6879
+Chr4	.teloPortWrapper	.telomere	.11905	.11964	.3.56e-25	.+	..	ID=Telomere0;Name=Chr4;Length=59;Distance from Telomere=11916
+Chr4	.teloPortWrapper	.telomere	.5397072	.5397013	.3.56e-25	.-	..	ID=Telomere0;Name=Chr4;Length=59;Distance from Telomere=5396965
+Chr4	.teloPortWrapper	.telomere	.5402117	.5402058	.3.56e-25	.-	..	ID=Telomere0;Name=Chr4;Length=59;Distance from Telomere=5402010
+Chr4	.teloPortWrapper	.telomere	.5407155	.5407096	.3.56e-25	.-	..	ID=Telomere0;Name=Chr4;Length=59;Distance from Telomere=5407048
+Chr4	.teloPortWrapper	.telomere	.5411370	.5411311	.3.56e-25	.-	..	ID=Telomere0;Name=Chr4;Length=59;Distance from Telomere=5411263
+Chr3	.teloPortWrapper	.telomere	.1378	.1437	.3.56e-25	.+	..	ID=Telomere0;Name=Chr3;Length=59;Distance from Telomere=1389
+Chr3	.teloPortWrapper	.telomere	.6370	.6429	.3.56e-25	.+	..	ID=Telomere0;Name=Chr3;Length=59;Distance from Telomere=6381
+Chr3	.teloPortWrapper	.telomere	.11359	.11418	.3.56e-25	.+	..	ID=Telomere0;Name=Chr3;Length=59;Distance from Telomere=11370
+Chr3	.teloPortWrapper	.telomere	.8225874	.8225815	.3.56e-25	.-	..	ID=Telomere0;Name=Chr3;Length=59;Distance from Telomere=8225767
+Chr3	.teloPortWrapper	.telomere	.8230888	.8230829	.3.56e-25	.-	..	ID=Telomere0;Name=Chr3;Length=59;Distance from Telomere=8230781
+Chr3	.teloPortWrapper	.telomere	.8235922	.8235863	.3.56e-25	.-	..	ID=Telomere0;Name=Chr3;Length=59;Distance from Telomere=8235815
+Chr2	.teloPortWrapper	.telomere	.1965	.2024	.3.56e-25	.+	..	ID=Telomere0;Name=Chr2;Length=59;Distance from Telomere=1976
+Chr2	.teloPortWrapper	.telomere	.7040	.7099	.3.56e-25	.+	..	ID=Telomere0;Name=Chr2;Length=59;Distance from Telomere=7051
+Chr2	.teloPortWrapper	.telomere	.12066	.12125	.3.56e-25	.+	..	ID=Telomere0;Name=Chr2;Length=59;Distance from Telomere=12077
+Chr2	.teloPortWrapper	.telomere	.7913614	.7913555	.3.56e-25	.-	..	ID=Telomere0;Name=Chr2;Length=59;Distance from Telomere=7913507
+Chr1	.teloPortWrapper	.telomere	.6666374	.6666315	.3.56e-25	.-	..	ID=Telomere0;Name=Chr1;Length=59;Distance from Telomere=6666267
+Chr4	.teloPortWrapper	.telomere	.4350544	.4350603	.3.56e-25	.+	..	ID=Telomere0;Name=Chr4;Length=59;Distance from Telomere=4350555
+Chr2	.teloPortWrapper	.telomere	.1265263	.1265319	.1.53e-23	.+	..	ID=Telomere0;Name=Chr2;Length=56;Distance from Telomere=1265271
+Chr8	.teloPortWrapper	.telomere	.661	.720	.3.56e-25	.+	..	ID=Telomere0;Name=Chr8;Length=59;Distance from Telomere=672
+Chr8	.teloPortWrapper	.telomere	.5799	.5858	.3.56e-25	.+	..	ID=Telomere0;Name=Chr8;Length=59;Distance from Telomere=5810
+Chr8	.teloPortWrapper	.telomere	.10968	.11027	.3.56e-25	.+	..	ID=Telomere0;Name=Chr8;Length=59;Distance from Telomere=10979
+Chr8	.teloPortWrapper	.telomere	.15998	.16057	.3.56e-25	.+	..	ID=Telomere0;Name=Chr8;Length=59;Distance from Telomere=16009
+Chr8	.teloPortWrapper	.telomere	.1848307	.1848248	.3.56e-25	.-	..	ID=Telomere0;Name=Chr8;Length=59;Distance from Telomere=1848200
+Chr8	.teloPortWrapper	.telomere	.1853373	.1853314	.3.56e-25	.-	..	ID=Telomere0;Name=Chr8;Length=59;Distance from Telomere=1853266
+Chr8	.teloPortWrapper	.telomere	.1868680	.1868621	.3.56e-25	.-	..	ID=Telomere0;Name=Chr8;Length=59;Distance from Telomere=1868573
+Chr8	.teloPortWrapper	.telomere	.1873812	.1873753	.3.56e-25	.-	..	ID=Telomere0;Name=Chr8;Length=59;Distance from Telomere=1873705
+Chr8	.teloPortWrapper	.telomere	.1878932	.1878873	.3.56e-25	.-	..	ID=Telomere0;Name=Chr8;Length=59;Distance from Telomere=1878825
+Chr8	.teloPortWrapper	.telomere	.1889064	.1889005	.3.56e-25	.-	..	ID=Telomere0;Name=Chr8;Length=59;Distance from Telomere=1888957
+Chr8	.teloPortWrapper	.telomere	.1894159	.1894100	.3.56e-25	.-	..	ID=Telomere0;Name=Chr8;Length=59;Distance from Telomere=1894052
+Chr8	.teloPortWrapper	.telomere	.1899160	.1899101	.3.56e-25	.-	..	ID=Telomere0;Name=Chr8;Length=59;Distance from Telomere=1899053
+Chr8	.teloPortWrapper	.telomere	.1843169	.1843110	.1.66e-23	.-	..	ID=Telomere0;Name=Chr8;Length=59;Distance from Telomere=1843062
+Chr8	.teloPortWrapper	.telomere	.1858396	.1858337	.1.66e-23	.-	..	ID=Telomere0;Name=Chr8;Length=59;Distance from Telomere=1858289
+Chr8	.teloPortWrapper	.telomere	.1863539	.1863480	.1.66e-23	.-	..	ID=Telomere0;Name=Chr8;Length=59;Distance from Telomere=1863432
+Chr8	.teloPortWrapper	.telomere	.1884068	.1884009	.1.66e-23	.-	..	ID=Telomere0;Name=Chr8;Length=59;Distance from Telomere=1883961
+Chr7	.teloPortWrapper	.telomere	.4091	.4150	.3.56e-25	.+	..	ID=Telomere0;Name=Chr7;Length=59;Distance from Telomere=4102
+Chr7	.teloPortWrapper	.telomere	.9122	.9181	.3.56e-25	.+	..	ID=Telomere0;Name=Chr7;Length=59;Distance from Telomere=9133
+Chr7	.teloPortWrapper	.telomere	.11567	.11626	.3.56e-25	.+	..	ID=Telomere0;Name=Chr7;Length=59;Distance from Telomere=11578
+Chr7	.teloPortWrapper	.telomere	.4037474	.4037415	.3.56e-25	.-	..	ID=Telomere0;Name=Chr7;Length=59;Distance from Telomere=4037367
+Chr7	.teloPortWrapper	.telomere	.4042500	.4042441	.3.56e-25	.-	..	ID=Telomere0;Name=Chr7;Length=59;Distance from Telomere=4042393
+Chr7	.teloPortWrapper	.telomere	.4044934	.4044875	.3.56e-25	.-	..	ID=Telomere0;Name=Chr7;Length=59;Distance from Telomere=4044827
+Chr7	.teloPortWrapper	.telomere	.4049962	.4049903	.3.56e-25	.-	..	ID=Telomere0;Name=Chr7;Length=59;Distance from Telomere=4049855
+Chr7	.teloPortWrapper	.telomere	.4060153	.4060094	.3.56e-25	.-	..	ID=Telomere0;Name=Chr7;Length=59;Distance from Telomere=4060046
+Chr7	.teloPortWrapper	.telomere	.4065188	.4065129	.3.56e-25	.-	..	ID=Telomere0;Name=Chr7;Length=59;Distance from Telomere=4065081
+Chr7	.teloPortWrapper	.telomere	.4070299	.4070240	.3.56e-25	.-	..	ID=Telomere0;Name=Chr7;Length=59;Distance from Telomere=4070192
+Chr7	.teloPortWrapper	.telomere	.4075290	.4075231	.3.56e-25	.-	..	ID=Telomere0;Name=Chr7;Length=59;Distance from Telomere=4075183
+Chr7	.teloPortWrapper	.telomere	.4055123	.4055065	.5.96e-23	.-	..	ID=Telomere0;Name=Chr7;Length=58;Distance from Telomere=4055017
+Chr7	.teloPortWrapper	.telomere	.3789848	.3789899	.4.67e-14	.+	..	ID=Telomere0;Name=Chr7;Length=51;Distance from Telomere=3789851
+Chr6	.teloPortWrapper	.telomere	.4287	.4346	.3.56e-25	.+	..	ID=Telomere0;Name=Chr6;Length=59;Distance from Telomere=4298
+Chr6	.teloPortWrapper	.telomere	.9334	.9393	.3.56e-25	.+	..	ID=Telomere0;Name=Chr6;Length=59;Distance from Telomere=9345
+Chr6	.teloPortWrapper	.telomere	.19392	.19451	.3.56e-25	.+	..	ID=Telomere0;Name=Chr6;Length=59;Distance from Telomere=19403
+Chr6	.teloPortWrapper	.telomere	.24414	.24473	.3.56e-25	.+	..	ID=Telomere0;Name=Chr6;Length=59;Distance from Telomere=24425
+Chr6	.teloPortWrapper	.telomere	.6103847	.6103788	.3.56e-25	.-	..	ID=Telomere0;Name=Chr6;Length=59;Distance from Telomere=6103740
+Chr6	.teloPortWrapper	.telomere	.6108962	.6108903	.3.56e-25	.-	..	ID=Telomere0;Name=Chr6;Length=59;Distance from Telomere=6108855
+Chr6	.teloPortWrapper	.telomere	.6129251	.6129192	.3.56e-25	.-	..	ID=Telomere0;Name=Chr6;Length=59;Distance from Telomere=6129144
+Chr6	.teloPortWrapper	.telomere	.14353	.14412	.1.66e-23	.+	..	ID=Telomere0;Name=Chr6;Length=59;Distance from Telomere=14364
+Chr6	.teloPortWrapper	.telomere	.6114006	.6113947	.1.66e-23	.-	..	ID=Telomere0;Name=Chr6;Length=59;Distance from Telomere=6113899
+Chr6	.teloPortWrapper	.telomere	.6119049	.6118990	.1.66e-23	.-	..	ID=Telomere0;Name=Chr6;Length=59;Distance from Telomere=6118942
+Chr6	.teloPortWrapper	.telomere	.6124211	.6124152	.1.66e-23	.-	..	ID=Telomere0;Name=Chr6;Length=59;Distance from Telomere=6124104
+Chr5	.teloPortWrapper	.telomere	.4040	.4099	.3.56e-25	.+	..	ID=Telomere0;Name=Chr5;Length=59;Distance from Telomere=4051
+Chr5	.teloPortWrapper	.telomere	.4435855	.4435796	.3.56e-25	.-	..	ID=Telomere0;Name=Chr5;Length=59;Distance from Telomere=4435748
+Chr5	.teloPortWrapper	.telomere	.4440882	.4440823	.3.56e-25	.-	..	ID=Telomere0;Name=Chr5;Length=59;Distance from Telomere=4440775
+Chr5	.teloPortWrapper	.telomere	.4450977	.4450918	.3.56e-25	.-	..	ID=Telomere0;Name=Chr5;Length=59;Distance from Telomere=4450870
+Chr5	.teloPortWrapper	.telomere	.4445924	.4445865	.1.66e-23	.-	..	ID=Telomere0;Name=Chr5;Length=59;Distance from Telomere=4445817
+Chr5	.teloPortWrapper	.telomere	.4456021	.4455962	.1.66e-23	.-	..	ID=Telomere0;Name=Chr5;Length=59;Distance from Telomere=4455914
+Chr4	.teloPortWrapper	.telomere	.9149	.9208	.3.56e-25	.+	..	ID=Telomere0;Name=Chr4;Length=59;Distance from Telomere=9160
+Chr4	.teloPortWrapper	.telomere	.14187	.14246	.3.56e-25	.+	..	ID=Telomere0;Name=Chr4;Length=59;Distance from Telomere=14198
+Chr4	.teloPortWrapper	.telomere	.5394791	.5394732	.3.56e-25	.-	..	ID=Telomere0;Name=Chr4;Length=59;Distance from Telomere=5394684
+Chr4	.teloPortWrapper	.telomere	.5399838	.5399779	.3.56e-25	.-	..	ID=Telomere0;Name=Chr4;Length=59;Distance from Telomere=5399731
+Chr4	.teloPortWrapper	.telomere	.5404875	.5404816	.3.56e-25	.-	..	ID=Telomere0;Name=Chr4;Length=59;Distance from Telomere=5404768
+Chr4	.teloPortWrapper	.telomere	.5409089	.5409030	.3.56e-25	.-	..	ID=Telomere0;Name=Chr4;Length=59;Distance from Telomere=5408982
+Chr4	.teloPortWrapper	.telomere	.4122	.4180	.5.96e-23	.+	..	ID=Telomere0;Name=Chr4;Length=58;Distance from Telomere=4132
+Chr3	.teloPortWrapper	.telomere	.8228608	.8228549	.3.56e-25	.-	..	ID=Telomere0;Name=Chr3;Length=59;Distance from Telomere=8228501
+Chr3	.teloPortWrapper	.telomere	.8650	.8708	.5.96e-23	.+	..	ID=Telomere0;Name=Chr3;Length=58;Distance from Telomere=8660
+Chr3	.teloPortWrapper	.telomere	.8223593	.8223535	.5.96e-23	.-	..	ID=Telomere0;Name=Chr3;Length=58;Distance from Telomere=8223487
+Chr3	.teloPortWrapper	.telomere	.8233642	.8233584	.5.96e-23	.-	..	ID=Telomere0;Name=Chr3;Length=58;Distance from Telomere=8233536
+Chr3	.teloPortWrapper	.telomere	.3658	.3712	.2.14e-22	.+	..	ID=Telomere0;Name=Chr3;Length=54;Distance from Telomere=3664
+Chr3	.teloPortWrapper	.telomere	.13635	.13689	.2.14e-22	.+	..	ID=Telomere0;Name=Chr3;Length=54;Distance from Telomere=13641
+Chr2	.teloPortWrapper	.telomere	.4236	.4295	.3.56e-25	.+	..	ID=Telomere0;Name=Chr2;Length=59;Distance from Telomere=4247
+Chr2	.teloPortWrapper	.telomere	.9321	.9380	.3.56e-25	.+	..	ID=Telomere0;Name=Chr2;Length=59;Distance from Telomere=9332
+Chr2	.teloPortWrapper	.telomere	.14346	.14405	.3.56e-25	.+	..	ID=Telomere0;Name=Chr2;Length=59;Distance from Telomere=14357
+Chr2	.teloPortWrapper	.telomere	.7911334	.7911275	.3.56e-25	.-	..	ID=Telomere0;Name=Chr2;Length=59;Distance from Telomere=7911227
+Chr1	.teloPortWrapper	.telomere	.6664095	.6664036	.3.56e-25	.-	..	ID=Telomere0;Name=Chr1;Length=59;Distance from Telomere=6663988
+Chr6	.teloPortWrapper	.telomere	.3063312	.3063369	.4.61e-24	.+	..	ID=Telomere0;Name=Chr6;Length=57;Distance from Telomere=3063321
+Chr4	.teloPortWrapper	.telomere	.2610711	.2610755	.7.57e-17	.+	..	ID=Telomere0;Name=Chr4;Length=44;Distance from Telomere=2610707
+Chr6	.teloPortWrapper	.telomere	.5374801	.5374742	.3.56e-25	.-	..	ID=Telomere0;Name=Chr6;Length=59;Distance from Telomere=5374694
