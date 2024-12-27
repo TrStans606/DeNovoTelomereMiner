@@ -1,1 +1,0 @@
-## Building Docker from Source
