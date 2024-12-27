@@ -19,6 +19,8 @@ DeNovoTelomereMiner is built for POSIX systems and has been tested on Fedora, Ub
 
 # **Dependencies**
 
+Python 3.8 or greater
+
 [TeloPort20XX](https://github.com/TrStans606/TeloPort20xx) a fork of [TeloPort by Seth Baunach](https://github.com/sabaunach/TeloPort) 
 
 [Blast+ 2.11.0](https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.11.0/) 
