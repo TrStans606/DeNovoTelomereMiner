@@ -61,3 +61,43 @@ If for whatever reason the ghcr.io service goes down you can also use Docker to 
 ## Manual Installation
 
 For manual installation instructions check out the [Installation wiki](https://github.com/TrStans606/DeNovoTelomereMiner/wiki/Manual-Installation-Guide) guide
+
+## DeNovoTelomereMiner Usage
+
+There are two ways to run DeNovoTelomereMiner. The first is via the main Python script: DeNovoTelomereMiner.py, which is cross-platform. The second is via the compiled script DeNovoTelomereMiner<arch>.bin, which can be downloaded from the releases tab. The compiled script is around 30 seconds to a minute faster per dataset, but you must download the correct version for your system. If you are using the Docker file, it will be DeNovoTelomereMiner_linux_amd64.bin. If you have no idea what version to download, then stick with the main Python script.
+
+### DeNovoTelomereMiner Command Line Arguments
+
+For this command line, only include the file name. The directory of each file type will be set in the config file.
+
+```bash
+python3 DeNovoTelomereMiner.py [-h] [-s S S] [-i I] -g G [-d D] [-t T] [-f [F ...]] [--cut CUT] [--simple] [--add [ADD ...]] [--config]
+```
+or
+```bash
+DeNovoTelomereMiner<arch>.bin [-h] [-s S S] [-i I] -g G [-d D] [-t T] [-f [F ...]] [--cut CUT] [--simple] [--add [ADD ...]] [--config]
+```
+
+```-h```: show the help message and exits
+
+```-s S S```: The two separated raw read FASTQ files. This argument expects two file names separated by a space.
+
+```-i I```: The interleaved raw read FASTQ file. This option is mutually exclusive with -s.
+
+```-g G```: The name of the assembled genome FASTA file used for alignment. If simple mode is not used, options -g are required.
+
+```-d D```: The name of the directory where all output files will be placed. The name defaults to the name of the fasta file provided. Directory names must be unique and must not already exist.
+
+```-t T```: The foreward tel repeat you want to search for. Default is CCCTAA.
+
+```-f [F ...]```: List all of the seqeunce files you want removed from reads. Must be in fasta format. You can list any number of files.
+
+```--add [ADD ...]```: List all addition seqeunces files you want compared to the reads. All must be in fasta format.You can list any number of files.
+
+```--cut CUT```: The number of reads in a cluster before it is labeled a canidate de-novo. The default is five.
+
+```--simple```: Activates Simple mode, a step by step interactive input mode.
+
+```--config```: Allows the user to interactively alter the config file.
+
+
