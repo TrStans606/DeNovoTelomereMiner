@@ -24,4 +24,4 @@ RUN git clone https://github.com/TrStans606/DeNovoTelomereMiner
 COPY . .
 
 # Clone the repository
-CMD ["bash", "-c", "source ~/.bashrc &&  bash install.sh"]
+CMD ["bash", "-c", "source ~/.bashrc", "&&", "cd", "docker", "&&", "bash", "install.sh"]
