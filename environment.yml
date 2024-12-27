@@ -10,3 +10,5 @@ dependencies:
   - mmseqs2
   - pandas
   - sra-tools
+  - curl
+  - nuitka

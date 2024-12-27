@@ -1,5 +1,5 @@
 # Use the conda base image
-FROM --platform=linux/amd64 continuumio/miniconda3
+FROM continuumio/miniconda3
 
 # Set the working directory
 WORKDIR /docker
@@ -23,5 +23,8 @@ RUN git clone https://github.com/TrStans606/DeNovoTelomereMiner
 # Copy the repository content
 COPY . .
 
+#compile python script
+RUN nuitka --standalone --follow-imports DeNovoTelomereMiner.py
+
 # Clone the repository
-CMD ["bash", "-c", "source ~/.bashrc && git --version"]
+CMD ["bash", "-c", "source ~/.bashrc && git --version && bash install.sh && python3 DeNovoTelomereMiner.py -h"]

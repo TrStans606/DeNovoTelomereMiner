@@ -290,6 +290,7 @@ def junctionFinder():
 					os.path.join('Outputs',
 								 directory,
 								 'teloPortOut'),
+					f'-t {telRepeat}',
 					'--revc 0',
 					'--splitJunc 1',
 					'--splitDir 0']
