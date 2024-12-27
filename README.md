@@ -83,4 +83,4 @@ The image also comes equiped with wget and the NCBI sra-toolkit to easily add da
 
 ## Manual Installation
 
-For manual installation instructions check out the [Installation.md](Installation.md) guide
+For manual installation instructions check out the [Installation wiki](https://github.com/TrStans606/DeNovoTelomereMiner/wiki/Manual-Installation-Guide) guide
