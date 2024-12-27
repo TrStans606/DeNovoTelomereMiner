@@ -495,6 +495,7 @@ def falsePosFilter():
 					as write:
 						write.write(singles[i])
 						write.write(singles[i+1])
+						trueDeNovos += 1
 	return trueDeNovos
 											
 def dictMaker(file, secondVal):               
@@ -519,7 +520,7 @@ def histogramBuilder():
 						   directory,
 						   'clusterHistogram.txt'), 'a') as \
 							  write:
-								write.write('Distribution of Clusters')
+								write.write('Distribution of Clusters\n')
 	for x in range(0,clustersCnt):
 		readCnt = 0
 		with open(f'{clusters}/cluster{x}.fasta', 'r') as read:
@@ -531,8 +532,9 @@ def histogramBuilder():
 							   'clusterHistogram.txt'), 'a') as \
 								  write:
 									line = f'cluster{x}\t{readCnt}\t'
-									line = f'{line}#' * readCnt
-									write.write(line)
+									bar = "#" * readCnt
+									line = f'{line} {bar}'
+									write.write(line +'\n')
 				
 def deNovoFilter():
 	if filtersCnt > 0:
@@ -741,7 +743,7 @@ def gffBuilder():
 					 f'{directory}blastGenomeOut6Annotated.txt'))
 	with open(os.path.join('Outputs',
 					directory,
-					f'{directory}blastGenomeOut6Annotated.txt'),\
+					f'{directory}denovos.gff'),\
 			  'a') as append:
 		append.write('##gff-version 3.1.26')
 		cnt = '0'
