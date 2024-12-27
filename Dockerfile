@@ -5,7 +5,7 @@ FROM continuumio/miniconda3
 WORKDIR /docker
 
 # Install Git
-RUN apt-get update && apt-get install -y git build-essential libboost-all-dev
+RUN apt-get update && apt-get install -y git build-essential libboost-all-dev --no-install-recommends
 
 # Copy the environment file
 COPY environment.yml .
