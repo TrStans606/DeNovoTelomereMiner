@@ -15,7 +15,7 @@ https://digitalcommons.wku.edu/stu_hon_theses/999
 
 # DeNovoTelomereMiner Quick Start
 
-DeNovoTelomereMiner is built for POSIX systems and has been tested on Fedora, Ubuntu, and macOS 15. For an easy install try the new [docker](https://www.docker.com/get-started/) option which works on Linux, macOS (Intel and ARM), and Windows. For Windows users, try [Windows Subsystem Linux](https://learn.microsoft.com/en-us/windows/wsl/install) offered by Microsoft. It has been tested on Python version 13.1. It is recommended to install dependencies via [Homebrew](https://brew.sh/) or [Conda](https://docs.anaconda.com/miniconda/install/), both of which are package managers on macOS and Linux. Instructions for installation are included on the project’s homepages.
+DeNovoTelomereMiner is built for POSIX systems and has been tested on Fedora, Ubuntu, and macOS 15. For an easy install try the new [docker](https://www.docker.com/get-started/) option which works on Linux, macOS (Intel and ARM), and Windows. This image should also work with Podman. For Windows users, try [Windows Subsystem Linux](https://learn.microsoft.com/en-us/windows/wsl/install) offered by Microsoft. It has been tested on Python version 13.1. It is recommended to install dependencies via [Homebrew](https://brew.sh/) or [Conda](https://docs.anaconda.com/miniconda/install/), both of which are package managers on macOS and Linux. Instructions for installation are included on the project’s homepages.
 
 # **Dependencies**
 
@@ -55,6 +55,22 @@ docker cp de_novos:docker/<insert file path> <any file or directory>
 ```
 
 The image also comes equiped with wget and the NCBI sra-toolkit to easily add data from FTP servers or the Sequence Read Archive (SRA) directly from the container itself.
+
+### Using Podman
+
+This image should also work using Podman on Linux but testing is first and foremost done with Docker.
+
+1. Pull the image from Github
+```bash
+podman pull ghcr.io/trstans606/denovotelomereminer:latest
+```
+2. Run the container
+
+```bash
+podman run --name de_novos -it 82b6ad51a816 bash
+```
+
+Everything else should be the same with podman just make sure you use the appropriate Podman command for file copying.
 
 ## Building Docker from Source
 
