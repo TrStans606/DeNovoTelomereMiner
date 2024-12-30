@@ -1,0 +1,4 @@
+Distribution of Clusters
+cluster0	17	 #################
+cluster1	32	 ################################
+cluster2	10	 ##########

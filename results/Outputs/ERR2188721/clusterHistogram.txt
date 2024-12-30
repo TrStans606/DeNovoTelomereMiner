@@ -1,0 +1,8 @@
+Distribution of Clusters
+cluster0	17	 #################
+cluster1	17	 #################
+cluster2	8	 ########
+cluster3	13	 #############
+cluster4	6	 ######
+cluster5	6	 ######
+cluster6	8	 ########

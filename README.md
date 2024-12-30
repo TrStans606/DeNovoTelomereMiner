@@ -86,14 +86,48 @@ python3 DeNovoTelomereMiner.py [-h] [-s S S] [-i I] -g G [-d D] [-t T] [-f [F ..
 
 ```-t T```: The foreward tel repeat you want to search for. Default is CCCTAA.
 
-```-f [F ...]```: List all of the seqeunce files you want removed from reads. Must be in fasta format. You can list any number of files.
+```-f [F ...]```: List all of the seqeunce files you want removed from reads. This actively removes some sequences from anaylsis. Must be in fasta format. You can list any number of files.
 
-```--add [ADD ...]```: List all addition seqeunces files you want compared to the reads. All must be in fasta format.You can list any number of files.
+```--add [ADD ...]```: List all addition seqeunces files you want compared to the reads. This adds in additional files which the raw reads will compared to via BLAST. All must be in fasta format.You can list any number of files.
 
 ```--cut CUT```: The number of reads in a cluster before it is labeled a canidate de-novo. The default is five.
 
 ```--simple```: Activates Simple mode, a step by step interactive input mode.
 
 ```--config```: Allows the user to interactively alter the config file.
+
+### DeNovoTelomereMiner Sample Command
+
+This command is assuming your raw read files are in Files/ and your genome is in testData/.
+
+```bash
+python3 DeNovoTelomereMiner.py -s ERR2061621_1.fastq ERR2061621_2.fastq -g B71v2sh.fasta -d ERR2061621
+```
+
+Your results will then be found in the ERR2061621 folder in Outputs.
+
+## Config.ini Guide
+
+DeNovoTelomereMiner finds where your files are via the config.ini file. The file can either be directly edited in the text editor of your choice or it can be edited within DeNovoTelomereMiner itself via the --config flag.
+
+```
+readDirectory=Files/
+genomeDirectory=testData/
+filterDirectory=Files/
+addDirectory=Files/
+```
+
+```readDirectory```= is where the raw fastq reads are (the -s or -i flags).
+
+```genomeDirectory```= is where the assembled fasta genome is (the -g flag).
+
+```filterDirectory```= is where the fasta files for filtering sequences are (the -f flag).
+
+```addDirectory```= is where the additional fasta files used for comparison are (the --add flag).
+
+These file paths can be absolute or relavtive but the path must exist and must not have any spaces before the equal sign and the file path, so:
+
+```readDirectory=/home/usr/Downloads/Genomes``` is okay but:
+```readDirectory= /home/usr/Downloads/Genomes``` isn't as there is a space between the equals sign and path.
 
 
