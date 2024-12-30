@@ -6,7 +6,7 @@
 3. [Docker Installation Guide](https://github.com/TrStans606/DeNovoTelomereMiner/tree/main#docker-instructions-for-linux-macos-and-windows)
 4. [Manual Installation Guide](https://github.com/TrStans606/DeNovoTelomereMiner/tree/main#manual-installation)
 5. [DeNovoTelomereMiner.py Guide](https://github.com/TrStans606/DeNovoTelomereMiner/tree/main#denovotelomereminer-usage)
-6. [config.ini Guide]()
+6. [config.ini Guide](https://github.com/TrStans606/DeNovoTelomereMiner/tree/main#configini-guide)
 
 ## Source
 
