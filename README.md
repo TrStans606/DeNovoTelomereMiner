@@ -34,13 +34,13 @@ Python 3.8 or greater
 ## Docker instructions for Linux, macOS and Windows
 1. Pull the image from Github
 ```bash
-docker pull ghcr.io/trstans606/denovotelomereminer:latest
+docker pull ghcr.io/trstans606/denovotelomereminer:latest@sha256:de0aa441ac86115cc55dd6577bf2d73b5afb7ec12d1b10102fb60a1d9767af98
 ```
 
 2. Run the container
 
 ```bash
-docker run --name de_novos -it 82b6ad51a816 bash
+docker run --name de_novos -it de0aa441ac86 bash
 ```
 
 It's that simple! Now the teloport environment is set up perfectly for running. To copy your data from your host machine to the docker image use this command on your host machine:
