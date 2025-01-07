@@ -644,8 +644,8 @@ def telContigDictMaker():
 		for line in read:
 			print(line)
 			chromosome = line.split('\t')[0]
-			qEnd = line.split('\t')[7]
-			qStart = line.split('\t')[6]
+			qEnd = line.split('\t')[6]
+			qStart = line.split('\t')[5]
 			contigLen = line.split('\t')[10]
 			if f'{chromosome}*s' not in telContigs:
 				posistionStart = 0
@@ -659,7 +659,7 @@ def telContigDictMaker():
 						('start', qEnd)
 					posistionStart = qEnd
 			if int(qEnd) > (int(contigLen) / 3):
-				if posistionEnd < qEnd:
+				if int(posistionEnd) < int(qEnd):
 					telContigs[f'{chromosome}*e'] = \
 						('end', qStart)
 					posistionEnd = qStart
@@ -688,7 +688,7 @@ def blastInterrogate():
 		
 		if telContigCheck:
 			posistion = telContigs[readLines[x].split("\t")[1]+ '*s'][1]
-			telDisS = abs(int(readLines[x].split('\t')[8]) - int(posistion))
+			telDisS = abs(int(readLines[x].split('\t')[7]) - int(posistion))
 			
 		telContigCheck = False
 		telDisE = 0
@@ -699,7 +699,7 @@ def blastInterrogate():
 		
 		if telContigCheck:
 			posistion = telContigs[readLines[x].split('\t')[1] + '*e'][1]
-			telDisE =  abs(int(readLines[x].split('\t')[8]) - posistion)
+			telDisE =  abs(int(readLines[x].split('\t')[8]) - int(posistion))
 		
 		telContigCheck = False
 		
@@ -748,16 +748,16 @@ def gffBuilder():
 		append.write('##gff-version 3.1.26')
 		cnt = '0'
 		for line in lines:
-			if line.split('\t')[13].rstrip() == 'revF':
+			if line.split('\t')[14].rstrip() == 'revF':
 				strand = '+'
-			elif line.split('\t')[13].rstrip() == 'revT':
+			elif line.split('\t')[14].rstrip() == 'revT':
 				strand = '-'
 			name = line.split("\t")[1]
 			length = \
 				abs(int(line.split('\t')[8]) - int(line.split('\t')[7]))
 			
 			
-			gffLine = '\t.'.join(
+			gffLine = '\t'.join(
 							[urllib.parse.quote(name),
 							'teloPortWrapper',
 							'telomere',
@@ -849,23 +849,15 @@ def resultsBuilder():
 						   directory,
 						   'clusterHistogram.txt'), 'r') as read:
 		histogram = read.readlines()
-		
-	with open(os.path.join('Outputs',
-						   directory,
-						   f'{directory}blastGenomeOut6Annotated.txt'), 'r') \
-		as read:
-			annotation = read.readlines()
 			
 	with open(os.path.join('Outputs',
 						   directory,
 						   f'{directory}results.txt'), 'a') as append:
-		append.write(resultsLine)
-		
 		for line in histogram:
 			append.write(line)
-			
-		for line in annotation:
-			append.write(line)
+
+		append.write(resultsLine)
+		
 def path_checker(path):
 	if not os.path.exists(path):
 		print(f"It seems the {path} defined in config.ini doesnt exist please update the file to include the proper path.")
