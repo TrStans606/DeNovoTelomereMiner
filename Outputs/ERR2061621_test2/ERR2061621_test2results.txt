@@ -1,0 +1,21 @@
+Distribution of Clusters
+cluster0	37	 #####################################
+cluster1	18	 ##################
+cluster2	14	 ##############
+cluster3	23	 #######################
+cluster4	8	 ########
+cluster5	4	 ####
+cluster6	3	 ###
+cluster7	11	 ###########
+cluster8	3	 ###
+cluster9	59	 ###########################################################
+ERR2061621_test2
+Number of raw reads processed: 80058680
+Number of Telomere reads processed: 2272
+Number of de-novo telomeres found by TeloPort: 		42
+Number of true de-novo telomeres: 34
+Number of clusters: 10
+Number of true de-novos filtered out: 0.0
+Number of true de-novo compared to the genome: 34.0
+Number of de novo telomere matches to the genome: 205
+Distribution of clusters 

@@ -336,7 +336,8 @@ def mmseqs2Call():
 					check=True)
 
 #processes the clustering into reads for further use
-def mmseqs2_processing():
+def mmseqs2_processing(cutOff_mm):
+	print("Entered mmseqs2_processing")
 	clusters = pd.read_csv(f"Outputs/{directory}/teloPortOut/clusters_cluster.tsv",sep="\t",header=None)
 	labels = {}
 	i=0
@@ -360,20 +361,52 @@ def mmseqs2_processing():
 	for value in pd.unique(clusters.iloc[:,0]):
 		with open(f"Outputs/{directory}/telomereReads/{value}.fasta",'r') as read:
 			lines = read.readlines()
-		if len(lines) /2 <= cutOff:
+		if len(lines) /2 <= cutOff_mm:
 			shutil.move(f"Outputs/{directory}/telomereReads/{value}.fasta",f"Outputs/{directory}/telomereReads/deNovoTelomeres")
+	#dry run before checking if the user wants to reset the cluster cutoff
+	cluster_num = 0
+	clusters_rename = glob.glob(f"Outputs/{directory}/telomereReads/*.fasta")
+	for file in clusters_rename:
+		cluster_num += 1
+	#checks if the user wants to reset the cluster cutoff
+	reset_check = False
+	while not reset_check:
+		print(f"You have generated {cluster_num} clusters.")
+		reset_gate = input("Would you like to redo the cluster cutoff? (y/n) ")
+		print(f"{reset_gate},{reset_check}")
+		match reset_gate:
+			case "y":
+				recluster(cutOff_mm)
+				reset_check = True
+			case "n":
+				reset_check = True
+			case _:
+				print("That is not a valid input. Please enter y for yes or n for no.")
+				reset_check = False
+	#the proper move function
 	cluster_num = 0
 	clusters_rename = glob.glob(f"Outputs/{directory}/telomereReads/*.fasta")
 	for file in clusters_rename:
 		shutil.move(file,f"Outputs/{directory}/telomereReads/telomereClusters/cluster{cluster_num}.fasta")
 		cluster_num += 1
-	singles = glob.glob(f"Outputs/{directory}/telomereReads/deNovoTelomeres/*.fasta")
-	with open(f"Outputs/{directory}/telomereReads/deNovoTelomeres/{directory}deNovos.fasta",'w') as write:
+	singles = glob.glob(f"Outputs/{directory}/telomereReads/deNovoTelomeres/cluster*.fasta")
+	with open(f"Outputs/{directory}/telomereReads/deNovoTelomeres/{directory}deNovos.fasta",'a') as write:
 		for file in singles:
 			with open(file,'r') as read:
 				for line in read:
-					write.write(line)
+					write.write(f"{line.rstrip()}\n")
 			os.remove(file)
+	return cutOff_mm
+
+def recluster(cutOff):
+	new_cutOff = int(input(f"Please enter the new cluster cutoff (the previous value was {cutOff}): "))
+	files = glob.glob(f"Outputs/{directory}/telomereReads/deNovoTelomeres/*.fasta")
+	for file in files:
+		os.remove(file)
+	files = glob.glob(f"Outputs/{directory}/telomereReads/*.fasta")
+	for file in files:
+		os.remove(file)
+	mmseqs2_processing(new_cutOff)
 
 #runs muscle and EMBOSS cons
 def autoMuscle():
@@ -745,7 +778,7 @@ def gffBuilder():
 					directory,
 					f'{directory}denovos.gff'),\
 			  'a') as append:
-		append.write('##gff-version 3.1.26')
+		append.write('##gff-version 3.1.26\n')
 		cnt = '0'
 		for line in lines:
 			if line.split('\t')[14].rstrip() == 'revF':
@@ -842,8 +875,6 @@ def resultsBuilder():
 	
 	resultsLine += \
 		f'Number of de novo telomere matches to the genome: {genomesCnt}\n'
-		
-	resultsLine += 'Distribution of clusters \n'
 	
 	with open(os.path.join('Outputs',
 						   directory,
@@ -919,7 +950,7 @@ else:
 	filtersCnt = 0
 
 teloPortPipeline()
-mmseqs2_processing()
+cutOff = mmseqs2_processing(cutOff)
 trueClusterCnt = autoMuscle()
 consBlast()
 trueDeNovos = falsePosFilter()
