@@ -132,4 +132,6 @@ These file paths can be absolute or relavtive but the path must exist and must n
 ```readDirectory=/home/usr/Downloads/Genomes``` is okay but:
 ```readDirectory= /home/usr/Downloads/Genomes``` isn't as there is a space between the equals sign and path.
 
+## Outputs
 
+The main output file is the {directory}results.txt file in your specified output directory in Outputs. This 
