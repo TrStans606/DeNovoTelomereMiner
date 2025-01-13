@@ -2,11 +2,11 @@
 
 ## Table of contents
 1. [Original Paper](https://github.com/TrStans606/DeNovoTelomereMiner/tree/main#source)
-2. [Dependencies](https://github.com/TrStans606/DeNovoTelomereMiner/tree/main#dependencies)
-3. [Docker Installation Guide](https://github.com/TrStans606/DeNovoTelomereMiner/tree/main#docker-instructions-for-linux-macos-and-windows)
-4. [Manual Installation Guide](https://github.com/TrStans606/DeNovoTelomereMiner/tree/main#manual-installation)
-5. [DeNovoTelomereMiner.py Guide](https://github.com/TrStans606/DeNovoTelomereMiner/tree/main#denovotelomereminer-usage)
-6. [config.ini Guide](https://github.com/TrStans606/DeNovoTelomereMiner/tree/main#configini-guide)
+2. [Docker Installation Guide](https://github.com/TrStans606/DeNovoTelomereMiner/tree/main#docker-instructions-for-linux-macos-and-windows)
+3. [Manual Installation Guide](https://github.com/TrStans606/DeNovoTelomereMiner/tree/main#manual-installation)
+4. [DeNovoTelomereMiner.py Guide](https://github.com/TrStans606/DeNovoTelomereMiner/tree/main#denovotelomereminer-usage)
+5. [config.ini Guide](https://github.com/TrStans606/DeNovoTelomereMiner/tree/main#configini-guide)
+6. Outputs
 
 ## Source
 
@@ -16,20 +16,6 @@ https://digitalcommons.wku.edu/stu_hon_theses/999
 # DeNovoTelomereMiner Quick Start
 
 DeNovoTelomereMiner is built for POSIX systems and has been tested on Fedora, Ubuntu, and macOS 15. For an easy install try the new [docker](https://www.docker.com/get-started/) option which works on Linux, macOS (Intel and ARM), and Windows. This image should also work with Podman. For Windows users, try [Windows Subsystem Linux](https://learn.microsoft.com/en-us/windows/wsl/install) offered by Microsoft. It has been tested on Python version 13.1. It is recommended to install dependencies via [Homebrew](https://brew.sh/) or [Conda](https://docs.anaconda.com/miniconda/install/), both of which are package managers on macOS and Linux. Instructions for installation are included on the project’s homepages.
-
-# **Dependencies**
-
-Python 3.8 or greater
-
-[TeloPort20XX](https://github.com/TrStans606/TeloPort20xx) a fork of [TeloPort by Seth Baunach](https://github.com/sabaunach/TeloPort) 
-
-[Blast+ 2.11.0](https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.11.0/) 
-
-[MUSCLE 3.8](https://drive5.com/muscle/downloads_v3.htm)
-
-[Mmseqs2](https://github.com/soedinglab/MMseqs2/)
-
-[Emboss 6.6.0](http://emboss.sourceforge.net/download/)
 
 ## Docker instructions for Linux, macOS and Windows
 1. Pull the image from Github
