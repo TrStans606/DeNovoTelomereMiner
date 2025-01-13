@@ -5,6 +5,7 @@ import glob
 import urllib.parse
 import pandas as pd
 import re
+import copy
 import shutil
 import sys
 
@@ -887,12 +888,72 @@ def resultsBuilder():
 			append.write(line)
 
 		append.write(resultsLine)
+	with open(f'Outputs/{directory}/{directory}results.txt', 'a') as write:
+		with open(f'Outputs/{directory}/{directory}seeds.tsv', 'r') as read:
+			for line in read:
+				write.write(line)
 		
 def path_checker(path):
 	if not os.path.exists(path):
 		print(f"It seems the {path} defined in config.ini doesnt exist please update the file to include the proper path.")
 		print("You can either edit config.ini in a text editor or using the --config flag when running again")
-		sys.exit()	
+		sys.exit()
+
+def seed_finder():
+	fullSeqs = {}
+	with open(f'Outputs/{directory}/{directory}blastGenomeOut6Annotated.txt', 'r') as read:
+		for line in read:
+			if line.split('\t')[0] not in fullSeqs:
+				fullSeqs[line.split('\t')[0]] = ""
+	seeds = copy.deepcopy(fullSeqs)
+	seqCheck = False
+	with open(f'Outputs/{directory}/teloPortOut/subTelReads.fastq','r') as read:
+		for line in read:
+			if seqCheck:
+				fullSeqs[read_name] = line.rstrip()
+				seqCheck = False
+			if line.split('\t')[0].lstrip("@") in fullSeqs:
+				read_name = line.split('\t')[0].lstrip("@")
+				seqCheck = True
+	#print(fullSeqs)
+	seqCheck = False
+	with open(f'Outputs/{directory}/telomereReads/deNovoTelomeres/{directory}blastDeNovos.fasta','r') as read:
+		for line in read:
+			if seqCheck:
+				overlap = overlap_finder(fullSeqs[read_name],line.rstrip())
+				seeds[read_name] = overlap
+				seqCheck = False
+			if line.split('\t')[0].lstrip(">") in fullSeqs:
+				read_name = line.split('\t')[0].lstrip(">")
+				seqCheck = True
+	for key,value in seeds.items():
+		with open(f'Outputs/{directory}/{directory}seeds.tsv','a') as write:
+			write.write(f"{key}\t {value}\n")
+
+def overlap_finder(full_read, deNovo_read):
+	start = "a"
+	for i in range(0,len(full_read)-len(deNovo_read)+1):
+		if full_read[i:i+len(deNovo_read)] == deNovo_read:
+			start = i
+			break
+	seed = ""
+	if start == "a":
+		return "No Overlap. Possible error"
+	if start != 0:
+		seed += "t."
+		for i in range(start-5,start):
+			seed += full_read[i]
+		seed += "|"
+		for i in range(start,start+5):
+			seed += full_read[i]
+	else:
+		for i in range(len(deNovo_read)-5,len(deNovo_read)):
+			seed += full_read[i]
+		seed += "|"
+		seed += "t."
+		for i in range(len(deNovo_read),len(deNovo_read)+5):
+			seed += full_read[i]
+	return seed
 #assigns the path varibles from the config file
 if args.config:
 	config()
@@ -981,6 +1042,7 @@ if addBlastCnt > 0:
 
 blastInterrogate()
 gffBuilder()
-resultsBuilder()              
+seed_finder()
+resultsBuilder()             
 				   
 #print(args.s)
