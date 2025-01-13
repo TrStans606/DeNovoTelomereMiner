@@ -274,9 +274,10 @@ def idTagger():
 		x = 0
 		for line in pairLines:
 			if x % 4 == 0:
-				newLine = f"@{directory}{x}\t{line.lstrip('@')}"
+				newLine = f"@{directory}_{x}\t{line.lstrip('@')}"
 				write.write(newLine)
-				write.write(pairLines[x + 1])
+			else:
+				write.write(line)
 			x += 1
 
 #calls junctionfinder
@@ -373,7 +374,6 @@ def mmseqs2_processing(cutOff_mm):
 	while not reset_check:
 		print(f"You have generated {cluster_num} clusters.")
 		reset_gate = input("Would you like to redo the cluster cutoff? (y/n) ")
-		print(f"{reset_gate},{reset_check}")
 		match reset_gate:
 			case "y":
 				recluster(cutOff_mm)
@@ -675,7 +675,6 @@ def telContigDictMaker():
 				 'blastDict',
 				 f'{directory}blastDictOut6.txt'), 'r') as read:
 		for line in read:
-			print(line)
 			chromosome = line.split('\t')[0]
 			qEnd = line.split('\t')[6]
 			qStart = line.split('\t')[5]
@@ -893,7 +892,7 @@ def path_checker(path):
 	if not os.path.exists(path):
 		print(f"It seems the {path} defined in config.ini doesnt exist please update the file to include the proper path.")
 		print("You can either edit config.ini in a text editor or using the --config flag when running again")
-		sys.exit()
+		sys.exit()	
 #assigns the path varibles from the config file
 if args.config:
 	config()
