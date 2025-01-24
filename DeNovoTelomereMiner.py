@@ -898,14 +898,17 @@ def path_checker(path):
 		print(f"It seems the {path} defined in config.ini doesnt exist please update the file to include the proper path.")
 		print("You can either edit config.ini in a text editor or using the --config flag when running again")
 		sys.exit()
-
+#finds seed
 def seed_finder():
+	#creates a dictionary of IDs and their own sequences
 	fullSeqs = {}
 	with open(f'Outputs/{directory}/{directory}blastGenomeOut6Annotated.txt', 'r') as read:
 		for line in read:
 			if line.split('\t')[0] not in fullSeqs:
 				fullSeqs[line.split('\t')[0]] = ""
+	#seeds is intially a copy of fullSeqs but will get the seeds instead of the sequence
 	seeds = copy.deepcopy(fullSeqs)
+	#writes the sequences to the dictionary
 	seqCheck = False
 	with open(f'Outputs/{directory}/teloPortOut/subTelReads.fastq','r') as read:
 		for line in read:
@@ -916,11 +919,12 @@ def seed_finder():
 				read_name = line.split('\t')[0].lstrip("@")
 				seqCheck = True
 	#print(fullSeqs)
+	#this finds the DeNovo reads to go along with the fullseqs
 	seqCheck = False
 	with open(f'Outputs/{directory}/telomereReads/deNovoTelomeres/{directory}blastDeNovos.fasta','r') as read:
 		for line in read:
 			if seqCheck:
-				overlap = overlap_finder(fullSeqs[read_name],line.rstrip())
+				overlap = overlap_finder(fullSeqs[read_name].upper(),line.rstrip().upper(),read_name)
 				seeds[read_name] = overlap
 				seqCheck = False
 			if line.split('\t')[0].lstrip(">") in fullSeqs:
@@ -930,8 +934,56 @@ def seed_finder():
 		with open(f'Outputs/{directory}/{directory}seeds.tsv','a') as write:
 			write.write(f"{key}\t {value}\n")
 
-def overlap_finder(full_read, deNovo_read):
+def overlap_finder(full_read, deNovo_read,id):
+	#grabs the reverse version of the telomere repeat
+	rev_tel = ""
+	for bp in telRepeat:
+		match bp.upper():
+			case "A":
+				rev_tel += "T"
+			case "T":
+				rev_tel += "A"
+			case "C":
+				rev_tel += "G"
+			case "G":
+				rev_tel += "C"
+	rev_tel = rev_tel[::-1]
+	#start is given value of a in case it is never initialized a will be used as an error check
 	start = "a"
+	global genome_read
+	genome_read = ""
+	#true false gates are used to grab the genome after the headers are grabbed
+	genome_gate = False
+	pos = 1
+	with open(f'Outputs/{directory}/blastOut/blastGenome/{directory}blastGenomeOut6.txt','r') as read:
+		for line in read:
+			#grabs the chromosome we are reading from and start and end values of the read
+			if line.split('\t')[0] == id:
+				chromosome = line.split('\t')[1]
+				if line.split('\t')[8] > line.split('\t')[7]:
+					start_genome = int(line.split('\t')[7])
+					end_genome = int(line.split('\t')[8])
+				else:
+					start_genome = int(line.split('\t')[8])
+					end_genome = int(line.split('\t')[7])
+				chr = ""
+				#reads in the chromosome as a string
+				with open(f'{genomeDir}/{blastGenome}','r') as read:
+					for line in read:
+						if genome_gate:
+							if line[0] == ">":
+								genome_gate = False
+							if genome_gate:
+								chr += line.rstrip()
+						if line[0] == ">":
+							if line.lstrip(">").rstrip() == chromosome:
+								genome_gate = True
+				#reads the chromosome to find the start and end posistion
+				for bp in chr:
+					if pos >= start_genome and pos <= end_genome+(len(full_read)-len(deNovo_read)):
+						genome_read += bp.upper()
+					pos+=1
+				break
 	for i in range(0,len(full_read)-len(deNovo_read)+1):
 		if full_read[i:i+len(deNovo_read)] == deNovo_read:
 			start = i
@@ -940,19 +992,48 @@ def overlap_finder(full_read, deNovo_read):
 	if start == "a":
 		return "No Overlap. Possible error"
 	if start != 0:
-		seed += "t."
-		for i in range(start-5,start):
-			seed += full_read[i]
-		seed += "|"
-		for i in range(start,start+5):
-			seed += full_read[i]
+		#seed += "t."
+		beggining = True
+		for i in range(start,start-10,-1):
+			if beggining:
+				if genome_read[i].upper() in telRepeat:
+					seed = genome_read[i].lower() + seed
+				else:
+					seed += "|"
+					seed = genome_read[i].upper() + seed
+				past_bp = genome_read[i].upper()
+			else:
+				past_bp += genome_read[i].upper()
+				if past_bp in telRepeat:
+					seed = genome_read[i].lower() + seed
+				else:
+					seed = genome_read[i].upper() + seed
+			beggining = False		
+		for i in range(start,start+10):
+			seed += full_read[i].upper()
+		seed = 'foreward:' + seed
 	else:
-		for i in range(len(deNovo_read)-5,len(deNovo_read)):
-			seed += full_read[i]
-		seed += "|"
-		seed += "t."
-		for i in range(len(deNovo_read),len(deNovo_read)+5):
-			seed += full_read[i]
+		beggining = True
+		for i in range(len(deNovo_read)-10,len(deNovo_read)):
+			if beggining:
+				if genome_read[i].upper() in rev_tel:
+					seed = genome_read[i].lower() + seed
+				else:
+					seed += "|"
+					seed = genome_read[i].upper() + seed
+				past_bp = genome_read[i].upper()
+			else:
+				past_bp += genome_read[i].upper()
+				if past_bp in rev_tel:
+					seed = genome_read[i].lower() + seed
+				else:
+					seed = genome_read[i].upper() + seed
+			beggining = False
+		#seed += "|"
+		#seed += "t."
+		for i in range(len(deNovo_read),len(deNovo_read)+10):
+			seed += full_read[i].upper()
+		seed = 'reverse:' + seed
 	return seed
 #assigns the path varibles from the config file
 if args.config:
