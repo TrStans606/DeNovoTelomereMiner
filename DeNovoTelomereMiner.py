@@ -980,7 +980,7 @@ def overlap_finder(full_read, deNovo_read,id):
 								genome_gate = True
 				#reads the chromosome to find the start and end posistion
 				for bp in chr:
-					if pos >= start_genome and pos <= end_genome+(len(full_read)-len(deNovo_read)):
+					if pos >= start_genome - 20 and pos <= end_genome+(len(full_read)-len(deNovo_read))+20:
 						genome_read += bp.upper()
 					pos+=1
 				break
@@ -992,9 +992,8 @@ def overlap_finder(full_read, deNovo_read,id):
 	if start == "a":
 		return "No Overlap. Possible error"
 	if start != 0:
-		#seed += "t."
 		beggining = True
-		for i in range(start,start-10,-1):
+		for i in range(20,0,-1):
 			if beggining:
 				if genome_read[i].upper() in telRepeat:
 					seed = genome_read[i].lower() + seed
@@ -1008,31 +1007,71 @@ def overlap_finder(full_read, deNovo_read,id):
 					seed = genome_read[i].lower() + seed
 				else:
 					seed = genome_read[i].upper() + seed
-			beggining = False		
-		for i in range(start,start+10):
+			beggining = False
+		for i in range(20,40):
 			seed += full_read[i].upper()
 		seed = 'foreward:' + seed
+		# #seed += "t."
+		# beggining = True
+		# for i in range(start,start-10,-1):
+		# 	if beggining:
+		# 		if genome_read[i].upper() in telRepeat:
+		# 			seed = genome_read[i].lower() + seed
+		# 		else:
+		# 			seed += "|"
+		# 			seed = genome_read[i].upper() + seed
+		# 		past_bp = genome_read[i].upper()
+		# 	else:
+		# 		past_bp += genome_read[i].upper()
+		# 		if past_bp in telRepeat:
+		# 			seed = genome_read[i].lower() + seed
+		# 		else:
+		# 			seed = genome_read[i].upper() + seed
+		# 	beggining = False		
+		# for i in range(start,start+10):
+		# 	seed += full_read[i].upper()
+		# seed = 'foreward:' + seed
 	else:
+		# beggining = True
+		# for i in range(len(deNovo_read)-10,len(deNovo_read)):
+		# 	if beggining:
+		# 		if genome_read[i].upper() in rev_tel:
+		# 			seed = genome_read[i].lower() + seed
+		# 		else:
+		# 			seed += "|"
+		# 			seed = genome_read[i].upper() + seed
+		# 		past_bp = genome_read[i].upper()
+		# 	else:
+		# 		past_bp += genome_read[i].upper()
+		# 		if past_bp in rev_tel:
+		# 			seed = genome_read[i].lower() + seed
+		# 		else:
+		# 			seed = genome_read[i].upper() + seed
+		# 	beggining = False
+		# #seed += "|"
+		# #seed += "t."
+		# for i in range(len(deNovo_read),len(deNovo_read)+10):
+		# 	seed += full_read[i].upper()
+		# seed = 'reverse:' + seed
 		beggining = True
-		for i in range(len(deNovo_read)-10,len(deNovo_read)):
+		length = end_genome-start_genome
+		for i in range(length,length+20):
 			if beggining:
 				if genome_read[i].upper() in rev_tel:
-					seed = genome_read[i].lower() + seed
+					seed += genome_read[i].lower() 
 				else:
 					seed += "|"
-					seed = genome_read[i].upper() + seed
+					seed += genome_read[i].upper() 
 				past_bp = genome_read[i].upper()
 			else:
 				past_bp += genome_read[i].upper()
 				if past_bp in rev_tel:
-					seed = genome_read[i].lower() + seed
+					seed += genome_read[i].lower() 
 				else:
-					seed = genome_read[i].upper() + seed
+					seed += genome_read[i].upper() 
 			beggining = False
-		#seed += "|"
-		#seed += "t."
-		for i in range(len(deNovo_read),len(deNovo_read)+10):
-			seed += full_read[i].upper()
+		for i in range(length-20,length):
+			seed = full_read[i].upper() + seed
 		seed = 'reverse:' + seed
 	return seed
 #assigns the path varibles from the config file
