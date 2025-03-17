@@ -930,9 +930,12 @@ def seed_finder():
 			if line.split('\t')[0].lstrip(">") in fullSeqs:
 				read_name = line.split('\t')[0].lstrip(">")
 				seqCheck = True
+	with open(f'Outputs/{directory}/{directory}seeds.tsv','a') as write:
+		write.write(f"Read_ID\tTelomere Read\tTelomere Seed\n")
 	for key,value in seeds.items():
 		with open(f'Outputs/{directory}/{directory}seeds.tsv','a') as write:
-			write.write(f"{key}\t {value}\n")
+
+			write.write(f"{key}\t{fullSeqs[key]}\t{value}\n")
 
 def overlap_finder(full_read, deNovo_read,id):
 	#grabs the reverse version of the telomere repeat
