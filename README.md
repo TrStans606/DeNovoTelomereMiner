@@ -1,5 +1,11 @@
 # DeNovoTelomereMiner
 
+TODO: SEED FINDING
+Scan the ref genome, BV15, not the raw reads
+Add more in padding before something is consiered a seed
+Stop seeds from being reversed
+
+
 ## Table of contents
 1. [Original Paper](https://github.com/TrStans606/DeNovoTelomereMiner/tree/main#source)
 2. [Docker Installation Guide](https://github.com/TrStans606/DeNovoTelomereMiner/tree/main#docker-instructions-for-linux-macos-and-windows)
