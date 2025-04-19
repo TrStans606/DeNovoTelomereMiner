@@ -280,6 +280,40 @@ def idTagger():
 			else:
 				write.write(line)
 			x += 1
+	dupeChecker()
+
+#check for dupes
+def dupeChecker():
+	seqs = []
+	oldFile = os.path.join('Outputs',
+		directory,
+		'teloPortOut','subTelReads.fastq')
+	oldFile_rename = os.path.join('Outputs',
+		directory,
+		'teloPortOut','subTelReads2.fastq')
+	newFile = os.path.join('Outputs',
+		directory,
+		'teloPortOut','subTelReads.fastq')
+	os.rename(oldFile,oldFile_rename)
+
+	pairLines, pairLineCnt = fileListBuilder(oldFile_rename)
+	with open(newFile, 'a') as write:
+		x=0
+		temp=""
+		for line in pairLines:
+			if x == 0:
+				temp = [line]
+			elif x == 4:
+				if temp[1] not in seqs:
+					seqs.append(temp[1])
+					for fastq_line in temp:
+						write.write(fastq_line)
+				x=0
+				temp = [line]
+			else:
+				temp.append(line)
+			x+=1
+	os.remove(oldFile_rename)
 
 #calls junctionfinder
 def junctionFinder():
@@ -888,10 +922,10 @@ def resultsBuilder():
 			append.write(line)
 
 		append.write(resultsLine)
-	with open(f'Outputs/{directory}/{directory}results.txt', 'a') as write:
-		with open(f'Outputs/{directory}/{directory}seeds.tsv', 'r') as read:
-			for line in read:
-				write.write(line)
+	#with open(f'Outputs/{directory}/{directory}results.txt', 'a') as write:
+	#	with open(f'Outputs/{directory}/{directory}seeds.tsv', 'r') as read:
+	#		for line in read:
+	#			write.write(line)
 		
 def path_checker(path):
 	if not os.path.exists(path):
@@ -999,17 +1033,17 @@ def overlap_finder(full_read, deNovo_read,id):
 		for i in range(20,0,-1):
 			if beggining:
 				if genome_read[i].upper() in telRepeat:
-					seed = genome_read[i].lower() + seed
+					seed += genome_read[i].lower() 
 				else:
 					seed += "|"
-					seed = genome_read[i].upper() + seed
-				past_bp = genome_read[i].upper()
+					seed += genome_read[i].upper() 
+				past_bp += genome_read[i].upper()
 			else:
 				past_bp += genome_read[i].upper()
 				if past_bp in telRepeat:
-					seed = genome_read[i].lower() + seed
+					seed += genome_read[i].lower() 
 				else:
-					seed = genome_read[i].upper() + seed
+					seed += genome_read[i].upper() 
 			beggining = False
 		for i in range(20,40):
 			seed += full_read[i].upper()
@@ -1165,7 +1199,7 @@ if addBlastCnt > 0:
 
 blastInterrogate()
 gffBuilder()
-seed_finder()
+#seed_finder()
 resultsBuilder()             
 				   
 #print(args.s)
