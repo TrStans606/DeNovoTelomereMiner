@@ -1,11 +1,11 @@
 # Use the conda base image
-FROM continuumio/miniconda3
+FROM continuumio/miniconda3:main
 
 # Set the working directory
 WORKDIR /docker
 
 # Install Git
-RUN apt-get update && apt-get install -y git build-essential libboost-all-dev --no-install-recommends
+RUN apt-get update && apt-get install -y git build-essential curl libboost-all-dev --no-install-recommends
 
 # Copy the environment file
 COPY environment.yml .
