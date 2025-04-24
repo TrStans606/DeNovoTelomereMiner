@@ -3,12 +3,11 @@ channels:
   - bioconda
   - conda-forge
 dependencies:
-  - python=3.8
-  - blast
-  - emboss
-  - muscle
-  - mmseqs2
-  - pandas
+  - python=3.12
+  - blast=2.16
+  - emboss=6.6
+  - muscle=5.3
+  - mmseqs2=16.747c6
+  - pandas=2.2
   - sra-tools
-  - curl
-  - nuitka
+  - samtools=1.21
