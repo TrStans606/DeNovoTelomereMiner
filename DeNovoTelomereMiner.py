@@ -922,10 +922,6 @@ def resultsBuilder():
 			append.write(line)
 
 		append.write(resultsLine)
-	# with open(f'Outputs/{directory}/{directory}results.txt', 'a') as write:
-	# 	with open(f'Outputs/{directory}/{directory}seeds.tsv', 'r') as read:
-	# 		for line in read:
-	# 			write.write(line)
 		
 def path_checker(path):
 	if not os.path.exists(path):
@@ -934,8 +930,11 @@ def path_checker(path):
 		sys.exit()
 #finds seed
 def seed_finder():
+	pre_existing = []
 	with open(f'Outputs/{directory}/{directory}seq_compare.tsv','w') as write:
 		write.write(f"Read_ID\tReads\tType\n")
+	with open(f'Outputs/{directory}/{directory}seeds.tsv','w') as write:
+		write.write(f'Read_ID\tSeed\tGenome_read\tDenovo_read\n')
 	with open(f'Outputs/{directory}/{directory}blastGenomeOut6Annotated.txt', 'r') as read:
 		for line in read:
 			seq_id = line.split('\t')[0].strip()
@@ -959,11 +958,11 @@ def seed_finder():
 				command.append("[AGTC]")
 				command.append("[TCAG]")
 			command.append('>')
-			command.append(f'Outputs/{directory}/tmp.txt')
+			command.append(os.path.join('Outputs',directory,'tmp.txt'))
 			subprocess.run(' '.join(command),
 									shell=True,
 									check=True)
-			with open(f'Outputs/{directory}/tmp.txt','r') as read2:
+			with open(os.path.join('Outputs',directory,'tmp.txt'),'r') as read2:
 				for line in read2:
 					if line[0].upper() == "A" or "T" or "C" or "G":
 						genome_read = line.upper().strip()
@@ -983,34 +982,74 @@ def seed_finder():
 			min_length = min(len(genome_read),len(denovo_read))
 			seed = ""
 			if rev.strip() == 'revT':
-				denovo_read = reversed_string = ''.join(reversed(denovo_read))
-				genome_read = reversed_string = ''.join(reversed(genome_read))
-			# for i in range(0,min_length):
-			# 	if genome_read[i] != denovo_read[i]:
-			# 		if "TT" or "TA" or "AG" or "GG" in genome_read[i-5:i]:
-			# 			for j in range(0,len(genome_read)):
-			# 				if j in range(i-5,i-1):
-			# 					if genome_read[j] + genome_read[j+1] == "TT" or "TA" or "AG" or "GG":
-			# 						seed = seed +  genome_read[j].lower() + genome_read[j+1].lower()
-			# 						j+=1
-			# 					else:
-			# 						seed = seed +  genome_read[j]
-			# 				else:
-			# 					seed = seed + genome_read[j]
-			# 			break
-			# 		else:
-			# 			for j in range(0,len(genome_read)):
-			# 				if j == i:
-			# 					seed = seed + '|'
-			# 					seed = seed + genome_read[j]
-			# 			break
-			# with open(f'Outputs/{directory}/{directory}seeds.tsv','a') as write:
-			# 	write.write(f'{seq_id}\t{seed}\t{denovo_read}\n')
-			if denovo_read != genome_read:
-				with open(f'Outputs/{directory}/{directory}seq_compare.tsv','a') as write:
-					write.write(f'{seq_id}\t{genome_read}\tGenome Read\n')
-					write.write(f'\t{denovo_read}\tDenovo Read\n')
-			
+				denovo_read = ''.join(reversed(denovo_read))
+				genome_read = ''.join(reversed(genome_read))
+			if denovo_read != genome_read and genome_read not in pre_existing:
+				pre_existing.append(genome_read)
+				# with open(f'Outputs/{directory}/{directory}seq_compare.tsv','a') as write:
+				# 	write.write(f'{seq_id}\t{genome_read}\tGenome Read\n')
+				# 	write.write(f'\t{denovo_read}\tDenovo Read\n')
+				with open(os.path.join('Outputs',directory,'query.txt'),'w') as write:
+					write.write(f'>genome\n{genome_read}')
+				with open(os.path.join('Outputs',directory,'subject.txt'),'w') as write:
+					write.write(f'>denovo\n{denovo_read}')
+				output = os.path.join('Outputs',directory,'blastTemp.txt')
+				dust = ''
+				outfmt ='-outfmt "6 qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue qlen"'
+				
+				command = ['blastn',
+							'-query',
+							os.path.join('Outputs',directory,'query.txt'),
+							'-subject',
+							os.path.join('Outputs',directory,'subject.txt'),
+							outfmt,
+							dust,
+							'-task blastn'
+							'>>',
+							output]
+				subprocess.run(' '.join(command),
+					shell=True,
+					check=True)
+				with open(output,'r') as read:
+					lines = read.readlines()
+					blast_hit = lines[0]
+
+				#mismatch = blast_hit.split('\t')[4]
+				#qstart = blast_hit.split('\t')[6]
+				qend = int(blast_hit.split('\t')[7]) - 1
+				#sstart = blast_hit.split('\t')[8]
+				#send = blast_hit.split('\t')[9]
+				seed_locs = []
+				to_append=""
+				if qend < len(genome_read):
+					if len(genome_read) - qend > 5:
+						end = 5
+					else:
+						end = len(genome_read) - qend
+					for i in range(qend,qend+end):
+						to_append += genome_read[i].upper() 
+						if len(to_append) > 1 and to_append in telRepeat:
+							seed_locs.append(i)
+							if len(to_append) == 2:
+								seed_locs.append(i-1)
+				seed =''
+				for i in range(0,len(genome_read)):
+					if i in seed_locs:
+						seed += genome_read[i].lower()
+					else:
+						seed += genome_read[i].upper()
+					if i == qend and len(seed_locs) == 0:
+						seed += '|'
+				if '|' in seed:
+					check = 'No'
+				else:
+					check = 'Yes'
+				with open(f'Outputs/{directory}/{directory}seeds.tsv','a') as write:
+					write.write(f'{seq_id}\t{check}\t{seed}\t{denovo_read}\n')
+	os.remove(os.path.join('Outputs',directory,'query.txt'))
+	os.remove(os.path.join('Outputs',directory,'subject.txt'))
+	os.remove(os.path.join('Outputs',directory,'blastTemp.txt'))
+	os.remove(os.path.join('Outputs',directory,'tmp.txt'))		
 
 #assigns the path varibles from the config file
 if args.config:
