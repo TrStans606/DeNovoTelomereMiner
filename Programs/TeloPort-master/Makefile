@@ -43,8 +43,8 @@ $(APP_DIR)/wcdInterrogate: $(WCD_OBJ)
 	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
-	@mkdir -p $(@D)
-	$(CXX) $(CXXFLAGS) $(INCLUDE) -c $< -o $@ $(LDFLAGS)
+    @mkdir -p $(@D)
+    $(CXX) $(CXXFLAGS) $(INCLUDE) -c $< -o $@
 
 .PHONY: all build clean debug release
 
