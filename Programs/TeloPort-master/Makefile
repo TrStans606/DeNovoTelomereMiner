@@ -1,6 +1,6 @@
 # Makefile adapted from http://www.partow.net/programming/makefile/index.html
 
-CXX		:= -c++
+CXX		:= g++
 CXXFLAGS	:= -std=gnu++11 -pedantic-errors -Wall -Wextra #-Werror
 LDFLAGS		:= -L/usr/lib -lboost_system -lboost_program_options -lboost_filesystem -lboost_date_time -lstdc++ -lm
 BUILD		:= ./build
@@ -43,8 +43,8 @@ $(APP_DIR)/wcdInterrogate: $(WCD_OBJ)
 	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
-    @mkdir -p $(@D)
-    $(CXX) $(CXXFLAGS) $(INCLUDE) -c $< -o $@
+	@mkdir -p $(@D)
+	$(CXX) $(CXXFLAGS) $(INCLUDE) -c $< -o $@
 
 .PHONY: all build clean debug release
 
