@@ -1,27 +1,22 @@
 # Makefile adapted from http://www.partow.net/programming/makefile/index.html
 
-CXX		:= g++
-CXXFLAGS	:= -std=gnu++11 -pedantic-errors -Wall -Wextra #-Werror
-LDFLAGS		:= -L/usr/lib -lboost_system -lboost_program_options -lboost_filesystem -lboost_date_time -lstdc++ -lm
-BUILD		:= ./build
-OBJ_DIR		:= $(BUILD)/objects
-SRC_DIR		:= ./src
-APP_DIR		:= $(BUILD)/apps
-# TARGET		:= program
-INCLUDE		:= -Iinclude/
-#SRC		:= $(wildcard src/*.cpp)
-#SRC		:= $(shell find $(SRC_DIR) -type f -name '*.cpp')
-#OBJECTS		:= $(SRC:%.cpp=$(OBJ_DIR)/%.o)
-#OBJECTS		:= $(patsubst ./src/%, $(BUILD)/%, $(SRC:.cpp=.o))
-TF_SRC		:= $(shell find ./src/core ./src/telomereFinder -type f -name '*.cpp') ./src/telomereFinder_driver.cpp
-TF_OBJ		:= $(patsubst ./src/%, $(OBJ_DIR)/%, $(TF_SRC:.cpp=.o))
-JF_SRC		:= $(shell find ./src/core ./src/junctionFinder -type f -name '*.cpp') ./src/junctionFinder_driver.cpp
-JF_OBJ		:= $(patsubst ./src/%, $(OBJ_DIR)/%, $(JF_SRC:.cpp=.o))
-SQ_SRC		:= $(shell find ./src/core -type f -name '*.cpp') ./src/sequenceQuality_driver.cpp
-SQ_OBJ		:= $(patsubst ./src/%, $(OBJ_DIR)/%, $(SQ_SRC:.cpp=.o))
-WCD_SRC		:= $(shell find ./src/core -type f -name '*.cpp') ./src/wcdInterrogate_driver.cpp
-WCD_OBJ		:= $(patsubst ./src/%, $(OBJ_DIR)/%, $(WCD_SRC:.cpp=.o))
+CXX     := g++
+CXXFLAGS    := -std=gnu++11 -pedantic-errors -Wall -Wextra #-Werror
+LDFLAGS     := -L/usr/lib -lboost_system -lboost_program_options -lboost_filesystem -lboost_date_time -lstdc++ -lm
+BUILD       := ./build
+OBJ_DIR     := $(BUILD)/objects
+SRC_DIR     := ./src
+APP_DIR     := $(BUILD)/apps
+INCLUDE     := -Iinclude/
 
+TF_SRC      := $(shell find ./src/core ./src/telomereFinder -type f -name '*.cpp') ./src/telomereFinder_driver.cpp
+TF_OBJ      := $(patsubst ./src/%, $(OBJ_DIR)/%, $(TF_SRC:.cpp=.o))
+JF_SRC      := $(shell find ./src/core ./src/junctionFinder -type f -name '*.cpp') ./src/junctionFinder_driver.cpp
+JF_OBJ      := $(patsubst ./src/%, $(OBJ_DIR)/%, $(JF_SRC:.cpp=.o))
+SQ_SRC      := $(shell find ./src/core -type f -name '*.cpp') ./src/sequenceQuality_driver.cpp
+SQ_OBJ      := $(patsubst ./src/%, $(OBJ_DIR)/%, $(SQ_SRC:.cpp=.o))
+WCD_SRC     := $(shell find ./src/core -type f -name '*.cpp') ./src/wcdInterrogate_driver.cpp
+WCD_OBJ     := $(patsubst ./src/%, $(OBJ_DIR)/%, $(WCD_SRC:.cpp=.o))
 
 all: build telomereFinder junctionFinder sequenceQuality wcdInterrogate
 
@@ -30,34 +25,42 @@ junctionFinder: $(APP_DIR)/junctionFinder
 sequenceQuality: $(APP_DIR)/sequenceQuality
 wcdInterrogate: $(APP_DIR)/wcdInterrogate
 
-$(APP_DIR)/telomereFinder: $(TF_OBJ)
-	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
+$(APP_DIR)/telomereFinder: build-dirs $(TF_OBJ)
+    $(CXX) $(CXXFLAGS) -o $@ $(TF_OBJ) $(LDFLAGS)
 
-$(APP_DIR)/junctionFinder: $(JF_OBJ)
-	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
+$(APP_DIR)/junctionFinder: build-dirs $(JF_OBJ)
+    $(CXX) $(CXXFLAGS) -o $@ $(JF_OBJ) $(LDFLAGS)
 
-$(APP_DIR)/sequenceQuality: $(SQ_OBJ)
-	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
+$(APP_DIR)/sequenceQuality: build-dirs $(SQ_OBJ)
+    $(CXX) $(CXXFLAGS) -o $@ $(SQ_OBJ) $(LDFLAGS)
 
-$(APP_DIR)/wcdInterrogate: $(WCD_OBJ)
-	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
+$(APP_DIR)/wcdInterrogate: build-dirs $(WCD_OBJ)
+    $(CXX) $(CXXFLAGS) -o $@ $(WCD_OBJ) $(LDFLAGS)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
-	@mkdir -p $(@D)
-	$(CXX) $(CXXFLAGS) $(INCLUDE) -c $< -o $@
+    @mkdir -p $(@D)
+    $(CXX) $(CXXFLAGS) $(INCLUDE) -c $< -o $@
 
-.PHONY: all build clean debug release
+.PHONY: all build build-dirs clean debug release
 
 build:
-	@mkdir -p $(APP_DIR)
-	@mkdir -p $(OBJ_DIR)
+    @mkdir -p $(APP_DIR)
+    @mkdir -p $(OBJ_DIR)
+
+build-dirs:
+    @mkdir -p $(APP_DIR)
+    @mkdir -p $(OBJ_DIR)
+    @mkdir -p $(OBJ_DIR)/core
+    @mkdir -p $(OBJ_DIR)/telomereFinder
+    @mkdir -p $(OBJ_DIR)/junctionFinder
 
 debug: CXXFLAGS += -DDEBUG -g
-debug: all
+debug: clean all
 
 release: CXXFLAGS += -O2
-release: all
+release: clean all
 
 clean:
-	-@rm -rvf $(OBJ_DIR)/*
-	-@rm -rvf $(APP_DIR)/*
+    -@rm -rf $(BUILD)
+    @mkdir -p $(APP_DIR)
+    @mkdir -p $(OBJ_DIR)
