@@ -1,6 +1,6 @@
 # Makefile adapted from http://www.partow.net/programming/makefile/index.html
 
-CXX     := g++
+CXX     := c++
 CXXFLAGS    := -std=gnu++11 -pedantic-errors -Wall -Wextra #-Werror
 LDFLAGS     := -L/usr/lib -lboost_system -lboost_program_options -lboost_filesystem -lboost_date_time -lstdc++ -lm
 BUILD       := ./build
