@@ -2,6 +2,7 @@
 
 (
 cd Programs/TeloPort-master/ || exit
+make clean
 make
 )
 (
