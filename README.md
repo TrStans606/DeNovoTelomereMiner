@@ -25,8 +25,10 @@ DeNovoTelomereMiner is built for POSIX systems and has been tested on Fedora, Ub
 
 ## Docker instructions for Linux, macOS and Windows
 1. Pull the image from Github
+
+Apple Silicon Mac:
 ```bash
-docker pull ghcr.io/trstans606/denovotelomereminer:latest@sha256:de0aa441ac86115cc55dd6577bf2d73b5afb7ec12d1b10102fb60a1d9767af98
+docker pull ghcr.io/trstans606/denovotelomereminer:x86@sha256:bcc98deeb3774ea61d878bafad35b72bd38ebe7dd5bf60fc448207e8e39bcd3c
 ```
 
 2. Run the container
