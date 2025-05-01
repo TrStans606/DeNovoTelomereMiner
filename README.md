@@ -38,8 +38,18 @@ docker pull ghcr.io/trstans606/denovotelomereminer:arm64@sha256:c80b170251a55e1e
 
 2. Run the container
 
+Run docker images to find the image id:
 ```bash
-docker run --name de_novos -it de0aa441ac86 bash
+docker images
+```
+You will get some result like:
+REPOSITORY                               TAG       IMAGE ID       CREATED          SIZE
+ghcr.io/trstans606/denovotelomereminer   <none>    bcc98deeb377   43 minutes ago   36.8GB
+
+Copy the value of IMAGE ID into the below command
+
+```bash
+docker run --name de_novos -it <IMAGE ID> bash
 ```
 
 It's that simple! Now the teloport environment is set up perfectly for running. To copy your data from your host machine to the docker image use this command on your host machine:
