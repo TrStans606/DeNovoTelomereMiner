@@ -26,33 +26,33 @@ sequenceQuality: $(APP_DIR)/sequenceQuality
 wcdInterrogate: $(APP_DIR)/wcdInterrogate
 
 $(APP_DIR)/telomereFinder: build-dirs $(TF_OBJ)
-    $(CXX) $(CXXFLAGS) -o $@ $(TF_OBJ) $(LDFLAGS)
+	$(CXX) $(CXXFLAGS) -o $@ $(TF_OBJ) $(LDFLAGS)
 
 $(APP_DIR)/junctionFinder: build-dirs $(JF_OBJ)
-    $(CXX) $(CXXFLAGS) -o $@ $(JF_OBJ) $(LDFLAGS)
+	$(CXX) $(CXXFLAGS) -o $@ $(JF_OBJ) $(LDFLAGS)
 
 $(APP_DIR)/sequenceQuality: build-dirs $(SQ_OBJ)
-    $(CXX) $(CXXFLAGS) -o $@ $(SQ_OBJ) $(LDFLAGS)
+	$(CXX) $(CXXFLAGS) -o $@ $(SQ_OBJ) $(LDFLAGS)
 
 $(APP_DIR)/wcdInterrogate: build-dirs $(WCD_OBJ)
-    $(CXX) $(CXXFLAGS) -o $@ $(WCD_OBJ) $(LDFLAGS)
+	$(CXX) $(CXXFLAGS) -o $@ $(WCD_OBJ) $(LDFLAGS)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
-    @mkdir -p $(@D)
-    $(CXX) $(CXXFLAGS) $(INCLUDE) -c $< -o $@
+	@mkdir -p $(@D)
+	$(CXX) $(CXXFLAGS) $(INCLUDE) -c $< -o $@
 
 .PHONY: all build build-dirs clean debug release
 
 build:
-    @mkdir -p $(APP_DIR)
-    @mkdir -p $(OBJ_DIR)
+	@mkdir -p $(APP_DIR)
+	@mkdir -p $(OBJ_DIR)
 
 build-dirs:
-    @mkdir -p $(APP_DIR)
-    @mkdir -p $(OBJ_DIR)
-    @mkdir -p $(OBJ_DIR)/core
-    @mkdir -p $(OBJ_DIR)/telomereFinder
-    @mkdir -p $(OBJ_DIR)/junctionFinder
+	@mkdir -p $(APP_DIR)
+	@mkdir -p $(OBJ_DIR)
+	@mkdir -p $(OBJ_DIR)/core
+	@mkdir -p $(OBJ_DIR)/telomereFinder
+	@mkdir -p $(OBJ_DIR)/junctionFinder
 
 debug: CXXFLAGS += -DDEBUG -g
 debug: clean all
@@ -61,6 +61,6 @@ release: CXXFLAGS += -O2
 release: clean all
 
 clean:
-    -@rm -rf $(BUILD)
-    @mkdir -p $(APP_DIR)
-    @mkdir -p $(OBJ_DIR)
+	-@rm -rf $(BUILD)
+	@mkdir -p $(APP_DIR)
+	@mkdir -p $(OBJ_DIR)
