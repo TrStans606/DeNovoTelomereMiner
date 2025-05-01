@@ -38,7 +38,7 @@ $(APP_DIR)/wcdInterrogate: build-dirs $(WCD_OBJ)
 	$(CXX) $(CXXFLAGS) -o $@ $(WCD_OBJ) $(LDFLAGS)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
-	@mkdir -p $(@D)
+	mkdir -p $(@D)
 	$(CXX) $(CXXFLAGS) $(INCLUDE) -c $< -o $@
 
 .PHONY: all build build-dirs clean debug release
