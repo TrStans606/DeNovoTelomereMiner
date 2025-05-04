@@ -28,7 +28,7 @@ DeNovoTelomereMiner is built for POSIX systems and has been tested on Fedora, Ub
 
 Windows, Intel Macs, x86 Linux
 ```bash
-docker pull ghcr.io/trstans606/denovotelomereminer:x86@sha256:bcc98deeb3774ea61d878bafad35b72bd38ebe7dd5bf60fc448207e8e39bcd3c
+docker pull ghcr.io/trstans606/denovotelomereminer:x86@sha256:3ba7f0478c55956eb81709658243fa13ab8bfbf4af7b94eeda20d9d7890fcb5e
 ```
 
 Apple Silicon Mac, arm64 Linux
