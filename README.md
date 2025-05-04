@@ -33,7 +33,7 @@ docker pull ghcr.io/trstans606/denovotelomereminer:x86@sha256:bcc98deeb3774ea61d
 
 Apple Silicon Mac, arm64 Linux
 ```bash
-docker pull ghcr.io/trstans606/denovotelomereminer:arm64@sha256:c80b170251a55e1eb429f5876479826a523c23606dba42a266e39ddd4bf87d83
+docker pull ghcr.io/trstans606/denovotelomereminer:arm64@sha256:4f6b988680b3db68b64f2fa5d73dd76405d5e5ebf21093c878d1d5bd0ef785e6
 ```
 
 2. Run the container
