@@ -49,7 +49,7 @@ parser.add_argument(
 	help=(
 		'The name of the assembled genome fasta file used for allignment'
 	),
-	required='n/a'
+	required=False
 )
 
 #command line argument for a directory
@@ -186,7 +186,7 @@ def inputCollect():
 		return [cutOff, choice, genomeI, blastGenome, directory]
 
 #tests for the validity of a file path
-def filePathTest(filename):
+def filePathTest(filename: str):
 	if os.access(filename, os.F_OK):
 		return True
 	else:
@@ -194,7 +194,7 @@ def filePathTest(filename):
 			"That file doesn't exist. Please enter a valid filename")
 		return False
 
-def fileListBuilder(file):
+def fileListBuilder(file: str):
 	with open(file, 'r') as read:
 		lines = read.readlines()
 		lineCnt = len(lines)
@@ -372,7 +372,7 @@ def mmseqs2Call():
 					check=True)
 
 #processes the clustering into reads for further use
-def mmseqs2_processing(cutOff_mm):
+def mmseqs2_processing(cutOff_mm: int):
 	print("Entered mmseqs2_processing")
 	clusters = pd.read_csv(f"Outputs/{directory}/teloPortOut/clusters_cluster.tsv",sep="\t",header=None)
 	labels = {}
@@ -391,7 +391,8 @@ def mmseqs2_processing(cutOff_mm):
 	for value in clusters.iloc[:,0]:
 		with open(f"Outputs/{directory}/telomereReads/{value}.fasta",'a') as write:
 			for j in range(len(seqs)):
-				if re.search(clusters.loc[i,1],seqs[j]):
+				pattern_str = str(clusters.loc[i, 1])
+				if re.search(pattern_str,seqs[j]):
 					write.write(f"{seqs[j]}{seqs[j+1]}")
 			i+=1
 	for value in pd.unique(clusters.iloc[:,0]):
@@ -433,7 +434,7 @@ def mmseqs2_processing(cutOff_mm):
 			os.remove(file)
 	return cutOff_mm
 
-def recluster(cutOff):
+def recluster(cutOff:int):
 	new_cutOff = int(input(f"Please enter the new cluster cutoff (the previous value was {cutOff}): "))
 	files = glob.glob(f"Outputs/{directory}/telomereReads/deNovoTelomeres/*.fasta")
 	for file in files:
@@ -513,7 +514,7 @@ def consBlast():
 		  dust)
 
 #runs blast            
-def blastRun(query, subject, output, dust):
+def blastRun(query:str, subject:str, output:str, dust:str):
 	outfmt ='-outfmt "6 qseqid sseqid pident length mismatch \
 		gapopen qstart qend sstart send evalue qlen"'
 	command = ['blastn',
@@ -566,7 +567,7 @@ def falsePosFilter():
 						trueDeNovos += 1
 	return trueDeNovos
 											
-def dictMaker(file, secondVal):               
+def dictMaker(file:str, secondVal:int):               
 	with open(file, 'r') as read:
 		dictionary = {}
 		for line in read:
@@ -923,7 +924,7 @@ def resultsBuilder():
 
 		append.write(resultsLine)
 		
-def path_checker(path):
+def path_checker(path:str):
 	if not os.path.exists(path):
 		print(f"It seems the {path} defined in config.ini doesnt exist please update the file to include the proper path.")
 		print("You can either edit config.ini in a text editor or using the --config flag when running again")
@@ -1051,60 +1052,77 @@ def seed_finder():
 	os.remove(os.path.join('Outputs',directory,'blastTemp.txt'))
 	os.remove(os.path.join('Outputs',directory,'tmp.txt'))		
 
-#assigns the path varibles from the config file
+# Assign variables based on simple mode or command line arguments
 if args.config:
-	config()
+    config()
+
+# Read config file first
 with open('config.ini','r') as read:
-	configLines = read.readlines()
-	readDir = configLines[0].split('=')[1].split('\n')[0]
-	genomeDir = configLines[1].split('=')[1].split('\n')[0]
-	filterDir = configLines[2].split('=')[1].split('\n')[0] 
-	addDir = configLines[3].split('=')[1]
-#makes sure the folders in config.ini exist
-path_checker(readDir.strip())
-path_checker(genomeDir.strip())
-path_checker(filterDir.strip())
-path_checker(addDir.strip())
+    configLines = read.readlines()
+    readDir = configLines[0].split('=')[1].split('\n')[0].strip() 
+    genomeDir = configLines[1].split('=')[1].split('\n')[0].strip() 
+    filterDir = configLines[2].split('=')[1].split('\n')[0].strip() 
+    addDir = configLines[3].split('=')[1].strip() 
+
+# makes sure the folders in config.ini exist
+path_checker(readDir)
+path_checker(genomeDir)
+path_checker(filterDir)
+path_checker(addDir)
 
 if args.simple:
-	inputResults = inputCollect()
-	telRepeat = args.t
-	if len(inputResults) == 6:
-		cutOff = inputResults[0]
-		choice = inputResults[1]
-		genomeR1 = inputResults[2]
-		genomeR2 = inputResults[3]
-		blastGenome = inputResults[4]
-		directory = inputResults[5]
-	else:
-		cutOff = inputResults[0]
-		choice = inputResults[1]
-		genomeI = inputResults[2]
-		blastGenome = inputResults[3]
-		directory = inputResults[4]
-elif args.s == 'n/a':
-	choice = 'i'
-	genomeI = args.i
-elif args.i == 'n/a':
-	choice = 's'
-	genomeR1 = args.s[0]
-	genomeR2 = args.s[1]
-if not args.simple:
-	blastGenome = args.g
-	cutOff = args.cut
-	telRepeat = args.t
-if args.d == 'n/a' and not args.simple:
-	directory = blastGenome.split('.')[0]
-else:
-	directory = args.d
+    inputResults = inputCollect()
+    cutOff = inputResults[0]
+    choice = inputResults[1]
+    # Assign genome files based on choice from simple mode
+    if choice == 's':
+        genomeR1 = inputResults[2]
+        genomeR2 = inputResults[3]
+        genomeI = None 
+    elif choice == 'i':
+        genomeI = inputResults[2]
+        genomeR1 = None 
+        genomeR2 = None
+    blastGenome = inputResults[4]
+    directory = inputResults[5]
+    telRepeat = args.t
+else: 
+    cutOff = args.cut
+    telRepeat = args.t
+    blastGenome = args.g
+    # Determine choice and assign genome files based on -s or -i args
+    if args.s != 'n/a':
+        choice = 's'
+        genomeR1 = args.s[0]
+        genomeR2 = args.s[1]
+        genomeI = None
+    elif args.i != 'n/a':
+        choice = 'i'
+        genomeI = args.i
+        genomeR1 = None
+        genomeR2 = None
+    else:
+         pass
+
+    # Determine directory name from args.d or blastGenome
+    if args.d != 'n/a':
+        directory = args.d
+    else:
+        # Ensure blastGenome is not None if you reach here
+        if blastGenome is None:
+             print("Error: Genome file (-g) is required when not in simple mode and no directory (-d) is specified.")
+             sys.exit(1) # Exit if required argument is missing
+        directory = blastGenome.split('.')[0]
+
+# Handle filter and add counts (these assignments are fine as they are)
 if args.add != 'n/a':
-	addBlastCnt = len(args.add)
+    addBlastCnt = len(args.add)
 else:
-	addBlastCnt = 0
+    addBlastCnt = 0
 if args.f != 'n/a':
-	filtersCnt = len(args.f)
+    filtersCnt = len(args.f)
 else:
-	filtersCnt = 0
+    filtersCnt = 0
 
 teloPortPipeline()
 cutOff = mmseqs2_processing(cutOff)
@@ -1129,10 +1147,10 @@ blastRun(os.path.join('Outputs',
 if addBlastCnt > 0:
 	for file in args.add:
 		blastRun(f'{addDir}file',
-			  f'{genomeDir}/{blastGenome}',
+			  os.path.join(f'{genomeDir}/{blastGenome}',
 						   directory,
 						   'blastOut',
-						   'blastAdd',
+						   'blastAdd'),
 						   f'{directory}{file.split(".")[0]}blast.txt','')
 
 blastInterrogate()
