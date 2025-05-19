@@ -140,6 +140,10 @@ def inputCollect():
 	
 	choiceMade = False
 	cutOff = 5
+	choice = str
+	genomeR1= str
+	genomeR2= str
+	genomeI= str
 	while not choiceMade:
 		choice = input(
 			'Please enter if you are using sperated (s) genome files or an \
@@ -235,8 +239,8 @@ def teloPortPipeline():
 def telomereFinderSeperated():
 	command = ['Programs/bin/telomereFinder', 
 		'-s',
-		os.path.join(readDir, genomeR1),
-		os.path.join(readDir, genomeR1),
+		os.path.join(str(readDir), str(genomeR1)),
+		os.path.join(str(readDir), str(genomeR2)),
 		'-o',
 		'Outputs/' + directory + '/teloPortOut/',
 		'-t',
@@ -251,7 +255,7 @@ def telomereFinderSeperated():
 def telomereFinderInter():
 	command = ['Programs/TeloPort/build/apps/telomereFinder',
 		'-i',
-		os.path.join(readDir, genomeI),
+		os.path.join(str(readDir), str(genomeI)),
 		'-o',
 		f'Outputs/{directory}/teloPortOut/',
 		'-t',
@@ -299,7 +303,7 @@ def dupeChecker():
 	pairLines, pairLineCnt = fileListBuilder(oldFile_rename)
 	with open(newFile, 'a') as write:
 		x=0
-		temp=""
+		temp=[]
 		for line in pairLines:
 			if x == 0:
 				temp = [line]
@@ -631,12 +635,13 @@ def deNovoFilter():
 								  'blastOut',
 								  'blastFilter',
 								  f'{directory}{file.split[0]}.txt'))
-				write.write(lines)
+				for x in lines:
+					write.write(x)
 		filterSingles = dictMaker(os.path.join('Outputs',
 					  directory,
 					  'blastOut',
 					  'blastFilter',
-					  f'{directory}filters.txt', 7))
+					  directory,'filters.txt'), 7)
 		filteredDeNovos = 0
 		lines, lineCnt = fileListBuilder(
 				os.path.join('Outputs',
@@ -815,6 +820,7 @@ def gffBuilder():
 			  'a') as append:
 		append.write('##gff-version 3.1.26\n')
 		cnt = '0'
+		strand = '+'
 		for line in lines:
 			if line.split('\t')[14].rstrip() == 'revF':
 				strand = '+'
@@ -931,6 +937,8 @@ def path_checker(path:str):
 		sys.exit()
 #finds seed
 def seed_finder():
+	genome_read= 'str'
+	denovo_read = 'str'
 	pre_existing = []
 	with open(f'Outputs/{directory}/{directory}seq_compare.tsv','w') as write:
 		write.write(f"Read_ID\tReads\tType\n")
@@ -1071,21 +1079,24 @@ path_checker(filterDir)
 path_checker(addDir)
 
 if args.simple:
-    inputResults = inputCollect()
-    cutOff = inputResults[0]
-    choice = inputResults[1]
-    # Assign genome files based on choice from simple mode
-    if choice == 's':
-        genomeR1 = inputResults[2]
-        genomeR2 = inputResults[3]
-        genomeI = None 
-    elif choice == 'i':
-        genomeI = inputResults[2]
-        genomeR1 = None 
-        genomeR2 = None
-    blastGenome = inputResults[4]
-    directory = inputResults[5]
-    telRepeat = args.t
+	inputResults = inputCollect()
+	if inputResults is None:
+		print("Error: inputCollect() did not return any results. Exiting.")
+		sys.exit(1)
+	cutOff = inputResults[0]
+	choice = inputResults[1]
+	# Assign genome files based on choice from simple mode
+	if choice == 's':
+		genomeR1 = inputResults[2]
+		genomeR2 = inputResults[3]
+		genomeI = None 
+	elif choice == 'i':
+		genomeI = inputResults[2]
+		genomeR1 = None 
+		genomeR2 = None
+	blastGenome = inputResults[4]
+	directory = inputResults[5]
+	telRepeat = args.t
 else: 
     cutOff = args.cut
     telRepeat = args.t
